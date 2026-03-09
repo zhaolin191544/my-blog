@@ -1,11 +1,9 @@
-import GenerativeTreeBg from "../components/GenerativeTreeBg";
+import "./globals.css";
+import type { Metadata } from "next";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
-        <GenerativeTreeBg init={5} len={5} strokeStyle="#00000020" />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

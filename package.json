@@ -9,7 +9,9 @@
     "lint": "oxlint .",
     "format": "oxfmt .",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
   "dependencies": {
     "lucide-react": "^0.574.0",

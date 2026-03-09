@@ -7,12 +7,7 @@ const r180 = Math.PI;
 const r15 = Math.PI / 12;
 const { random } = Math;
 
-function polar2cart(
-  x: number,
-  y: number,
-  r: number,
-  theta: number,
-): [number, number] {
+function polar2cart(x: number, y: number, r: number, theta: number): [number, number] {
   return [x + r * Math.cos(theta), y + r * Math.sin(theta)];
 }
 
@@ -68,8 +63,7 @@ export default function GenerativeTreeBg({
       const rad1 = rad + random() * r15;
       const rad2 = rad - random() * r15;
 
-      if (nx < -100 || nx > width + 100 || ny < -100 || ny > height + 100)
-        return;
+      if (nx < -100 || nx > width + 100 || ny < -100 || ny > height + 100) return;
 
       const iter = iterations;
       if (iter <= init || random() > 0.5) queue.push(() => step(nx, ny, rad1));
@@ -91,10 +85,7 @@ export default function GenerativeTreeBg({
     };
 
     // Always: left side (growing right) + right side (growing left)
-    queue = [
-      () => step(0, random() * height, 0),
-      () => step(width, random() * height, r180),
-    ];
+    queue = [() => step(0, random() * height, 0), () => step(width, random() * height, r180)];
 
     // Randomly add top (growing down)
     if (random() > 0.5) {

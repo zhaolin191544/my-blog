@@ -6,12 +6,7 @@ const r180 = Math.PI;
 const r90 = Math.PI / 2;
 const { random } = Math;
 
-function polar2cart(
-  x: number,
-  y: number,
-  r: number,
-  theta: number,
-): [number, number] {
+function polar2cart(x: number, y: number, r: number, theta: number): [number, number] {
   return [x + r * Math.cos(theta), y + r * Math.sin(theta)];
 }
 
@@ -84,10 +79,7 @@ export default function GenerativeTreeBg({
       // 2. 侧枝的分化：藤蔓分叉概率很低 (3%)，或者在初始阶段强制分叉
       if (depth <= init || random() < 0.03) {
         // 侧枝通常会以较大的角度偏离主干
-        const branchRad =
-          rad +
-          (random() > 0.5 ? 1 : -1) * (Math.PI / 3) +
-          (random() - 0.5) * 0.5;
+        const branchRad = rad + (random() > 0.5 ? 1 : -1) * (Math.PI / 3) + (random() - 0.5) * 0.5;
         queue.push(() => step(nx, ny, branchRad, depth + 1));
       }
     };
@@ -108,14 +100,8 @@ export default function GenerativeTreeBg({
     // 起点逻辑保持不变
     queue =
       random() < 0.5
-        ? [
-            () => step(0, random() * height, 0, 0),
-            () => step(width, random() * height, r180, 0),
-          ]
-        : [
-            () => step(random() * width, 0, r90, 0),
-            () => step(random() * width, height, -r90, 0),
-          ];
+        ? [() => step(0, random() * height, 0, 0), () => step(width, random() * height, r180, 0)]
+        : [() => step(random() * width, 0, r90, 0), () => step(random() * width, height, -r90, 0)];
 
     rafRef.current = requestAnimationFrame(frame);
   }, [init, len, strokeStyle, lineWidth, stepsPerFrame, interval]);

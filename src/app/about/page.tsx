@@ -1,152 +1,210 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import Image from "next/image";
 
-export default function AboutPage() {
+export default function About() {
   return (
-    <div className="min-h-screen bg-white text-gray-800 font-sans selection:bg-gray-200">
-      <div className="max-w-2xl mx-auto px-5 py-10">
-        {/* Header 区域 */}
-        <header className="mb-12 relative">
-          {/* 返回按钮 */}
-          <Link
-            href="/"
-            className="inline-flex items-center text-gray-500 hover:text-black transition-colors mb-4 text-sm"
-          >
-            <ArrowLeft className="w-4 h-4 mr-1" />
-            黑洞里
-          </Link>
+    <>
+      <style>{`
+        @keyframes bounce-x {
+          from { transform: translateX(5px); }
+          to   { transform: translateX(0); }
+        }
 
-          {/* 封面图 */}
-          <div className="relative w-full h-48 md:h-64 rounded-xl overflow-hidden shadow-sm">
-            {/* 注意：请替换为你自己的图片路径 */}
-            <Image
-              src="/images/cover.jpg"
-              alt="Cover"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
+        .now-page a {
+          color: #2e2e2e;
+          text-decoration-line: underline;
+          text-decoration-style: solid;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 5px;
+        }
 
-          {/* 头像与个人信息 (使用负margin实现重叠效果) */}
-          <div className="relative -mt-10 ml-4 flex items-end gap-4 z-10">
-            <a href="mailto:your-email@example.com" className="group">
-              <div className="flex items-center gap-3">
-                <div className="relative w-20 h-20 rounded-full border-4 border-white overflow-hidden shadow-md bg-white">
-                  <Image
-                    src="/images/avatar.png"
-                    alt="Spike"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  {/* 模仿原网页的交互：Hover显示名字 */}
-                  <span className="font-bold text-lg bg-black text-white px-2 py-1 rounded">
-                    Spike.
-                  </span>
-                </div>
+        .now-page header a {
+          text-decoration: none;
+        }
+
+        @media (pointer: fine) and (hover: hover) {
+          .now-page a:hover {
+            text-decoration: none;
+            background: #0077aa;
+            color: #fff;
+          }
+          .now-page header a.profile-link:hover {
+            background: transparent;
+            color: inherit;
+          }
+        }
+
+        .now-page p {
+          margin-block: 0.65em;
+        }
+
+        .now-page article section > p:first-child {
+          margin-block-start: 0;
+        }
+      `}</style>
+      <section
+        className="now-page mx-auto min-[900px]:max-w-[90vw] min-[1200px]:max-w-250
+              bg-transparent dark:bg-[#232323]
+              font-serif text-[#2e2e2e] dark:text-[aliceblue]
+              leading-normal wrap-break-word
+              transition-colors duration-300
+              "
+        style={{ fontSize: "clamp(16px, 2vw + 10px, 24px)" }}
+      >
+        <header className="relative">
+          <span className="absolute left-[1em] top-[1em] z-10">
+            <Link href="/" className="text-[aliceblue]!">
+              ⇦ Home
+            </Link>
+          </span>
+          <Image
+            src="/about/cover.jpg"
+            alt="cover"
+            width={1920}
+            height={1080}
+            className="w-full object-cover max-h-[44vh]"
+            priority
+          />
+
+          <a href="mailto:zhaolin191544@gmail.com" className="profile-link group">
+            <div
+              className="absolute bottom-0 right-[1em] z-1
+              flex translate-y-[2em] items-center gap-[0.5em]"
+            >
+              <span
+                className="absolute right-full me-[1em] bottom-[2em]
+              hidden w-max text-[1.2em] text-[#b8b8b8]
+              group-hover:inline-block"
+                style={{
+                  animation: "bounce-x 0.8s ease-in infinite alternate-reverse",
+                }}
+              >
+                想和我聊聊天？☞
+              </span>
+              <span className="text-[aliceblue] text-[2em] translate-y-[-0.4em]">Lin</span>
+
+              <Image
+                src="/about/avatar.jpg"
+                alt="lin"
+                width={100}
+                height={100}
+                className="h-[5em] w-[5em] rounded-[0.5em]"
+              />
+
+              <div className="absolute right-0 top-full text-[1em] text-[#787878] dark:text-[#b8b8b8] flex flex-col items-end w-max mt-1">
+                <span>横玉声中吹满地,</span>
+                <span>好枝长恨无人寄.</span>
               </div>
-            </a>
-          </div>
+            </div>
+          </a>
         </header>
 
-        {/* 主要内容区域 */}
-        <main>
-          <article className="grid grid-cols-1 md:grid-cols-[80px_1fr] gap-8">
-            {/* 左侧：日期 (Time) */}
-            <aside className="text-gray-400 font-serif md:text-right pt-1">
-              <time
-                dateTime="2025-10-18"
-                className="flex flex-row md:flex-col gap-2 md:gap-0 text-2xl md:text-3xl font-bold leading-none"
-              >
-                <span>19</span>
-                <span className="text-sm md:text-lg font-normal uppercase tracking-wider">
-                  Oct
-                </span>
-                <span className="text-sm md:text-base font-light text-gray-300">
-                  2025
-                </span>
-              </time>
-            </aside>
+        <main className="mt-[5em]">
+          <article className="grid grid-cols-[max-content_auto] gap-[0.5em] px-[1em]">
+            <time dateTime="2026-3-7">
+              7
+              <br />
+              Mar
+              <br />
+              2026
+            </time>
 
-            {/* 右侧：正文 (Section) */}
-            <section className="space-y-6 text-base leading-relaxed text-gray-700">
+            <section>
+              <p>目前在深圳读本科，渴望逃离这里。</p>
+              <p>ISFP 佛系、冷清、孤独 但也同时很期待朋友。</p>
               <p>
-                目前居住在深圳，最近热衷于写博客，
-                <Link
-                  href="#"
-                  className="underline decoration-gray-300 hover:decoration-black hover:text-black underline-offset-4 transition-all"
-                >
-                  折腾博客
-                </Link>
-                ，以及
-                <Link
-                  href="#"
-                  className="underline decoration-gray-300 hover:decoration-black hover:text-black underline-offset-4 transition-all"
-                >
-                  折腾 Emacs
-                </Link>
-                和学习 LLM 的使用。
+                爱好广泛，顶级美食家。喜欢踢足球，听音乐，读be小说，玩游戏，跑步，听播客，寻觅各种各样的美食。超级大p人，渴望自由，做一些看起来没有意义的事情。以下是一些我很喜欢的东西或者是你可以找到我的地方：
               </p>
 
-              <p>
-                随着年纪渐长，工作占据了大多的时间，锻炼也少，身体每况愈下，今年的目标就是好好睡觉，多锻炼。现在主要就是跑步，一边跑一边听播客，我比较喜欢听这几个：
-              </p>
-
-              <ul className="list-disc pl-5 space-y-1 marker:text-gray-300">
-                {[
-                  "内核恐慌",
-                  "虚实之间 True Imagination",
-                  "Nice Try",
-                  "独树不成林",
-                  "罗永浩的十字路口",
-                ].map((item) => (
-                  <li key={item}>
-                    <a
-                      href="#"
-                      className="hover:text-blue-600 hover:underline transition-colors"
-                    >
-                      {item}
-                    </a>
-                  </li>
-                ))}
+              <ul className="my-[0.65em] list-disc pl-[2em]">
+                <li>
+                  <a
+                    href="https://open.spotify.com/artist/1QAJqy2dA3ihHBFIHRphZj?si=_Oqf26BFQtCdHTxgewVJTQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Cigarettes After Sex
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://open.spotify.com/artist/7lbSsjYACZHn1MSDXPxNF2?si=_UL17THvSqKZIBCxiXVcEQ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    宇多田光
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://open.spotify.com/artist/00FQb4jTyendYWaN8pK0wa?si=kIk8rOQRSHKL5kiVJ0OOUg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Lana Del Rey
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://open.spotify.com/show/4Anol9oYw2uC01O2EWwois?si=84ee17daad7642a1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    蛇蛇幹話
+                  </a>
+                  <em> （喜欢的一档播客节目 坐飞机必听）</em>
+                </li>
+                <li>
+                  <del>知乎用户Carl</del>
+                  <em> (已被“网暴”至注销)</em>
+                </li>
+                <li>
+                  <a
+                    href="https://steamcommunity.com/profiles/76561199396616962/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    0x103
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://space.bilibili.com/3493117720267715?spm_id_from=333.1007.0.0"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    哈喽呢呢呢
+                  </a>
+                </li>
               </ul>
 
-              <p>
-                喜欢咖啡，会用摩卡壶做拿铁或者手冲。喜欢喝茶，例如三得利的乌龙茶。喜欢喝啤酒，但是最近体检结果不好，要尽量不喝。
-              </p>
+              <p>我还喜欢看美剧或者是亚洲这边的一些迷你剧，以下是我比较喜欢的一些：</p>
+              <ul className="my-[0.65em] list-disc pl-[2em]">
+                <li>
+                  Shameless <em>(对我的性格再次塑造有一定的影响)</em>
+                </li>
+                <li>First Love</li>
+                <li>Queen&apos;s Gambit</li>
+                <li>Better Call Saul</li>
+              </ul>
+              <p>喜欢喝奶茶、咖啡、茶。过去有段时间对于烟的依赖很大，现在好多了。</p>
+              <p>前端练习生，学习Web开发，待业中。</p>
+            </section>
 
-              <p>
-                很喜欢{" "}
-                <Link href="#" className="link-style">
-                  听歌
-                </Link>
-                ，最近喜欢听整张的{" "}
-                <Link href="#" className="link-style">
-                  专辑
-                </Link>
-                ，有喜欢的乐队来到深圳也会去听听 live。
-              </p>
-
-              <p>
-                喜欢上网冲浪看各种文章，然后整理到博客的{" "}
-                <Link href="#" className="link-style">
-                  Zine
-                </Link>{" "}
-                中。
-              </p>
-
-              <p>偶尔也会玩玩游戏，现在主要在玩空洞骑士。</p>
-
-              <p className="border-l-4 border-gray-200 pl-4 italic text-gray-500">
-                前端开发工程师，擅长 Web 开发，待业中。
-              </p>
+            <time dateTime="2022-6-30">
+              30
+              <br />
+              Jun
+              <br />
+              2022
+            </time>
+            <section>
+              <p>江苏省南通市，长大的地方。</p>
+              <p>爱我的支持我的家人，很好的朋友，青涩的爱情，随着慢慢长大，一些成为了过去式...</p>
             </section>
           </article>
         </main>
-      </div>
-    </div>
+      </section>
+    </>
   );
 }
