@@ -1,7 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+    --color-amber: #ffa133;
+    --color-pumpkin: #e47b1a;
+    --color-flux: #c8be50;
+    --color-foam: #bccabb;
+    --color-enamel: #eeeeee;
+    --color-cement: #c0c0c0;
+    --color-aluminum: #cccccc;
+    --color-ash: #8e8e8e;
+    --color-mud: #8a8a6f;
+    --color-clay: #6c6c58;
+    --color-smoke: #666666;
+    --color-dark: #444444;
+    --color-soot: #333333;
+    --color-carbon: #222222;
+    --color-black: #141414;
+}
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
+
+    --flick: cubic-bezier(0.36, 2.09, 0.07, -1.52);
+    --easing: cubic-bezier(1, 0.05, 0.48, 0.99);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -11,8 +38,22 @@
     }
 }
 
+::spelling-error {
+    text-decoration: none;
+}
+
 body {
     background: var(--background);
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: var(--color-foam);
+    }
 }
