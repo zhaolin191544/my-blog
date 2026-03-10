@@ -1,10 +1,12 @@
+import { useTranslations } from "next-intl";
+
 export function TicketArea() {
+  const t = useTranslations("ticket");
+
   return (
     <div className="relative h-[700px] max-[1115px]:h-[600px] max-[767px]:h-[500px]">
       <p className="text-[11px] whitespace-pre text-clay mb-4">
-        {"\u2591"}{"  "}IT&apos;S GREAT FOR WORKING
-        <br />
-        {"\u2591"}{"  "}WITH TABULAR DATA
+        {t("tabular_note")}
       </p>
       <div className="group relative h-full mt-[70px]">
         <img

@@ -4,12 +4,14 @@ import createGlobe from 'cobe'
 import { MapPinIcon } from 'lucide-react'
 import { useMotionValue, useSpring } from 'motion/react'
 import { useEffect, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 export function LocationPlaceholder() {
+  const t = useTranslations('homepage.about-me')
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const dragOriginXRef = useRef<number | null>(null)
   const dragDeltaRef = useRef(0)
-  const fadeMask = 'radial-gradient(circle at 50% 50%, rgb(0, 0, 0) 60%, rgb(0, 0, 0, 0) 70%)'
+  const fadeMask = 'radial-gradient(circle at 50% 50%, rgb(255, 255, 255) 60%, rgba(255, 255, 255, 0) 70%)'
 
   const rotation = useMotionValue(0)
   const springRotation = useSpring(rotation, {
@@ -38,14 +40,17 @@ export function LocationPlaceholder() {
       height: width * 2,
       phi: 0,
       theta: 0,
-      dark: 1,
-      diffuse: 2,
+      dark: 0, // Light mode globe
+      diffuse: 1.2,
       mapSamples: 16_000,
-      mapBrightness: 2,
-      baseColor: [0.8, 0.8, 0.8],
-      markerColor: [1, 1, 1],
-      glowColor: [0.5, 0.5, 0.5],
-      markers: [{ location: [22.3193, 114.1694], size: 0.1 }],
+      mapBrightness: 3, // Brighter for light theme
+      baseColor: [0.95, 0.95, 0.95], // Light grey water/base
+      markerColor: [0.2, 0.2, 0.2], // Dark markers (carbon/soot color)
+      glowColor: [1, 1, 1], // White/light glow
+      markers: [
+        { location: [22.5431, 114.0579], size: 0.1 }, // Shenzhen
+        { location: [32.0162, 120.8753], size: 0.1 }  // Nantong
+      ],
       scale: 1.05,
       onRender: (state: Record<string, any>) => {
         state.phi = 2.75 + springRotation.get()
@@ -61,67 +66,69 @@ export function LocationPlaceholder() {
   }, []) // Removed springRotation from dependencies
 
   return (
-    <div className='relative flex aspect-square w-full flex-col gap-6 overflow-hidden rounded-2xl p-4 shadow-feature-card lg:p-6'>
+    <div className='relative flex aspect-square w-full flex-col gap-6 overflow-visible rounded-2xl p-4 shadow-feature-card lg:p-6'>
       <div className='flex items-center gap-2 relative z-10'>
         <MapPinIcon className='size-4.5' />
-        <h2 className='text-sm'>Current Location</h2>
+        <h2 className='text-sm'>{t('location')}</h2>
       </div>
-      <div className='absolute inset-x-0 -bottom-[30%] mx-auto aspect-square w-[140%] -left-[20%]'>
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            placeItems: 'center',
-            placeContent: 'center',
-            overflow: 'visible',
-          }}
-        >
+      <div className='absolute inset-0 pointer-events-none'>
+        <div className='absolute inset-x-0 -bottom-[40%] mx-auto aspect-square w-[160%] -left-[30%]'>
           <div
             style={{
               width: '100%',
-              aspectRatio: '1/1',
-              maxWidth: 800,
-              WebkitMaskImage: fadeMask,
-              maskImage: fadeMask,
+              height: '100%',
+              display: 'flex',
+              placeItems: 'center',
+              placeContent: 'center',
+              pointerEvents: 'auto'
             }}
           >
-            <canvas
-              ref={canvasRef}
-              onPointerDown={(e) => {
-                dragOriginXRef.current = e.clientX - dragDeltaRef.current
-                if (canvasRef.current) canvasRef.current.style.cursor = 'grabbing'
-              }}
-              onPointerUp={() => {
-                dragOriginXRef.current = null
-                if (canvasRef.current) canvasRef.current.style.cursor = 'grab'
-              }}
-              onPointerOut={() => {
-                dragOriginXRef.current = null
-                if (canvasRef.current) canvasRef.current.style.cursor = 'grab'
-              }}
-              onMouseMove={(e) => {
-                if (dragOriginXRef.current !== null) {
-                  const delta = e.clientX - dragOriginXRef.current
-                  dragDeltaRef.current = delta
-                  rotation.set(delta / 200)
-                }
-              }}
-              onTouchMove={(e) => {
-                if (dragOriginXRef.current !== null && e.touches[0]) {
-                  const delta = e.touches[0].clientX - dragOriginXRef.current
-                  dragDeltaRef.current = delta
-                  rotation.set(delta / 100)
-                }
-              }}
+            <div
               style={{
                 width: '100%',
-                height: '100%',
-                contain: 'layout paint size',
-                cursor: 'auto',
-                userSelect: 'none',
+                aspectRatio: '1/1',
+                maxWidth: 1000,
+                WebkitMaskImage: fadeMask,
+                maskImage: fadeMask,
               }}
-            />
+            >
+              <canvas
+                ref={canvasRef}
+                onPointerDown={(e) => {
+                  dragOriginXRef.current = e.clientX - dragDeltaRef.current
+                  if (canvasRef.current) canvasRef.current.style.cursor = 'grabbing'
+                }}
+                onPointerUp={() => {
+                  dragOriginXRef.current = null
+                  if (canvasRef.current) canvasRef.current.style.cursor = 'grab'
+                }}
+                onPointerOut={() => {
+                  dragOriginXRef.current = null
+                  if (canvasRef.current) canvasRef.current.style.cursor = 'grab'
+                }}
+                onMouseMove={(e) => {
+                  if (dragOriginXRef.current !== null) {
+                    const delta = e.clientX - dragOriginXRef.current
+                    dragDeltaRef.current = delta
+                    rotation.set(delta / 200)
+                  }
+                }}
+                onTouchMove={(e) => {
+                  if (dragOriginXRef.current !== null && e.touches[0]) {
+                    const delta = e.touches[0].clientX - dragOriginXRef.current
+                    dragDeltaRef.current = delta
+                    rotation.set(delta / 100)
+                  }
+                }}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  contain: 'layout paint size',
+                  cursor: 'auto',
+                  userSelect: 'none',
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

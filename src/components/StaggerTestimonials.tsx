@@ -2,35 +2,38 @@
 
 import { motion } from "motion/react";
 import { Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    id: 1,
-    text: "Building for the web is like exploring the cosmos — every project reveals something new about what's possible.",
-    by: "LinLin",
-    role: "Full-stack Developer",
-    avatar: "L",
-    color: "#ff8a65",
-  },
-  {
-    id: 2,
-    text: "Good design is invisible. Great design makes you feel like you've discovered something extraordinary.",
-    by: "Design Philosophy",
-    role: "UX/UI Lead",
-    avatar: "D",
-    color: "#4db6ac",
-  },
-  {
-    id: 3,
-    text: "The best code is written with curiosity — wondering not just how to solve the problem, but why it exists.",
-    by: "Engineering Notes",
-    role: "Senior Architect",
-    avatar: "E",
-    color: "#7986cb",
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function StaggerTestimonials() {
+  const t = useTranslations("testimonials");
+
+  const testimonials = [
+    {
+      id: 1,
+      text: t("t1_text"),
+      by: t("t1_by"),
+      role: t("t1_role"),
+      avatar: t("t1_avatar"),
+      color: "#ff8a65",
+    },
+    {
+      id: 2,
+      text: t("t2_text"),
+      by: t("t2_by"),
+      role: t("t2_role"),
+      avatar: t("t2_avatar"),
+      color: "#4db6ac",
+    },
+    {
+      id: 3,
+      text: t("t3_text"),
+      by: t("t3_by"),
+      role: t("t3_role"),
+      avatar: t("t3_avatar"),
+      color: "#7986cb",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-10 w-full max-w-[540px] ml-auto py-12 max-[767px]:mx-auto relative">
       {/* Decorative background element */}
@@ -44,8 +47,8 @@ export function StaggerTestimonials() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-[40px] leading-[1.1] font-bold text-carbon tracking-tight mb-3">
-            Creative <br />
-            <span className="text-ash/60 italic font-serif">Perspectives</span>
+            {t("title")} <br />
+            <span className="text-ash/60 italic font-serif">{t("subtitle")}</span>
           </h2>
           <div className="w-12 h-1 bg-carbon rounded-full" />
         </motion.div>

@@ -1,36 +1,23 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export function WelcomeContent() {
+  const t = useTranslations("welcome");
+
   return (
-    <div className="flex flex-col gap-6">
-      <h2 className="text-[48px] max-[1115px]:text-[36px] max-[767px]:text-[28px] text-soot leading-tight">
+    <div className="flex flex-col gap-8">
+      <h2 className="text-[48px] max-[1115px]:text-[36px] max-[767px]:text-[28px] text-soot leading-tight text-ash/60 italic font-serif">
         HOLA My Friends
-        <span className="animate-wave ml-3 text-[52px] max-[767px]:text-[32px]">
-          {"\uD83D\uDC4B"}
+        <span className="animate-wave ml-3 text-[52px] max-[767px]:text-[32px] inline-block">
+          👋
         </span>
       </h2>
-      <div className="text-dark text-[16.5px] leading-[1.7] max-w-[520px]">
-        <p>
-          Welcome to my corner of the internet. I&apos;m LinLin, a developer and
-          creative thinker exploring the boundaries of technology, design, and
-          everything in between.
-        </p>
-        <p className="mt-4 text-clay">
-          This blog is where I share my thoughts on building things for the web,
-          learning new technologies, and the occasional adventure in space
-          (mostly fictional).
-        </p>
-      </div>
-      <div className="flex gap-3 mt-2">
-        <span className="inline-block px-3 py-1 text-[11px] bg-foam text-soot">
-          DEVELOPER
-        </span>
-        <span className="inline-block px-3 py-1 text-[11px] bg-aluminum text-soot">
-          DESIGNER
-        </span>
-        <span className="inline-block px-3 py-1 text-[11px] bg-amber/30 text-soot">
-          EXPLORER
-        </span>
+      <div className="text-dark text-[18px] max-[767px]:text-[16px] leading-[1.8] max-w-[560px] flex flex-col gap-4 font-serif">
+        <p>&emsp;&emsp;{t("p1")}</p>
+        <p>&emsp;&emsp;{t("p2")}</p>
+        <p>&emsp;&emsp;{t("p3")}</p>
+        <p>&emsp;&emsp;{t("p4")}</p>
       </div>
     </div>
   );

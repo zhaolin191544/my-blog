@@ -5,23 +5,29 @@ import { LetterPrintout } from "@/src/components/departure/LetterPrintout";
 import { Editor } from "@/src/components/departure/Editor";
 import { CodeSection } from "@/src/components/departure/CodeSection";
 import { TerminalDemo } from "@/src/components/TerminalDemo";
+import FallingText from "@/src/components/FallingText";
 import { StaggeredMenu } from "@/src/components/StaggeredMenu/StaggeredMenu";
 import { WelcomeContent } from "@/src/components/WelcomeContent";
 import { StaggerTestimonials } from "@/src/components/StaggerTestimonials";
 import { LocationPlaceholder } from "@/src/components/LocationPlaceholder";
 import { LanyardWrapper } from "@/src/components/Lanyard/LanyardWrapper";
 import { SpotifyPlayer } from "@/src/components/SpotifyPlayer";
+import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
+  const t = useTranslations("navigation");
+
   return (
     <div className="min-h-screen overflow-x-hidden">
+      <LanguageSwitcher />
       {/* Navigation */}
       <StaggeredMenu
         items={[
-          { label: "Home", href: "/" },
-          { label: "About", href: "/about" },
-          { label: "Projects", href: "#projects" },
-          { label: "Contact", href: "#contact" },
+          { label: t("home"), href: "/" },
+          { label: t("about"), href: "/about" },
+          { label: t("projects"), href: "#projects" },
+          { label: t("contact"), href: "#contact" },
         ]}
         socialItems={[
           { label: "GitHub", href: "https://github.com" },
@@ -38,11 +44,24 @@ export default function Home() {
       </header>
 
       <div className="max-w-360 mx-auto px-11 max-[767px]:px-4">
-        {/* ===== SECTION 2: Welcome + Terminal ===== */}
-        <section className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-22 max-[767px]:mt-11 items-center">
+        {/* ===== SECTION 2: Welcome + Terminal & FallingText ===== */}
+        <section className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-12 mt-22 max-[767px]:mt-11 items-top">
           <WelcomeContent />
-          <div className="flex justify-center">
+          <div className="flex flex-col gap-8 w-full items-center justify-center">
             <TerminalDemo />
+            <div className="w-full max-w-lg h-[400px] max-[767px]:h-[300px] relative block overflow-visible">
+              <FallingText
+                text={`frontend football CS_pro poker Vuer DouDou Reacter MY JJY LMY 1223 Kr8s 0x103`}
+                highlightWords={["JJY","DouDou","LMY","Kr8s","0x103"]}
+                highlightClass="text-amber italic font-serif"
+                trigger="hover"
+                backgroundColor="transparent"
+                wireframes={false}
+                gravity={0.56}
+                fontSize="2rem"
+                mouseConstraintStiffness={0.9}
+              />
+            </div>
           </div>
         </section>
 
@@ -105,12 +124,9 @@ export default function Home() {
         </section>
       </div>
 
-      {/* ===== SECTION 7: Code Section (dark background) ===== */}
-      <section className="mt-[132px] max-[767px]:mt-[66px] text-cement bg-carbon selection:bg-cement selection:text-carbon overflow-hidden">
+      {/* ===== SECTION 7: Code Section (light background) ===== */}
+      <section className="relative mt-[132px] max-[767px]:mt-[66px] text-carbon bg-white selection:bg-foam selection:text-carbon overflow-visible pb-[100px] w-full">
         <CodeSection />
-        {/* <div className="max-w-[1440px] px-11 mx-auto max-[767px]:px-4 pt-[88px] pb-[88px]">
-          <Editor />
-        </div> */}
       </section>
     </div>
   );

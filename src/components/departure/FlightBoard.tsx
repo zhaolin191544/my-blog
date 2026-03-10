@@ -5,17 +5,17 @@ export function FlightBoard() {
       <br />
       {`\u251C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u253C\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2524`}
       <br />
-      {`\u2502 LH789   \u2502 EUR Europa 1            \u2502 13:45      \u2502 Z23   \u2502 Delayed      \u2502`}
+      {`\u2502 ZL1915  \u2502 NTG NanTong             \u2502 12:06      \u2502 15    \u2502 Delayed      \u2502`}
       <br />
       <span className="animate-[blink_1s_infinite_steps(1)]">
-        {`\u2502 XX123   \u2502 KBA Kuiper Alpha        \u2502 08:00      \u2502 22    \u2502 On Time      \u2502`}
+        {`\u2502 JJ1030  \u2502 TZ ZheTao               \u2502 10:30      \u2502 10    \u2502 On Time      \u2502`}
       </span>
       <br />
-      {`\u2502 AF321   \u2502 MAR Mars Landing        \u2502 09:15      \u2502 12    \u2502 On Time      \u2502`}
+      {`\u2502 DZ1223  \u2502 SZX ShenZhen            \u2502 20:22      \u2502 C2    \u2502 On Time      \u2502`}
       <br />
-      {`\u2502 UA567   \u2502 NTK New Tokyo           \u2502 11:20      \u2502 C8    \u2502 Departed     \u2502`}
+      {`\u2502 DR2025  \u2502 KUL Malaysia            \u2502 06:10      \u2502 88    \u2502 On Time      \u2502`}
       <br />
-      {`\u2502 QF678   \u2502 ZMB Zvezda Moonbase     \u2502 20:00      \u2502 17    \u2502 On Time      \u2502`}
+      {`\u2502 USTB11  \u2502 PEK BeiJing             \u2502 16:35      \u2502 12    \u2502 Crashed（坠毁)\u2502`}
     </pre>
   );
 }

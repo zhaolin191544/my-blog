@@ -84,47 +84,56 @@ can be conducted.
 
 export function CodeSection() {
   return (
-    <div className="relative w-full max-w-[1440px] px-11 mx-auto md:px-4 flex flex-col">
+    <div className="relative w-full flex flex-col pt-12 overflow-visible">
+      {/* Decorative background image */}
       <img
-        className="absolute top-[127px] left-[-505px] max-[1115px]:top-[88px] max-[1115px]:left-[-642px] max-[767px]:left-[-953px]"
+        className="absolute top-0 left-[-20%] xl:left-[-10%] max-[767px]:hidden w-[1000px] xl:w-[1200px] opacity-20 pointer-events-none z-0"
         src="/assets/mercury-diagram.svg"
         alt=""
       />
-      <img
-        className="absolute top-[198px] left-[798px] max-[1115px]:top-[210px] max-[1115px]:left-[618px] max-[767px]:top-[88px] max-[767px]:left-[135px]"
-        src="/assets/rust.svg"
-        alt=""
-      />
-      <img
-        className="absolute bottom-[-31px] left-[-3px] max-[1115px]:left-[326px] max-[767px]:left-[102px] max-[767px]:bottom-[56px]"
-        src="/assets/sql.svg"
-        alt=""
-      />
-      <p className="absolute top-[1199px] left-[798px] w-[182px] text-mud max-[1115px]:top-[1180px] max-[1115px]:left-auto max-[1115px]:right-[176px] max-[767px]:top-[1454px] text-[11px] whitespace-pre">
-        {"\u2591"}{"  "}ADD A RETRO FLAVOR
-        <br />
-        {"\u2591"}{"  "}TO YOUR CODE AND
-        <br />
-        {"\u2591"}{"  "}TECHNICAL DOCUMENTATION
-      </p>
-      <Printout
-        className="relative mt-[1375px] left-[296px] max-[1115px]:mt-[1316px] max-[1115px]:left-[87px] max-[767px]:left-0 max-[767px]:mt-[1572px] max-[767px]:mb-[320px] light"
-        color="grey"
-      >
-        <pre
-          className="relative pt-[88px] px-[44px] max-[767px]:select-none max-[767px]:pointer-events-none"
-          contentEditable
-          suppressContentEditableWarning
-          spellCheck={false}
-          style={{
-            fontSize: "13.75px",
-            maxHeight: "calc(100% - 88px)",
-            overflowY: "clip",
-          }}
+      
+      {/* Text block */}
+      <div className="relative z-30 mb-20 px-11 max-[767px]:px-4 max-w-[1440px] mx-auto w-full">
+        <p className="text-mud text-[16px] xl:text-[20px] whitespace-pre font-bold tracking-widest leading-loose">
+          {"\u2591"}{"  "}ADD A RETRO FLAVOR
+          <br />
+          {"\u2591"}{"  "}TO YOUR CODE AND
+          <br />
+          {"\u2591"}{"  "}TECHNICAL DOCUMENTATION
+        </p>
+      </div>
+
+      {/* Code images row (side by side) */}
+      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-11 max-[767px]:px-4 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32 mb-24">
+        <img
+          className="w-[350px] xl:w-[450px] pointer-events-none opacity-100 hover:scale-105 transition-transform"
+          src="/assets/sql.svg"
+          alt="SQL"
+        />
+      </div>
+
+      {/* Printout taking full width */}
+      <div className="relative z-30 w-[100vw] left-[calc(50%-50vw)] flex justify-center bg-white shadow-2xl">
+        <Printout
+          className="w-full h-auto text-carbon max-w-[1920px]"
+          color="white"
         >
-          {missionReport}
-        </pre>
-      </Printout>
+          <pre
+            className="relative pt-[70px] pb-[50px] px-[5%] max-[767px]:px-[4%] max-[767px]:pt-[60px] max-[767px]:select-none max-[767px]:pointer-events-none font-mono"
+            contentEditable
+            suppressContentEditableWarning
+            spellCheck={false}
+            style={{
+              fontSize: "clamp(12px, 1.2vw, 18px)",
+              lineHeight: "1.7",
+              maxHeight: "800px",
+              overflowY: "auto",
+            }}
+          >
+            {missionReport}
+          </pre>
+        </Printout>
+      </div>
     </div>
   );
 }

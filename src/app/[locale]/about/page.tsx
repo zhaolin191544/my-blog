@@ -1,9 +1,14 @@
-import Link from "next/link";
+import { Link } from "@/src/i18n/routing";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 
 export default function About() {
+  const t = useTranslations("about");
+
   return (
     <>
+      <LanguageSwitcher />
       <style>{`
         @keyframes bounce-x {
           from { transform: translateX(5px); }
@@ -54,7 +59,7 @@ export default function About() {
         <header className="relative">
           <span className="absolute left-[1em] top-[1em] z-10">
             <Link href="/" className="text-[aliceblue]!">
-              ⇦ Home
+              {t("home_link")}
             </Link>
           </span>
           <Image
@@ -79,7 +84,7 @@ export default function About() {
                   animation: "bounce-x 0.8s ease-in infinite alternate-reverse",
                 }}
               >
-                想和我聊聊天？☞
+                {t("chat_prompt")}
               </span>
               <span className="text-[aliceblue] text-[2em] translate-y-[-0.4em]">Lin</span>
 
@@ -92,8 +97,8 @@ export default function About() {
               />
 
               <div className="absolute right-0 top-full text-[1em] text-[#787878] dark:text-[#b8b8b8] flex flex-col items-end w-max mt-1">
-                <span>横玉声中吹满地,</span>
-                <span>好枝长恨无人寄.</span>
+                <span>{t("poem_line1")}</span>
+                <span>{t("poem_line2")}</span>
               </div>
             </div>
           </a>
@@ -110,11 +115,9 @@ export default function About() {
             </time>
 
             <section>
-              <p>目前在深圳读本科，渴望逃离这里。</p>
-              <p>ISFP 佛系、冷清、孤独 但也同时很期待朋友。</p>
-              <p>
-                爱好广泛，顶级美食家。喜欢踢足球，听音乐，读be小说，玩游戏，跑步，听播客，寻觅各种各样的美食。超级大p人，渴望自由，做一些看起来没有意义的事情。以下是一些我很喜欢的东西或者是你可以找到我的地方：
-              </p>
+              <p>{t("intro_p1")}</p>
+              <p>{t("intro_p2")}</p>
+              <p>{t("intro_p3")}</p>
 
               <ul className="my-[0.65em] list-disc pl-[2em]">
                 <li>
@@ -152,11 +155,11 @@ export default function About() {
                   >
                     蛇蛇幹話
                   </a>
-                  <em> （喜欢的一档播客节目 坐飞机必听）</em>
+                  <em>{t("podcast_note")}</em>
                 </li>
                 <li>
                   <del>知乎用户Carl</del>
-                  <em> (已被“网暴”至注销)</em>
+                  <em>{t("zhihu_note")}</em>
                 </li>
                 <li>
                   <a
@@ -178,17 +181,17 @@ export default function About() {
                 </li>
               </ul>
 
-              <p>我还喜欢看美剧或者是亚洲这边的一些迷你剧，以下是我比较喜欢的一些：</p>
+              <p>{t("tv_shows_intro")}</p>
               <ul className="my-[0.65em] list-disc pl-[2em]">
                 <li>
-                  Shameless <em>(对我的性格再次塑造有一定的影响)</em>
+                  Shameless <em>{t("shameless_note")}</em>
                 </li>
                 <li>First Love</li>
                 <li>Queen&apos;s Gambit</li>
                 <li>Better Call Saul</li>
               </ul>
-              <p>喜欢喝奶茶、咖啡、茶。过去有段时间对于烟的依赖很大，现在好多了。</p>
-              <p>前端练习生，学习Web开发，待业中。</p>
+              <p>{t("drinks_note")}</p>
+              <p>{t("career_note")}</p>
             </section>
 
             <time dateTime="2022-6-30">
@@ -199,8 +202,8 @@ export default function About() {
               2022
             </time>
             <section>
-              <p>江苏省南通市，长大的地方。</p>
-              <p>爱我的支持我的家人，很好的朋友，青涩的爱情，随着慢慢长大，一些成为了过去式...</p>
+              <p>{t("hometown_p1")}</p>
+              <p>{t("hometown_p2")}</p>
             </section>
           </article>
         </main>

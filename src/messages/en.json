@@ -1,0 +1,67 @@
+{
+  "homepage": {
+    "about-me": {
+      "location": "ShenZhen/NanTong"
+    }
+  },
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "about": {
+    "home_link": "⇦ Home",
+    "chat_prompt": "Wanna chat with me? ☞",
+    "poem_line1": "Jade flute sounds fill the ground,",
+    "poem_line2": "Longing to send a beautiful branch, but no one to send to.",
+    "intro_p1": "Currently an undergrad in Shenzhen, eager to escape this place.",
+    "intro_p2": "ISFP, chill, aloof, lonely, but also really looking forward to making friends.",
+    "intro_p3": "Wide range of hobbies, top-tier foodie. Love playing football, listening to music, reading sad novels, playing games, running, listening to podcasts, and hunting for all kinds of good food. Super big 'P' personality, longing for freedom, doing things that seem meaningless. Here are some things I really like or places you can find me:",
+    "podcast_note": " (A podcast I love, a must-listen on flights)",
+    "zhihu_note": " (Account deleted due to cyberbullying)",
+    "tv_shows_intro": "I also like watching American TV shows or some miniseries from Asia, here are some of my favorites:",
+    "shameless_note": "(Had a certain impact on reshaping my personality)",
+    "drinks_note": "Like drinking milk tea, coffee, tea. Was heavily dependent on smoking for a while, much better now.",
+    "career_note": "Frontend trainee, learning Web development, currently unemployed.",
+    "hometown_p1": "Nantong, Jiangsu Province, where I grew up.",
+    "hometown_p2": "Family who loves and supports me, good friends, green love, as I grow up slowly, some have become things of the past..."
+  },
+  "welcome": {
+    "p1": "Welcome to my little corner of the internet. This website is the result of completely tearing down my old blog UI and tech stack, and gathering wisdom from all around. I hope you like it.",
+    "p2": "Who am I? You can call me Lin, I really like it when you call me that. I'm still in college, but about to start looking for jobs. You can learn more about me in the about section.",
+    "p3": "Where do I come from? I'm from Nantong, Jiangsu. When I first started college, I accidentally learned about Evan You, and since then I fell in love with frontend. I've been to offline conferences twice. But right now, I'm a bit lost, forgot where I came from, and switched to Next.",
+    "p4": "Where am I going? I'm painfully looking for a job right now, hoping to find one. I haven't figured out the future, maybe blockchain? I'm a very emotional person, and I started this blog to record and share my life. I'll post some ramblings, try writing fiction, post photos. I hope you'll enjoy it.",
+    "tag1": "Frontend Trainee",
+    "tag2": "Handicapped Midfielder",
+    "tag3": "Texas Hold'em Pro",
+    "tag4": "Crypto Master"
+  },
+  "testimonials": {
+    "title": "Thoughts &",
+    "subtitle": "Reflections",
+    "t1_text": "He's the best poker player I've ever seen, once went bankrupt to me trying to bluff all-in on the river with a small pair.",
+    "t1_by": "Tang Jingze",
+    "t1_role": "Legend Poker Dongzhu Champion",
+    "t1_avatar": "T",
+    "t2_text": "Lin is an advanced CS player. He once missed a whole clip against 4 enemies with their backs turned in a 10k ELO match and got counter-killed.",
+    "t2_by": "JJY",
+    "t2_role": "Dongzhu Team CS Division Coach",
+    "t2_avatar": "J",
+    "t3_text": "He's a friend I've known since middle school, but now I realize he's a real **. Even my friends think he's a joke when I tell them his stories.",
+    "t3_by": "Mysterious Anonymous Man",
+    "t3_role": "Authentic Dude",
+    "t3_avatar": "F"
+  },
+  "ticket": {
+    "tabular_note": "░  STRANGER LAND NO ROOM FOR SOUL\n░  HOMETOWN NO ROOM FOR BODY"
+  },
+  "spotify": {
+    "switch_chinese": "Switch to Chinese",
+    "switch_english": "Switch to English",
+    "podcast": "Podcast",
+    "videos": "Videos",
+    "rss": "RSS Feed",
+    "spotify_note": "░  OUR DESIRES MAY BE DIFFERENT\n░  BUT OUR DISAPPOINTMENTS ARE SIMILAR"
+  }
+}

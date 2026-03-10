@@ -21,6 +21,13 @@ export function TerminalDemo() {
       <TypingAnimation delay={400} duration={30} className="text-clay">
         &gt; welcome aboard!
       </TypingAnimation>
+      <TypingAnimation delay={800} duration={15} className="text-amber mt-4 block whitespace-pre">
+        {`lin {                             |
+    name: "lin lin",              |
+    gender: "male",               |
+    age: 22,                      v
+}                             hover below`}
+      </TypingAnimation>
     </Terminal>
   );
 }
