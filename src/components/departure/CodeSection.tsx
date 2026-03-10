@@ -1,7 +1,6 @@
 "use client";
 
 import { Printout } from "./Printout";
-import { Sensor } from "./Sensor";
 
 const missionReport = `\
 # MISSION REPORT 75X9389                                                              1/17
@@ -85,7 +84,7 @@ can be conducted.
 
 export function CodeSection() {
   return (
-    <div className="relative w-full max-w-[1440px] px-11 mx-auto md:px-4">
+    <div className="relative w-full max-w-[1440px] px-11 mx-auto md:px-4 flex flex-col">
       <img
         className="absolute top-[127px] left-[-505px] max-[1115px]:top-[88px] max-[1115px]:left-[-642px] max-[767px]:left-[-953px]"
         src="/assets/mercury-diagram.svg"
@@ -101,7 +100,6 @@ export function CodeSection() {
         src="/assets/sql.svg"
         alt=""
       />
-      <Sensor />
       <p className="absolute top-[1199px] left-[798px] w-[182px] text-mud max-[1115px]:top-[1180px] max-[1115px]:left-auto max-[1115px]:right-[176px] max-[767px]:top-[1454px] text-[11px] whitespace-pre">
         {"\u2591"}{"  "}ADD A RETRO FLAVOR
         <br />

@@ -218,10 +218,10 @@ export function Editor() {
   const [lang, setLang] = useState<Language>(Language.RUST);
 
   return (
-    <div className="max-w-[1440px] px-11 mx-auto md:px-4 pt-[88px] pb-[88px]">
+    <div className="w-full">
       <div className="relative w-full max-w-[824px]">
         <select
-          className="absolute top-4 right-4 z-[1] bg-carbon text-cement border border-smoke py-1 px-2 font-inherit text-[11px] cursor-pointer"
+          className="absolute top-4 right-4 z-[1] bg-enamel text-dark border border-aluminum py-1 px-2 font-inherit text-[11px] cursor-pointer"
           value={lang}
           onChange={(e) => setLang(e.target.value as Language)}
         >
@@ -232,7 +232,7 @@ export function Editor() {
           ))}
         </select>
         <pre
-          className="bg-carbon text-cement p-4 min-h-[400px] whitespace-pre overflow-auto text-[13px] leading-[1.5] caret-cement focus:outline-none"
+          className="bg-enamel text-soot p-4 min-h-[400px] whitespace-pre overflow-auto text-[13px] leading-[1.5] caret-soot border border-aluminum focus:outline-none selection:bg-foam selection:text-carbon"
           contentEditable
           suppressContentEditableWarning
           spellCheck={false}

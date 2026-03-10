@@ -23,10 +23,9 @@ export function Printout({
   return (
     <svg
       className={`printout text-carbon ${className ?? ""}`}
-      width="1010"
-      height="648"
       viewBox="0 0 1010 648"
       fill="none"
+      style={{ width: '100%', height: 'auto' }}
       {...rest}
       xmlns="http://www.w3.org/2000/svg"
     >
