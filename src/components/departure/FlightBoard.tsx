@@ -15,7 +15,7 @@ export function FlightBoard() {
       <br />
       {`\u2502 DR2025  \u2502 KUL Malaysia            \u2502 06:10      \u2502 88    \u2502 On Time      \u2502`}
       <br />
-      {`\u2502 USTB11  \u2502 PEK BeiJing             \u2502 16:35      \u2502 12    \u2502 Crashed（坠毁)\u2502`}
+      {`\u2502 USTB11  \u2502 PEK BeiJing             \u2502 16:35      \u2502 12    \u2502 Crashed      \u2502`}
     </pre>
   );
 }

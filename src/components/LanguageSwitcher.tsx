@@ -17,7 +17,7 @@ export function LanguageSwitcher() {
   const iconClass = "text-carbon/60 hover:text-carbon transition-all hover:scale-110 active:scale-95 flex items-center justify-center";
 
   return (
-    <div className="fixed top-[47px] right-[170px] max-[767px]:right-[110px] z-50 flex items-center gap-5">
+    <div className="fixed top-[47px] right-[170px] max-[767px]:right-[170px] z-50 flex items-center gap-5">
       {/* Podcast (Mic) Button (UI Only) */}
       <button className={iconClass} title="Podcast">
         <Mic size={22} strokeWidth={2} />
