@@ -2,10 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/src/lib/prisma";
 import { getSession } from "@/src/lib/auth";
 
-export async function GET(
-  _request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
     const chapters = await prisma.novelChapter.findMany({
@@ -19,10 +16,7 @@ export async function GET(
   }
 }
 
-export async function POST(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const session = await getSession();
     if (!session) {
@@ -34,10 +28,7 @@ export async function POST(
     const { title, content, published } = body;
 
     if (!title || !content) {
-      return NextResponse.json(
-        { error: "标题和内容不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "标题和内容不能为空" }, { status: 400 });
     }
 
     const maxOrder = await prisma.novelChapter.findFirst({

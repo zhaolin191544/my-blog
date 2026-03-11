@@ -14,7 +14,8 @@ export function LanguageSwitcher() {
     router.replace(pathname, { locale: nextLocale });
   };
 
-  const iconClass = "text-carbon/60 hover:text-carbon transition-all hover:scale-110 active:scale-95 flex items-center justify-center";
+  const iconClass =
+    "text-carbon/60 hover:text-carbon transition-all hover:scale-110 active:scale-95 flex items-center justify-center";
 
   return (
     <div className="fixed top-[47px] right-[170px] max-[767px]:right-[170px] z-50 flex items-center gap-5">

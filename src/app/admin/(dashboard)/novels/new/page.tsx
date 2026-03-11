@@ -71,9 +71,7 @@ export default function NewNovelPage() {
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
           <div className="space-y-4">
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-                标题
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">标题</label>
               <input
                 type="text"
                 value={form.title}
@@ -83,14 +81,10 @@ export default function NewNovelPage() {
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-                简介
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">简介</label>
               <textarea
                 value={form.description}
-                onChange={(e) =>
-                  setForm((f) => ({ ...f, description: e.target.value }))
-                }
+                onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
                 rows={3}
                 className="w-full resize-none rounded-lg border border-neutral-200 px-4 py-2 text-sm focus:border-amber-400 focus:outline-none"
                 placeholder="小说简介..."
@@ -100,9 +94,7 @@ export default function NewNovelPage() {
         </div>
 
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
-          <label className="mb-3 block text-sm font-medium text-neutral-700">
-            封面图片
-          </label>
+          <label className="mb-3 block text-sm font-medium text-neutral-700">封面图片</label>
           <ImageUploader
             value={form.cover}
             onChange={(url) => setForm((f) => ({ ...f, cover: url }))}

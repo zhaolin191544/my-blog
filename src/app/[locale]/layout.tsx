@@ -5,23 +5,18 @@ import { notFound } from "next/navigation";
 
 export default async function LocaleLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  
+
   if (!routing.locales.includes(locale as any)) {
     notFound();
   }
 
   const messages = await getMessages();
 
-  return (
-    <NextIntlClientProvider messages={messages}>
-      {children}
-    </NextIntlClientProvider>
-  );
+  return <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>;
 }
-

@@ -56,10 +56,7 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
         published: publish !== undefined ? publish : form.published,
       };
 
-      const url =
-        mode === "create"
-          ? "/api/blogs"
-          : `/api/blogs/${initialData?.id}`;
+      const url = mode === "create" ? "/api/blogs" : `/api/blogs/${initialData?.id}`;
       const method = mode === "create" ? "POST" : "PUT";
 
       const res = await fetch(url, {
@@ -120,9 +117,7 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
           <div className="space-y-4">
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-                标题
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">标题</label>
               <input
                 type="text"
                 value={form.title}
@@ -145,22 +140,16 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
               <input
                 type="text"
                 value={form.slug}
-                onChange={(e) =>
-                  setForm((f) => ({ ...f, slug: e.target.value }))
-                }
+                onChange={(e) => setForm((f) => ({ ...f, slug: e.target.value }))}
                 className="w-full rounded-lg border border-neutral-200 px-4 py-2 font-mono text-sm focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50"
                 placeholder="article-slug"
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-                摘要
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">摘要</label>
               <textarea
                 value={form.excerpt}
-                onChange={(e) =>
-                  setForm((f) => ({ ...f, excerpt: e.target.value }))
-                }
+                onChange={(e) => setForm((f) => ({ ...f, excerpt: e.target.value }))}
                 rows={2}
                 className="w-full resize-none rounded-lg border border-neutral-200 px-4 py-2 text-sm focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50"
                 placeholder="简短描述..."
@@ -171,9 +160,7 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
 
         {/* Cover Image */}
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
-          <label className="mb-3 block text-sm font-medium text-neutral-700">
-            封面图片
-          </label>
+          <label className="mb-3 block text-sm font-medium text-neutral-700">封面图片</label>
           <ImageUploader
             value={form.cover}
             onChange={(url) => setForm((f) => ({ ...f, cover: url }))}
@@ -184,15 +171,11 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
         {/* Content Type Toggle */}
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
           <div className="mb-4 flex items-center justify-between">
-            <label className="text-sm font-medium text-neutral-700">
-              正文内容
-            </label>
+            <label className="text-sm font-medium text-neutral-700">正文内容</label>
             <div className="flex rounded-lg border border-neutral-200 p-0.5">
               <button
                 type="button"
-                onClick={() =>
-                  setForm((f) => ({ ...f, contentType: "MARKDOWN" }))
-                }
+                onClick={() => setForm((f) => ({ ...f, contentType: "MARKDOWN" }))}
                 className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
                   form.contentType === "MARKDOWN"
                     ? "bg-amber-500 text-white"
@@ -203,9 +186,7 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
               </button>
               <button
                 type="button"
-                onClick={() =>
-                  setForm((f) => ({ ...f, contentType: "HTML" }))
-                }
+                onClick={() => setForm((f) => ({ ...f, contentType: "HTML" }))}
                 className={`rounded-md px-3 py-1 text-xs font-medium transition-colors ${
                   form.contentType === "HTML"
                     ? "bg-amber-500 text-white"
@@ -219,9 +200,7 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
           <RichTextEditor
             content={form.content}
             contentType={form.contentType}
-            onChange={(content, contentType) =>
-              setForm((f) => ({ ...f, content, contentType }))
-            }
+            onChange={(content, contentType) => setForm((f) => ({ ...f, content, contentType }))}
             placeholder="开始写作..."
           />
         </div>

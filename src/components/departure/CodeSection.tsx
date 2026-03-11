@@ -91,15 +91,18 @@ export function CodeSection() {
         src="/assets/mercury-diagram.svg"
         alt=""
       />
-      
+
       {/* Text block */}
       <div className="relative z-30 mb-20 px-11 max-[767px]:px-4 max-w-[1440px] mx-auto w-full">
         <p className="text-mud text-[16px] xl:text-[20px] whitespace-pre font-bold tracking-widest leading-loose">
-          {"\u2591"}{"  "}ADD A RETRO FLAVOR
+          {"\u2591"}
+          {"  "}ADD A RETRO FLAVOR
           <br />
-          {"\u2591"}{"  "}TO YOUR CODE AND
+          {"\u2591"}
+          {"  "}TO YOUR CODE AND
           <br />
-          {"\u2591"}{"  "}TECHNICAL DOCUMENTATION
+          {"\u2591"}
+          {"  "}TECHNICAL DOCUMENTATION
         </p>
       </div>
 
@@ -114,10 +117,7 @@ export function CodeSection() {
 
       {/* Printout taking full width */}
       <div className="relative z-30 w-[100vw] left-[calc(50%-50vw)] flex justify-center bg-white shadow-2xl">
-        <Printout
-          className="w-full h-auto text-carbon max-w-[1920px]"
-          color="white"
-        >
+        <Printout className="w-full h-auto text-carbon max-w-[1920px]" color="white">
           <pre
             className="relative pt-[70px] pb-[50px] px-[5%] max-[767px]:px-[4%] max-[767px]:pt-[60px] max-[767px]:select-none max-[767px]:pointer-events-none font-mono"
             contentEditable

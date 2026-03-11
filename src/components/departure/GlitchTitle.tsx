@@ -113,9 +113,7 @@ export function GlitchTitle() {
       <span className="bg-aluminum inline-block leading-none whitespace-pre max-[1115px]:mb-1.5 max-[767px]:mb-[2.5px]">
         {blog}
       </span>
-      <span className="relative top-[10px] left-[11px] text-[11px] align-top">
-        v1.500
-      </span>
+      <span className="relative top-[10px] left-[11px] text-[11px] align-top">v1.500</span>
     </h1>
   );
 }

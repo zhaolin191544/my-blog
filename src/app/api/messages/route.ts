@@ -39,10 +39,7 @@ export async function POST(request: NextRequest) {
     const { name, email, content } = body;
 
     if (!name || !email || !content) {
-      return NextResponse.json(
-        { error: "姓名、邮箱和留言内容不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "姓名、邮箱和留言内容不能为空" }, { status: 400 });
     }
 
     const spamResult = checkSpam(content, email, name);
@@ -56,10 +53,7 @@ export async function POST(request: NextRequest) {
       },
     });
 
-    return NextResponse.json(
-      { success: true, id: message.id },
-      { status: 201 }
-    );
+    return NextResponse.json({ success: true, id: message.id }, { status: 201 });
   } catch {
     return NextResponse.json({ error: "提交失败" }, { status: 500 });
   }

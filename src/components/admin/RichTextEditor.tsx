@@ -63,7 +63,7 @@ function ToolbarButton({
         "rounded p-1.5 transition-colors",
         active
           ? "bg-amber-100 text-amber-700"
-          : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700"
+          : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700",
       )}
     >
       {children}
@@ -78,7 +78,7 @@ export function RichTextEditor({
   placeholder = "开始写作...",
 }: RichTextEditorProps) {
   const [mode, setMode] = useState<"wysiwyg" | "source">(
-    contentType === "MARKDOWN" ? "source" : "wysiwyg"
+    contentType === "MARKDOWN" ? "source" : "wysiwyg",
   );
   const [sourceContent, setSourceContent] = useState(content);
   const [previewHtml, setPreviewHtml] = useState("");
@@ -106,8 +106,7 @@ export function RichTextEditor({
     },
     editorProps: {
       attributes: {
-        class:
-          "prose prose-neutral max-w-none min-h-[400px] p-4 focus:outline-none",
+        class: "prose prose-neutral max-w-none min-h-[400px] p-4 focus:outline-none",
       },
     },
   });
@@ -140,10 +139,7 @@ export function RichTextEditor({
                 ? `![image](${data.url})\n`
                 : `<img src="${data.url}" alt="image" />\n`;
             setSourceContent((prev) => prev + imgTag);
-            onChange(
-              sourceContent + imgTag,
-              contentType === "MARKDOWN" ? "MARKDOWN" : "HTML"
-            );
+            onChange(sourceContent + imgTag, contentType === "MARKDOWN" ? "MARKDOWN" : "HTML");
           }
         }
       } catch {
@@ -154,7 +150,7 @@ export function RichTextEditor({
         fileInputRef.current.value = "";
       }
     },
-    [editor, mode, contentType, sourceContent, onChange]
+    [editor, mode, contentType, sourceContent, onChange],
   );
 
   const handleSourceChange = useCallback(
@@ -162,7 +158,7 @@ export function RichTextEditor({
       setSourceContent(value);
       onChange(value, contentType);
     },
-    [contentType, onChange]
+    [contentType, onChange],
   );
 
   const handleAddLink = useCallback(() => {
@@ -243,27 +239,21 @@ export function RichTextEditor({
             <div className="mx-1 h-6 w-px bg-neutral-200" />
 
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().toggleHeading({ level: 1 }).run()
-              }
+              onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()}
               active={editor.isActive("heading", { level: 1 })}
               title="标题 1"
             >
               <Heading1 className="h-4 w-4" />
             </ToolbarButton>
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().toggleHeading({ level: 2 }).run()
-              }
+              onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()}
               active={editor.isActive("heading", { level: 2 })}
               title="标题 2"
             >
               <Heading2 className="h-4 w-4" />
             </ToolbarButton>
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().toggleHeading({ level: 3 }).run()
-              }
+              onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()}
               active={editor.isActive("heading", { level: 3 })}
               title="标题 3"
             >
@@ -304,27 +294,21 @@ export function RichTextEditor({
             <div className="mx-1 h-6 w-px bg-neutral-200" />
 
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().setTextAlign("left").run()
-              }
+              onClick={() => editor.chain().focus().setTextAlign("left").run()}
               active={editor.isActive({ textAlign: "left" })}
               title="左对齐"
             >
               <AlignLeft className="h-4 w-4" />
             </ToolbarButton>
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().setTextAlign("center").run()
-              }
+              onClick={() => editor.chain().focus().setTextAlign("center").run()}
               active={editor.isActive({ textAlign: "center" })}
               title="居中"
             >
               <AlignCenter className="h-4 w-4" />
             </ToolbarButton>
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().setTextAlign("right").run()
-              }
+              onClick={() => editor.chain().focus().setTextAlign("right").run()}
               active={editor.isActive({ textAlign: "right" })}
               title="右对齐"
             >
@@ -334,9 +318,7 @@ export function RichTextEditor({
             <div className="mx-1 h-6 w-px bg-neutral-200" />
 
             <ToolbarButton
-              onClick={() =>
-                editor.chain().focus().toggleHighlight().run()
-              }
+              onClick={() => editor.chain().focus().toggleHighlight().run()}
               active={editor.isActive("highlight")}
               title="高亮"
             >
@@ -351,16 +333,10 @@ export function RichTextEditor({
 
             <div className="mx-1 h-6 w-px bg-neutral-200" />
 
-            <ToolbarButton
-              onClick={() => editor.chain().focus().undo().run()}
-              title="撤销"
-            >
+            <ToolbarButton onClick={() => editor.chain().focus().undo().run()} title="撤销">
               <Undo className="h-4 w-4" />
             </ToolbarButton>
-            <ToolbarButton
-              onClick={() => editor.chain().focus().redo().run()}
-              title="重做"
-            >
+            <ToolbarButton onClick={() => editor.chain().focus().redo().run()} title="重做">
               <Redo className="h-4 w-4" />
             </ToolbarButton>
           </>
@@ -374,11 +350,7 @@ export function RichTextEditor({
 
         <div className="ml-auto flex items-center gap-1">
           {mode === "source" && (
-            <ToolbarButton
-              onClick={togglePreview}
-              active={showPreview}
-              title="预览"
-            >
+            <ToolbarButton onClick={togglePreview} active={showPreview} title="预览">
               <Eye className="h-4 w-4" />
             </ToolbarButton>
           )}
@@ -402,17 +374,11 @@ export function RichTextEditor({
               value={sourceContent}
               onChange={(e) => handleSourceChange(e.target.value)}
               className="min-h-[400px] w-full resize-y p-4 font-mono text-sm text-neutral-800 focus:outline-none"
-              placeholder={
-                contentType === "MARKDOWN"
-                  ? "在此输入 Markdown..."
-                  : "在此输入 HTML..."
-              }
+              placeholder={contentType === "MARKDOWN" ? "在此输入 Markdown..." : "在此输入 HTML..."}
             />
             {showPreview && (
               <div className="border-l border-neutral-200 p-4">
-                <div className="mb-2 text-xs font-medium text-neutral-400">
-                  预览
-                </div>
+                <div className="mb-2 text-xs font-medium text-neutral-400">预览</div>
                 <div
                   className="prose prose-neutral max-w-none text-sm"
                   dangerouslySetInnerHTML={{ __html: previewHtml }}

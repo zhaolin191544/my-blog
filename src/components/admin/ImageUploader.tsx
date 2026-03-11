@@ -43,7 +43,7 @@ export function ImageUploader({
         setUploading(false);
       }
     },
-    [category, onChange]
+    [category, onChange],
   );
 
   const handleDrop = useCallback(
@@ -55,7 +55,7 @@ export function ImageUploader({
         uploadFile(file);
       }
     },
-    [uploadFile]
+    [uploadFile],
   );
 
   const handleFileChange = useCallback(
@@ -68,7 +68,7 @@ export function ImageUploader({
         fileInputRef.current.value = "";
       }
     },
-    [uploadFile]
+    [uploadFile],
   );
 
   if (value) {
@@ -104,7 +104,7 @@ export function ImageUploader({
         dragOver
           ? "border-amber-400 bg-amber-50"
           : "border-neutral-300 bg-neutral-50 hover:border-amber-400 hover:bg-amber-50/50",
-        className
+        className,
       )}
     >
       {uploading ? (
@@ -112,12 +112,8 @@ export function ImageUploader({
       ) : (
         <>
           <Upload className="mb-2 h-8 w-8 text-neutral-400" />
-          <p className="text-sm text-neutral-500">
-            拖拽图片到此处或点击上传
-          </p>
-          <p className="mt-1 text-xs text-neutral-400">
-            支持 JPG、PNG、WebP、GIF（最大 5MB）
-          </p>
+          <p className="text-sm text-neutral-500">拖拽图片到此处或点击上传</p>
+          <p className="mt-1 text-xs text-neutral-400">支持 JPG、PNG、WebP、GIF（最大 5MB）</p>
         </>
       )}
       <input

@@ -2,12 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame, useThree, extend } from "@react-three/fiber";
-import {
-  useGLTF,
-  useTexture,
-  Environment,
-  Lightformer,
-} from "@react-three/drei";
+import { useGLTF, useTexture, Environment, Lightformer } from "@react-three/drei";
 import {
   BallCollider,
   CuboidCollider,
@@ -62,19 +57,12 @@ export default function Lanyard({
 
     container.addEventListener("webglcontextlost", handleContextLost, true);
     return () => {
-      container.removeEventListener(
-        "webglcontextlost",
-        handleContextLost,
-        true,
-      );
+      container.removeEventListener("webglcontextlost", handleContextLost, true);
     };
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="relative w-full h-full flex justify-center items-center"
-    >
+    <div ref={containerRef} className="relative w-full h-full flex justify-center items-center">
       <Canvas
         key={canvasKey}
         camera={{ position, fov }}
@@ -256,9 +244,7 @@ function Band({
             onPointerDown={(e) => {
               (e.target as any).setPointerCapture(e.pointerId);
               setDragged(
-                new THREE.Vector3()
-                  .copy(e.point)
-                  .sub(vec.copy(card.current!.translation() as any)),
+                new THREE.Vector3().copy(e.point).sub(vec.copy(card.current!.translation() as any)),
               );
             }}
           >

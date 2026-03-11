@@ -19,8 +19,8 @@ export async function PUT(request: NextRequest) {
         prisma.novelChapter.update({
           where: { id: ch.id },
           data: { sortOrder: ch.sortOrder },
-        })
-      )
+        }),
+      ),
     );
 
     return NextResponse.json({ success: true });

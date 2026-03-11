@@ -1,16 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback, useRef } from "react";
-import {
-  Upload,
-  Trash2,
-  Pencil,
-  MapPin,
-  X,
-  Check,
-  Loader2,
-  ImageIcon,
-} from "lucide-react";
+import { Upload, Trash2, Pencil, MapPin, X, Check, Loader2, ImageIcon } from "lucide-react";
 
 interface Photo {
   id: string;
@@ -127,9 +118,7 @@ export default function PhotosPage() {
     <div className="mx-auto max-w-6xl">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-neutral-900">照片管理</h1>
-        <p className="mt-1 text-sm text-neutral-500">
-          按地区分类管理照片
-        </p>
+        <p className="mt-1 text-sm text-neutral-500">按地区分类管理照片</p>
       </div>
 
       {/* Upload Section */}
@@ -220,9 +209,7 @@ export default function PhotosPage() {
       {/* Photo Grid */}
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         {loading ? (
-          <p className="col-span-full py-12 text-center text-neutral-400">
-            加载中...
-          </p>
+          <p className="col-span-full py-12 text-center text-neutral-400">加载中...</p>
         ) : photos.length === 0 ? (
           <div className="col-span-full flex flex-col items-center py-12 text-neutral-400">
             <ImageIcon className="mb-2 h-12 w-12" />
@@ -241,9 +228,7 @@ export default function PhotosPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 transition-opacity group-hover:opacity-100" />
               <div className="absolute bottom-0 left-0 right-0 p-3 text-white opacity-0 transition-opacity group-hover:opacity-100">
-                <p className="text-sm font-medium">
-                  {photo.caption || "无标题"}
-                </p>
+                <p className="text-sm font-medium">{photo.caption || "无标题"}</p>
                 <p className="text-xs opacity-75">
                   {photo.region}
                   {photo.location ? ` · ${photo.location}` : ""}
@@ -283,41 +268,29 @@ export default function PhotosPage() {
             </div>
             <div className="space-y-3">
               <div>
-                <label className="mb-1 block text-sm font-medium text-neutral-700">
-                  标题
-                </label>
+                <label className="mb-1 block text-sm font-medium text-neutral-700">标题</label>
                 <input
                   type="text"
                   value={editForm.caption}
-                  onChange={(e) =>
-                    setEditForm((f) => ({ ...f, caption: e.target.value }))
-                  }
+                  onChange={(e) => setEditForm((f) => ({ ...f, caption: e.target.value }))}
                   className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:border-amber-400 focus:outline-none"
                 />
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-neutral-700">
-                  地点
-                </label>
+                <label className="mb-1 block text-sm font-medium text-neutral-700">地点</label>
                 <input
                   type="text"
                   value={editForm.location}
-                  onChange={(e) =>
-                    setEditForm((f) => ({ ...f, location: e.target.value }))
-                  }
+                  onChange={(e) => setEditForm((f) => ({ ...f, location: e.target.value }))}
                   className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:border-amber-400 focus:outline-none"
                 />
               </div>
               <div>
-                <label className="mb-1 block text-sm font-medium text-neutral-700">
-                  地区
-                </label>
+                <label className="mb-1 block text-sm font-medium text-neutral-700">地区</label>
                 <input
                   type="text"
                   value={editForm.region}
-                  onChange={(e) =>
-                    setEditForm((f) => ({ ...f, region: e.target.value }))
-                  }
+                  onChange={(e) => setEditForm((f) => ({ ...f, region: e.target.value }))}
                   className="w-full rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:border-amber-400 focus:outline-none"
                 />
               </div>

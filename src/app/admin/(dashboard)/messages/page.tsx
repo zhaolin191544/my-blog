@@ -1,14 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import {
-  Mail,
-  MailOpen,
-  Trash2,
-  ShieldAlert,
-  ShieldCheck,
-  Inbox,
-} from "lucide-react";
+import { Mail, MailOpen, Trash2, ShieldAlert, ShieldCheck, Inbox } from "lucide-react";
 import { format } from "date-fns";
 
 interface Message {
@@ -87,9 +80,7 @@ export default function MessagesPage() {
     <div className="mx-auto max-w-4xl">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-neutral-900">留言板</h1>
-        <p className="mt-1 text-sm text-neutral-500">
-          管理访客留言
-        </p>
+        <p className="mt-1 text-sm text-neutral-500">管理访客留言</p>
       </div>
 
       {/* Tabs */}
@@ -128,9 +119,7 @@ export default function MessagesPage() {
             <div
               key={msg.id}
               className={`rounded-xl border bg-white transition-colors ${
-                msg.read
-                  ? "border-neutral-200"
-                  : "border-amber-200 bg-amber-50/20"
+                msg.read ? "border-neutral-200" : "border-amber-200 bg-amber-50/20"
               } ${msg.isSpam ? "border-red-200 bg-red-50/20" : ""}`}
             >
               <div
@@ -149,21 +138,15 @@ export default function MessagesPage() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <span className="font-medium text-neutral-900">
-                      {msg.name}
-                    </span>
-                    <span className="text-xs text-neutral-400">
-                      {msg.email}
-                    </span>
+                    <span className="font-medium text-neutral-900">{msg.name}</span>
+                    <span className="text-xs text-neutral-400">{msg.email}</span>
                     {msg.isSpam && (
                       <span className="rounded-full bg-red-50 px-2 py-0.5 text-xs text-red-600">
                         垃圾
                       </span>
                     )}
                   </div>
-                  <p className="mt-0.5 truncate text-sm text-neutral-500">
-                    {msg.content}
-                  </p>
+                  <p className="mt-0.5 truncate text-sm text-neutral-500">{msg.content}</p>
                 </div>
                 <span className="shrink-0 text-xs text-neutral-400">
                   {format(new Date(msg.createdAt), "MM-dd HH:mm")}
@@ -172,9 +155,7 @@ export default function MessagesPage() {
 
               {expandedId === msg.id && (
                 <div className="border-t border-neutral-100 px-4 py-3">
-                  <p className="whitespace-pre-wrap text-sm text-neutral-700">
-                    {msg.content}
-                  </p>
+                  <p className="whitespace-pre-wrap text-sm text-neutral-700">{msg.content}</p>
                   <div className="mt-3 flex items-center gap-2">
                     {msg.read ? (
                       <button

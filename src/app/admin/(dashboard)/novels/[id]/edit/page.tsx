@@ -73,9 +73,7 @@ export default function EditNovelPage() {
             <input
               type="checkbox"
               checked={form.published}
-              onChange={(e) =>
-                setForm((f) => ({ ...f, published: e.target.checked }))
-              }
+              onChange={(e) => setForm((f) => ({ ...f, published: e.target.checked }))}
               className="rounded border-neutral-300 text-amber-500 focus:ring-amber-400"
             />
             已发布
@@ -95,27 +93,19 @@ export default function EditNovelPage() {
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
           <div className="space-y-4">
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-                标题
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">标题</label>
               <input
                 type="text"
                 value={form.title}
-                onChange={(e) =>
-                  setForm((f) => ({ ...f, title: e.target.value }))
-                }
+                onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
                 className="w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-amber-400 focus:outline-none"
               />
             </div>
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-                简介
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">简介</label>
               <textarea
                 value={form.description}
-                onChange={(e) =>
-                  setForm((f) => ({ ...f, description: e.target.value }))
-                }
+                onChange={(e) => setForm((f) => ({ ...f, description: e.target.value }))}
                 rows={3}
                 className="w-full resize-none rounded-lg border border-neutral-200 px-4 py-2 text-sm focus:border-amber-400 focus:outline-none"
               />
@@ -124,9 +114,7 @@ export default function EditNovelPage() {
         </div>
 
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
-          <label className="mb-3 block text-sm font-medium text-neutral-700">
-            封面图片
-          </label>
+          <label className="mb-3 block text-sm font-medium text-neutral-700">封面图片</label>
           <ImageUploader
             value={form.cover}
             onChange={(url) => setForm((f) => ({ ...f, cover: url }))}

@@ -4,7 +4,7 @@ import { getSession } from "@/src/lib/auth";
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string; commentId: string }> }
+  { params }: { params: Promise<{ id: string; commentId: string }> },
 ) {
   try {
     const session = await getSession();
@@ -28,7 +28,7 @@ export async function PUT(
 
 export async function DELETE(
   _request: NextRequest,
-  { params }: { params: Promise<{ id: string; commentId: string }> }
+  { params }: { params: Promise<{ id: string; commentId: string }> },
 ) {
   try {
     const session = await getSession();

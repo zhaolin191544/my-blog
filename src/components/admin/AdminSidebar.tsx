@@ -45,7 +45,7 @@ export function AdminSidebar() {
     <aside
       className={cn(
         "flex h-screen flex-col border-r border-neutral-200 bg-white transition-all duration-300",
-        collapsed ? "w-[68px]" : "w-[240px]"
+        collapsed ? "w-[68px]" : "w-[240px]",
       )}
     >
       {/* Header */}
@@ -59,11 +59,7 @@ export function AdminSidebar() {
           onClick={() => setCollapsed(!collapsed)}
           className="rounded-lg p-1.5 text-neutral-400 transition-colors hover:bg-neutral-100 hover:text-neutral-600"
         >
-          {collapsed ? (
-            <ChevronRight className="h-4 w-4" />
-          ) : (
-            <ChevronLeft className="h-4 w-4" />
-          )}
+          {collapsed ? <ChevronRight className="h-4 w-4" /> : <ChevronLeft className="h-4 w-4" />}
         </button>
       </div>
 
@@ -80,15 +76,12 @@ export function AdminSidebar() {
                 "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-all",
                 active
                   ? "bg-amber-50 text-amber-600"
-                  : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
+                  : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900",
               )}
               title={collapsed ? item.label : undefined}
             >
               <Icon
-                className={cn(
-                  "h-5 w-5 shrink-0",
-                  active ? "text-amber-500" : "text-neutral-400"
-                )}
+                className={cn("h-5 w-5 shrink-0", active ? "text-amber-500" : "text-neutral-400")}
               />
               {!collapsed && <span>{item.label}</span>}
             </Link>

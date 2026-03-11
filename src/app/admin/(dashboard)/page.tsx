@@ -1,12 +1,5 @@
 import { prisma } from "@/src/lib/prisma";
-import {
-  FileText,
-  Zap,
-  BookOpen,
-  Camera,
-  MessageSquare,
-  MessageCircle,
-} from "lucide-react";
+import { FileText, Zap, BookOpen, Camera, MessageSquare, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 async function getStats() {
@@ -135,9 +128,7 @@ export default async function DashboardPage() {
     <div className="mx-auto max-w-6xl">
       <div className="mb-8">
         <h1 className="text-2xl font-bold text-neutral-900">仪表盘</h1>
-        <p className="mt-1 text-sm text-neutral-500">
-          欢迎回来，这是你的博客概览
-        </p>
+        <p className="mt-1 text-sm text-neutral-500">欢迎回来，这是你的博客概览</p>
       </div>
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,15 +145,9 @@ export default async function DashboardPage() {
             >
               <div className="flex items-start justify-between">
                 <div>
-                  <p className="text-sm font-medium text-neutral-500">
-                    {card.label}
-                  </p>
-                  <p className="mt-2 text-3xl font-bold text-neutral-900">
-                    {count}
-                  </p>
-                  {subtext && (
-                    <p className="mt-1 text-xs text-neutral-400">{subtext}</p>
-                  )}
+                  <p className="text-sm font-medium text-neutral-500">{card.label}</p>
+                  <p className="mt-2 text-3xl font-bold text-neutral-900">{count}</p>
+                  {subtext && <p className="mt-1 text-xs text-neutral-400">{subtext}</p>}
                 </div>
                 <div
                   className={`rounded-xl ${card.bg} p-3 transition-transform group-hover:scale-110`}
@@ -177,9 +162,7 @@ export default async function DashboardPage() {
 
       {/* Quick Actions */}
       <div className="mt-8">
-        <h2 className="mb-4 text-lg font-semibold text-neutral-900">
-          快捷操作
-        </h2>
+        <h2 className="mb-4 text-lg font-semibold text-neutral-900">快捷操作</h2>
         <div className="flex flex-wrap gap-3">
           <Link
             href="/admin/blogs/new"

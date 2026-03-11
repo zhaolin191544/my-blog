@@ -5,9 +5,7 @@ export function TicketArea() {
 
   return (
     <div className="relative h-[700px] max-[1115px]:h-[600px] max-[767px]:h-[500px]">
-      <p className="text-[11px] whitespace-pre text-clay mb-4">
-        {t("tabular_note")}
-      </p>
+      <p className="text-[11px] whitespace-pre text-clay mb-4">{t("tabular_note")}</p>
       <div className="group relative h-full mt-[70px]">
         <img
           className="absolute left-[100px] top-[40px] max-[1115px]:left-[40px] max-[1115px]:top-[20px] max-[767px]:left-0 max-[767px]:top-[20px] transition-transform duration-1000 ease-[cubic-bezier(1,0.05,0.48,0.99)] group-hover:translate-x-[20px] group-hover:translate-y-[-24px] group-hover:rotate-[2deg]"

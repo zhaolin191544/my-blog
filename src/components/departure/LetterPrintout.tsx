@@ -18,17 +18,14 @@ Dear Dr. Kerning,
 
 I trust this message finds you in good spirits. I am pleased to brief
 you on `}
-          <span className="bg-foam">
-            this critical scientific venture
-          </span>
+          <span className="bg-foam">this critical scientific venture</span>
           {` at the far reaches of our
 solar system. Your groundbreaking research and expertise in
 exoplanetary ecosystems uniquely qualifies you for this endeavor.
 
 `}
           <span className="bg-foam">
-            Your primary objective will be to investigate an anomaly
-            detected in
+            Your primary objective will be to investigate an anomaly detected in
           </span>
           <br />
           <span className="bg-foam">the Kuiper belt.</span>

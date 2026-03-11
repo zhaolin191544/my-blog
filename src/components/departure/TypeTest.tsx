@@ -37,7 +37,7 @@ const SAMPLES: TypeSampleProps[] = [
 function TypeSample({ className, style, copy, size, tracking }: TypeSampleProps) {
   return (
     <div
-      className={`flex flex-col ${className === "hidden-small" ? "max-[767px]:hidden" : className ?? ""}`}
+      className={`flex flex-col ${className === "hidden-small" ? "max-[767px]:hidden" : (className ?? "")}`}
       style={style}
     >
       <div className="flex items-center gap-[55px] text-clay">

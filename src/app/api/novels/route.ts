@@ -26,10 +26,7 @@ export async function POST(request: NextRequest) {
     const { title, cover, description, published } = body;
 
     if (!title) {
-      return NextResponse.json(
-        { error: "标题不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "标题不能为空" }, { status: 400 });
     }
 
     const novel = await prisma.novel.create({

@@ -3,10 +3,7 @@ import { prisma } from "@/src/lib/prisma";
 import { getSession } from "@/src/lib/auth";
 import { checkSpam } from "@/src/lib/spam-detector";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function GET(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
     const session = await getSession();
@@ -31,20 +28,14 @@ export async function GET(
   }
 }
 
-export async function POST(
-  request: NextRequest,
-  { params }: { params: Promise<{ id: string }> }
-) {
+export async function POST(request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
     const body = await request.json();
     const { author, email, content } = body;
 
     if (!author || !email || !content) {
-      return NextResponse.json(
-        { error: "姓名、邮箱和评论内容不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "姓名、邮箱和评论内容不能为空" }, { status: 400 });
     }
 
     const post = await prisma.blogPost.findUnique({ where: { id } });

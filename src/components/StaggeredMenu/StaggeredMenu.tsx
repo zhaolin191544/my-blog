@@ -41,10 +41,7 @@ export function StaggeredMenu({
     if (!isOpen) return;
     function onClick(e: MouseEvent) {
       const target = e.target as HTMLElement;
-      if (
-        !target.closest(".staggered-menu-panel") &&
-        !target.closest(".sm-toggle-btn")
-      ) {
+      if (!target.closest(".staggered-menu-panel") && !target.closest(".sm-toggle-btn")) {
         setIsOpen(false);
       }
     }

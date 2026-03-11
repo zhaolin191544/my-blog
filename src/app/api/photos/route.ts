@@ -43,10 +43,7 @@ export async function POST(request: NextRequest) {
     const { url, caption, location, region } = body;
 
     if (!url || !region) {
-      return NextResponse.json(
-        { error: "图片URL和地区不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "图片URL和地区不能为空" }, { status: 400 });
     }
 
     const photo = await prisma.photo.create({

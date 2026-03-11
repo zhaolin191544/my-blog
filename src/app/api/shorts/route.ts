@@ -34,10 +34,7 @@ export async function POST(request: NextRequest) {
     const { content, location } = body;
 
     if (!content) {
-      return NextResponse.json(
-        { error: "内容不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "内容不能为空" }, { status: 400 });
     }
 
     const short = await prisma.short.create({

@@ -26,7 +26,7 @@ export default function Home() {
         items={[
           { label: t("home"), href: "/" },
           { label: t("about"), href: "/about" },
-          { label: t("projects"), href: "#projects" },
+          { label: t("photo"), href: "/photos" },
           { label: t("contact"), href: "#contact" },
         ]}
         socialItems={[
@@ -52,7 +52,7 @@ export default function Home() {
             <div className="w-full max-w-lg h-[400px] max-[767px]:h-[300px] relative block overflow-visible">
               <FallingText
                 text={`frontend football CS_pro poker Vuer DouDou Reacter MY JJY LMY 1223 Kr8s 0x103`}
-                highlightWords={["JJY","DouDou","LMY","Kr8s","0x103"]}
+                highlightWords={["JJY", "DouDou", "LMY", "Kr8s", "0x103"]}
                 highlightClass="text-amber italic font-serif"
                 trigger="hover"
                 backgroundColor="transparent"
@@ -84,10 +84,10 @@ export default function Home() {
           <div className="relative z-10 grid grid-cols-[40%_50%] h-full pointer-events-none max-[767px]:block max-[767px]:pt-11">
             <div className="max-[767px]:hidden" />
             <div className="relative pointer-events-auto max-[767px]:w-full">
-              <img 
-                src="/assets/highlighter-outline.svg" 
-                alt="" 
-                className="absolute hidden md:block w-90 h-130 -rotate-90 -left-[100px] top-[10%] pointer-events-none" 
+              <img
+                src="/assets/highlighter-outline.svg"
+                alt=""
+                className="absolute hidden md:block w-90 h-130 -rotate-90 -left-[100px] top-[10%] pointer-events-none"
               />
               <StaggerTestimonials />
             </div>

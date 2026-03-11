@@ -11,10 +11,7 @@ const adapter = new PrismaPg({ connectionString });
 const prisma = new PrismaClient({ adapter });
 
 async function main() {
-  const hashedPassword = await bcrypt.hash(
-    process.env.ADMIN_PASSWORD || "admin123",
-    12
-  );
+  const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD || "admin123", 12);
 
   await prisma.adminUser.upsert({
     where: { username: process.env.ADMIN_USERNAME || "admin" },

@@ -63,30 +63,22 @@ export default function NewChapterPage() {
 
       <div className="space-y-6">
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
-          <label className="mb-1.5 block text-sm font-medium text-neutral-700">
-            章节标题
-          </label>
+          <label className="mb-1.5 block text-sm font-medium text-neutral-700">章节标题</label>
           <input
             type="text"
             value={form.title}
-            onChange={(e) =>
-              setForm((f) => ({ ...f, title: e.target.value }))
-            }
+            onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
             className="w-full rounded-lg border border-neutral-200 px-4 py-2.5 focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50"
             placeholder="第一章：..."
           />
         </div>
 
         <div className="rounded-xl border border-neutral-200 bg-white p-6">
-          <label className="mb-3 block text-sm font-medium text-neutral-700">
-            章节内容
-          </label>
+          <label className="mb-3 block text-sm font-medium text-neutral-700">章节内容</label>
           <RichTextEditor
             content={form.content}
             contentType="HTML"
-            onChange={(content) =>
-              setForm((f) => ({ ...f, content }))
-            }
+            onChange={(content) => setForm((f) => ({ ...f, content }))}
             placeholder="开始写作..."
           />
         </div>

@@ -89,9 +89,7 @@ export default function ShortsPage() {
     <div className="mx-auto max-w-3xl">
       <div className="mb-6">
         <h1 className="text-2xl font-bold text-neutral-900">短内容</h1>
-        <p className="mt-1 text-sm text-neutral-500">
-          随时记录想法和动态
-        </p>
+        <p className="mt-1 text-sm text-neutral-500">随时记录想法和动态</p>
       </div>
 
       {/* Create Form */}
@@ -133,10 +131,7 @@ export default function ShortsPage() {
           <p className="py-12 text-center text-neutral-400">暂无内容</p>
         ) : (
           shorts.map((short) => (
-            <div
-              key={short.id}
-              className="rounded-xl border border-neutral-200 bg-white p-4"
-            >
+            <div key={short.id} className="rounded-xl border border-neutral-200 bg-white p-4">
               {editingId === short.id ? (
                 <div className="space-y-3">
                   <textarea
@@ -171,14 +166,10 @@ export default function ShortsPage() {
                 </div>
               ) : (
                 <>
-                  <p className="whitespace-pre-wrap text-sm text-neutral-800">
-                    {short.content}
-                  </p>
+                  <p className="whitespace-pre-wrap text-sm text-neutral-800">{short.content}</p>
                   <div className="mt-3 flex items-center justify-between">
                     <div className="flex items-center gap-3 text-xs text-neutral-400">
-                      <span>
-                        {format(new Date(short.createdAt), "yyyy-MM-dd HH:mm")}
-                      </span>
+                      <span>{format(new Date(short.createdAt), "yyyy-MM-dd HH:mm")}</span>
                       {short.location && (
                         <span className="flex items-center gap-1">
                           <MapPin className="h-3 w-3" />

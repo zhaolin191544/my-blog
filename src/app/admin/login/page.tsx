@@ -53,9 +53,7 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-300">
-                用户名
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-300">用户名</label>
               <div className="relative">
                 <User className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-500" />
                 <input
@@ -70,9 +68,7 @@ export default function LoginPage() {
             </div>
 
             <div>
-              <label className="mb-1.5 block text-sm font-medium text-neutral-300">
-                密码
-              </label>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-300">密码</label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-neutral-500" />
                 <input
@@ -88,11 +84,7 @@ export default function LoginPage() {
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-neutral-300"
                 >
-                  {showPassword ? (
-                    <EyeOff className="h-4 w-4" />
-                  ) : (
-                    <Eye className="h-4 w-4" />
-                  )}
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
               </div>
             </div>

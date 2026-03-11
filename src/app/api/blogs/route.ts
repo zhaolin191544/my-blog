@@ -46,22 +46,15 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { title, slug, cover, excerpt, content, contentType, published } =
-      body;
+    const { title, slug, cover, excerpt, content, contentType, published } = body;
 
     if (!title || !slug || !content) {
-      return NextResponse.json(
-        { error: "标题、slug 和内容不能为空" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "标题、slug 和内容不能为空" }, { status: 400 });
     }
 
     const existing = await prisma.blogPost.findUnique({ where: { slug } });
     if (existing) {
-      return NextResponse.json(
-        { error: "该 slug 已存在" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "该 slug 已存在" }, { status: 400 });
     }
 
     const post = await prisma.blogPost.create({

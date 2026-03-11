@@ -1,19 +1,8 @@
 "use client";
 
 import { cn } from "@/src/lib/utils";
-import {
-  motion,
-  useInView,
-  type HTMLMotionProps,
-} from "motion/react";
-import {
-  createContext,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-  type ReactNode,
-} from "react";
+import { motion, useInView, type HTMLMotionProps } from "motion/react";
+import { createContext, useContext, useEffect, useRef, useState, type ReactNode } from "react";
 
 // Sequence context for coordinating child animations
 const SequenceContext = createContext<{
@@ -54,10 +43,7 @@ export function Terminal({
     <SequenceContext.Provider value={{ registerChild, startOnView, inView }}>
       <div
         ref={ref}
-        className={cn(
-          "rounded-xl border border-aluminum bg-white max-w-lg w-full",
-          className,
-        )}
+        className={cn("rounded-xl border border-aluminum bg-white max-w-lg w-full", className)}
       >
         <div className="flex items-center gap-2 border-b border-aluminum p-4">
           <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
@@ -65,9 +51,7 @@ export function Terminal({
           <span className="h-3 w-3 rounded-full bg-[#28c840]" />
         </div>
         <pre className="p-4 overflow-x-auto">
-          <code className="text-sm text-soot font-inherit grid gap-1">
-            {children}
-          </code>
+          <code className="text-sm text-soot font-inherit grid gap-1">{children}</code>
         </pre>
       </div>
     </SequenceContext.Provider>
@@ -136,21 +120,14 @@ interface AnimatedSpanProps extends HTMLMotionProps<"div"> {
   className?: string;
 }
 
-export function AnimatedSpan({
-  children,
-  delay = 0,
-  className,
-  ...props
-}: AnimatedSpanProps) {
+export function AnimatedSpan({ children, delay = 0, className, ...props }: AnimatedSpanProps) {
   const { registerChild, startOnView, inView } = useContext(SequenceContext);
   const effectiveDelay = registerChild(delay);
 
   return (
     <motion.div
       initial={{ opacity: 0, y: -5 }}
-      animate={
-        !startOnView || inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -5 }
-      }
+      animate={!startOnView || inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -5 }}
       transition={{ duration: 0.3, delay: effectiveDelay / 1000 }}
       className={cn("", className)}
       {...props}

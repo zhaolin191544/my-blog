@@ -60,9 +60,7 @@ export default function BlogsPage() {
       <div className="mb-6 flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-bold text-neutral-900">博客文章</h1>
-          <p className="mt-1 text-sm text-neutral-500">
-            共 {total} 篇文章
-          </p>
+          <p className="mt-1 text-sm text-neutral-500">共 {total} 篇文章</p>
         </div>
         <Link
           href="/admin/blogs/new"
@@ -127,10 +125,7 @@ export default function BlogsPage() {
               </tr>
             ) : (
               posts.map((post) => (
-                <tr
-                  key={post.id}
-                  className="transition-colors hover:bg-neutral-50"
-                >
+                <tr key={post.id} className="transition-colors hover:bg-neutral-50">
                   <td className="px-4 py-3">
                     <p className="font-medium text-neutral-900">{post.title}</p>
                     <p className="text-xs text-neutral-400">/{post.slug}</p>
@@ -148,9 +143,7 @@ export default function BlogsPage() {
                   </td>
                   <td className="px-4 py-3">
                     <button
-                      onClick={() =>
-                        router.push(`/admin/blogs/${post.id}/comments`)
-                      }
+                      onClick={() => router.push(`/admin/blogs/${post.id}/comments`)}
                       className="flex items-center gap-1 text-sm text-neutral-500 hover:text-amber-500"
                     >
                       <MessageCircle className="h-3.5 w-3.5" />

@@ -24,11 +24,7 @@ const SPAM_KEYWORDS = [
   "日赚",
 ];
 
-export function checkSpam(
-  content: string,
-  email: string,
-  name: string
-): SpamCheckResult {
+export function checkSpam(content: string, email: string, name: string): SpamCheckResult {
   const reasons: string[] = [];
   let score = 0;
 
@@ -81,8 +77,7 @@ export function checkSpam(
 
   // Rule 8: Too many special characters
   const specialCharRatio =
-    (content.replace(/[\w\s\u4e00-\u9fff]/g, "").length / content.length) *
-    100;
+    (content.replace(/[\w\s\u4e00-\u9fff]/g, "").length / content.length) * 100;
   if (content.length > 5 && specialCharRatio > 50) {
     score += 15;
     reasons.push("Too many special characters");

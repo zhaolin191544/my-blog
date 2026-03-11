@@ -3,15 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
-import {
-  ArrowLeft,
-  Plus,
-  Pencil,
-  Trash2,
-  GripVertical,
-  ArrowUp,
-  ArrowDown,
-} from "lucide-react";
+import { ArrowLeft, Plus, Pencil, Trash2, GripVertical, ArrowUp, ArrowDown } from "lucide-react";
 
 interface Chapter {
   id: string;
@@ -55,10 +47,7 @@ export default function ChaptersPage() {
     const targetIndex = direction === "up" ? index - 1 : index + 1;
     if (targetIndex < 0 || targetIndex >= newChapters.length) return;
 
-    [newChapters[index], newChapters[targetIndex]] = [
-      newChapters[targetIndex],
-      newChapters[index],
-    ];
+    [newChapters[index], newChapters[targetIndex]] = [newChapters[targetIndex], newChapters[index]];
 
     const reordered = newChapters.map((ch, i) => ({
       id: ch.id,
@@ -118,13 +107,9 @@ export default function ChaptersPage() {
               className="flex items-center gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3"
             >
               <GripVertical className="h-4 w-4 shrink-0 text-neutral-300" />
-              <span className="w-8 shrink-0 text-sm font-mono text-neutral-400">
-                {index + 1}
-              </span>
+              <span className="w-8 shrink-0 text-sm font-mono text-neutral-400">{index + 1}</span>
               <div className="flex-1">
-                <span className="font-medium text-neutral-900">
-                  {chapter.title}
-                </span>
+                <span className="font-medium text-neutral-900">{chapter.title}</span>
               </div>
               <span
                 className={`rounded-full px-2 py-0.5 text-xs ${

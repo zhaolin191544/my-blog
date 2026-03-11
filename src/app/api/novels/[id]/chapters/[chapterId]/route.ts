@@ -4,7 +4,7 @@ import { getSession } from "@/src/lib/auth";
 
 export async function GET(
   _request: NextRequest,
-  { params }: { params: Promise<{ id: string; chapterId: string }> }
+  { params }: { params: Promise<{ id: string; chapterId: string }> },
 ) {
   try {
     const { chapterId } = await params;
@@ -24,7 +24,7 @@ export async function GET(
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string; chapterId: string }> }
+  { params }: { params: Promise<{ id: string; chapterId: string }> },
 ) {
   try {
     const session = await getSession();
@@ -52,7 +52,7 @@ export async function PUT(
 
 export async function DELETE(
   _request: NextRequest,
-  { params }: { params: Promise<{ id: string; chapterId: string }> }
+  { params }: { params: Promise<{ id: string; chapterId: string }> },
 ) {
   try {
     const session = await getSession();

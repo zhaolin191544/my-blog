@@ -38,7 +38,7 @@ export function StaggerTestimonials() {
     <div className="flex flex-col gap-10 w-full max-w-[540px] ml-auto py-12 max-[767px]:mx-auto relative">
       {/* Decorative background element */}
       <div className="absolute -right-20 top-0 w-64 h-64 bg-cement/20 rounded-full blur-3xl -z-10" />
-      
+
       <div className="mb-4 max-[767px]:px-4">
         <motion.div
           initial={{ opacity: 0, x: 20 }}
@@ -60,16 +60,16 @@ export function StaggerTestimonials() {
             key={t.id}
             initial={{ opacity: 0, y: 30, rotate: i % 2 === 0 ? -1 : 1 }}
             whileInView={{ opacity: 1, y: 0, rotate: 0 }}
-            whileHover={{ 
-              y: -8, 
+            whileHover={{
+              y: -8,
               rotate: i % 2 === 0 ? 1 : -1,
-              transition: { duration: 0.2 } 
+              transition: { duration: 0.2 },
             }}
             viewport={{ once: true, margin: "-50px" }}
-            transition={{ 
-              duration: 0.7, 
+            transition={{
+              duration: 0.7,
               delay: i * 0.15,
-              ease: [0.21, 1.11, 0.81, 0.99]
+              ease: [0.21, 1.11, 0.81, 0.99],
             }}
             className={`
               relative p-8 bg-white border border-aluminum/30 
@@ -80,9 +80,9 @@ export function StaggerTestimonials() {
             `}
           >
             {/* Background Accent */}
-            <div 
+            <div
               className="absolute top-0 right-0 w-32 h-32 opacity-[0.03] pointer-events-none group-hover:opacity-[0.06] transition-opacity"
-              style={{ backgroundColor: t.color, clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }}
+              style={{ backgroundColor: t.color, clipPath: "polygon(100% 0, 0 0, 100% 100%)" }}
             />
 
             <div className="absolute top-6 right-8 text-aluminum/20 group-hover:text-aluminum/40 transition-colors">
@@ -93,18 +93,16 @@ export function StaggerTestimonials() {
               <p className="text-[17px] leading-relaxed text-carbon/90 font-medium mb-8">
                 {t.text}
               </p>
-              
+
               <div className="flex items-center gap-4">
-                <div 
+                <div
                   className="w-11 h-11 rounded-2xl flex items-center justify-center text-white font-bold text-lg shadow-lg"
                   style={{ backgroundColor: t.color }}
                 >
                   {t.avatar}
                 </div>
                 <div>
-                  <h4 className="text-[15px] font-bold text-carbon tracking-tight">
-                    {t.by}
-                  </h4>
+                  <h4 className="text-[15px] font-bold text-carbon tracking-tight">{t.by}</h4>
                   <p className="text-[12px] text-ash font-medium uppercase tracking-wider">
                     {t.role}
                   </p>

@@ -66,9 +66,7 @@ export default function CommentsPage() {
         </Link>
         <div>
           <h1 className="text-2xl font-bold text-neutral-900">评论管理</h1>
-          <p className="text-sm text-neutral-500">
-            共 {comments.length} 条评论
-          </p>
+          <p className="text-sm text-neutral-500">共 {comments.length} 条评论</p>
         </div>
       </div>
 
@@ -82,20 +80,14 @@ export default function CommentsPage() {
             <div
               key={comment.id}
               className={`rounded-xl border bg-white p-4 ${
-                comment.approved
-                  ? "border-neutral-200"
-                  : "border-amber-200 bg-amber-50/30"
+                comment.approved ? "border-neutral-200" : "border-amber-200 bg-amber-50/30"
               }`}
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
-                    <span className="font-medium text-neutral-900">
-                      {comment.author}
-                    </span>
-                    <span className="text-xs text-neutral-400">
-                      {comment.email}
-                    </span>
+                    <span className="font-medium text-neutral-900">{comment.author}</span>
+                    <span className="text-xs text-neutral-400">{comment.email}</span>
                     <span
                       className={`rounded-full px-2 py-0.5 text-xs ${
                         comment.approved
@@ -106,9 +98,7 @@ export default function CommentsPage() {
                       {comment.approved ? "已通过" : "待审核"}
                     </span>
                   </div>
-                  <p className="mt-2 text-sm text-neutral-600">
-                    {comment.content}
-                  </p>
+                  <p className="mt-2 text-sm text-neutral-600">{comment.content}</p>
                   <p className="mt-2 text-xs text-neutral-400">
                     {format(new Date(comment.createdAt), "yyyy-MM-dd HH:mm")}
                   </p>
