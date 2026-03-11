@@ -12,6 +12,7 @@ import {
   LogOut,
   ChevronLeft,
   ChevronRight,
+  Heart,
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/src/lib/utils";
@@ -22,6 +23,7 @@ const navItems = [
   { href: "/admin/shorts", icon: Zap, label: "短内容" },
   { href: "/admin/novels", icon: BookOpen, label: "小说" },
   { href: "/admin/photos", icon: Camera, label: "照片" },
+  { href: "/admin/mrs-zhao", icon: Heart, label: "Mrs. Zhao" },
   { href: "/admin/messages", icon: MessageSquare, label: "留言板" },
 ];
 

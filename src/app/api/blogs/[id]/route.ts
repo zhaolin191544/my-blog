@@ -43,6 +43,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
         content: body.content,
         contentType: body.contentType,
         published: body.published,
+        createdAt: body.createdAt ? new Date(body.createdAt) : undefined,
       },
     });
 

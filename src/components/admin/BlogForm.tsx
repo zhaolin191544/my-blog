@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { RichTextEditor } from "./RichTextEditor";
 import { ImageUploader } from "./ImageUploader";
-import { ArrowLeft, Save } from "lucide-react";
+import { ArrowLeft, Save, Calendar } from "lucide-react";
 import Link from "next/link";
+import { format } from "date-fns";
 
 interface BlogFormData {
   id?: string;
@@ -16,6 +17,7 @@ interface BlogFormData {
   content: string;
   contentType: "MARKDOWN" | "HTML";
   published: boolean;
+  createdAt: string;
 }
 
 interface BlogFormProps {
@@ -46,6 +48,7 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
     content: initialData?.content || "",
     contentType: initialData?.contentType || "MARKDOWN",
     published: initialData?.published || false,
+    createdAt: initialData?.createdAt || format(new Date(), "yyyy-MM-dd'T'HH:mm"),
   });
 
   const handleSave = async (publish?: boolean) => {
@@ -154,6 +157,18 @@ export function BlogForm({ initialData, mode }: BlogFormProps) {
                 className="w-full resize-none rounded-lg border border-neutral-200 px-4 py-2 text-sm focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50"
                 placeholder="简短描述..."
               />
+            </div>
+            <div>
+              <label className="mb-1.5 block text-sm font-medium text-neutral-700">发布时间</label>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4 text-neutral-400" />
+                <input
+                  type="datetime-local"
+                  value={form.createdAt}
+                  onChange={(e) => setForm((f) => ({ ...f, createdAt: e.target.value }))}
+                  className="rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50"
+                />
+              </div>
             </div>
           </div>
         </div>

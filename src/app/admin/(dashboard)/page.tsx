@@ -1,5 +1,5 @@
 import { prisma } from "@/src/lib/prisma";
-import { FileText, Zap, BookOpen, Camera, MessageSquare, MessageCircle } from "lucide-react";
+import { FileText, Zap, BookOpen, Camera, MessageSquare, MessageCircle, Heart } from "lucide-react";
 import Link from "next/link";
 
 async function getStats() {
@@ -13,6 +13,7 @@ async function getStats() {
     photoCount,
     messageCount,
     unreadMessageCount,
+    mrsZhaoCount,
   ] = await Promise.all([
     prisma.blogPost.count(),
     prisma.blogPost.count({ where: { published: true } }),
@@ -23,6 +24,7 @@ async function getStats() {
     prisma.photo.count(),
     prisma.message.count({ where: { isSpam: false } }),
     prisma.message.count({ where: { read: false, isSpam: false } }),
+    prisma.mrsZhaoArticle.count(),
   ]);
 
   return {
@@ -35,6 +37,7 @@ async function getStats() {
     photoCount,
     messageCount,
     unreadMessageCount,
+    mrsZhaoCount,
   };
 }
 
@@ -87,6 +90,14 @@ const statCards = [
     color: "text-cyan-500",
     bg: "bg-cyan-50",
   },
+  {
+    key: "mrsZhao",
+    label: "Mrs. Zhao",
+    icon: Heart,
+    href: "/admin/mrs-zhao",
+    color: "text-rose-500",
+    bg: "bg-rose-50",
+  },
 ];
 
 export default async function DashboardPage() {
@@ -106,6 +117,8 @@ export default async function DashboardPage() {
         return stats.photoCount;
       case "message":
         return stats.messageCount;
+      case "mrsZhao":
+        return stats.mrsZhaoCount;
       default:
         return 0;
     }
@@ -187,6 +200,12 @@ export default async function DashboardPage() {
             className="rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
           >
             + 上传照片
+          </Link>
+          <Link
+            href="/admin/mrs-zhao"
+            className="rounded-lg border border-neutral-200 bg-white px-4 py-2 text-sm font-medium text-neutral-700 transition-colors hover:bg-neutral-50"
+          >
+            + Mrs. Zhao 文章
           </Link>
         </div>
       </div>

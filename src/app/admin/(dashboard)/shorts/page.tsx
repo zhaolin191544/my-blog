@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { MapPin, Trash2, Pencil, Plus, X, Check } from "lucide-react";
+import { MapPin, Trash2, Pencil, Plus, X, Check, Calendar } from "lucide-react";
 import { format } from "date-fns";
 
 interface Short {
@@ -16,9 +16,11 @@ export default function ShortsPage() {
   const [loading, setLoading] = useState(true);
   const [newContent, setNewContent] = useState("");
   const [newLocation, setNewLocation] = useState("");
+  const [newCreatedAt, setNewCreatedAt] = useState(format(new Date(), "yyyy-MM-dd'T'HH:mm"));
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editContent, setEditContent] = useState("");
   const [editLocation, setEditLocation] = useState("");
+  const [editCreatedAt, setEditCreatedAt] = useState("");
   const [creating, setCreating] = useState(false);
 
   const fetchShorts = useCallback(async () => {
@@ -48,10 +50,12 @@ export default function ShortsPage() {
         body: JSON.stringify({
           content: newContent,
           location: newLocation || null,
+          createdAt: newCreatedAt,
         }),
       });
       setNewContent("");
       setNewLocation("");
+      setNewCreatedAt(format(new Date(), "yyyy-MM-dd'T'HH:mm"));
       fetchShorts();
     } catch {
       // failed
@@ -67,6 +71,7 @@ export default function ShortsPage() {
       body: JSON.stringify({
         content: editContent,
         location: editLocation || null,
+        createdAt: editCreatedAt,
       }),
     });
     setEditingId(null);
@@ -83,6 +88,7 @@ export default function ShortsPage() {
     setEditingId(short.id);
     setEditContent(short.content);
     setEditLocation(short.location || "");
+    setEditCreatedAt(format(new Date(short.createdAt), "yyyy-MM-dd'T'HH:mm"));
   };
 
   return (
@@ -101,7 +107,7 @@ export default function ShortsPage() {
           className="w-full resize-none rounded-lg border border-neutral-200 px-4 py-2.5 text-sm focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50"
           placeholder="写点什么..."
         />
-        <div className="mt-3 flex items-center justify-between">
+        <div className="mt-3 flex flex-wrap items-center gap-3">
           <div className="flex items-center gap-2">
             <MapPin className="h-4 w-4 text-neutral-400" />
             <input
@@ -112,6 +118,16 @@ export default function ShortsPage() {
               placeholder="位置（可选）"
             />
           </div>
+          <div className="flex items-center gap-2">
+            <Calendar className="h-4 w-4 text-neutral-400" />
+            <input
+              type="datetime-local"
+              value={newCreatedAt}
+              onChange={(e) => setNewCreatedAt(e.target.value)}
+              className="rounded-lg border border-neutral-200 px-3 py-1.5 text-sm focus:border-amber-400 focus:outline-none"
+            />
+          </div>
+          <div className="ml-auto" />
           <button
             onClick={handleCreate}
             disabled={!newContent.trim() || creating}
@@ -140,14 +156,27 @@ export default function ShortsPage() {
                     rows={3}
                     className="w-full resize-none rounded-lg border border-neutral-200 px-3 py-2 text-sm focus:border-amber-400 focus:outline-none"
                   />
-                  <div className="flex items-center justify-between">
-                    <input
-                      type="text"
-                      value={editLocation}
-                      onChange={(e) => setEditLocation(e.target.value)}
-                      className="rounded-lg border border-neutral-200 px-3 py-1.5 text-sm"
-                      placeholder="位置"
-                    />
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="h-4 w-4 text-neutral-400" />
+                      <input
+                        type="text"
+                        value={editLocation}
+                        onChange={(e) => setEditLocation(e.target.value)}
+                        className="rounded-lg border border-neutral-200 px-3 py-1.5 text-sm"
+                        placeholder="位置"
+                      />
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="h-4 w-4 text-neutral-400" />
+                      <input
+                        type="datetime-local"
+                        value={editCreatedAt}
+                        onChange={(e) => setEditCreatedAt(e.target.value)}
+                        className="rounded-lg border border-neutral-200 px-3 py-1.5 text-sm focus:border-amber-400 focus:outline-none"
+                      />
+                    </div>
+                    <div className="ml-auto" />
                     <div className="flex gap-2">
                       <button
                         onClick={() => setEditingId(null)}

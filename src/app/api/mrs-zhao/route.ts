@@ -9,12 +9,12 @@ export async function GET(request: NextRequest) {
     const limit = parseInt(searchParams.get("limit") || "20");
 
     const [data, total] = await Promise.all([
-      prisma.short.findMany({
-        orderBy: { createdAt: "desc" },
+      prisma.mrsZhaoArticle.findMany({
+        orderBy: { publishAt: "desc" },
         skip: (page - 1) * limit,
         take: limit,
       }),
-      prisma.short.count(),
+      prisma.mrsZhaoArticle.count(),
     ]);
 
     return NextResponse.json({ data, total, page, limit });
@@ -31,21 +31,21 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { content, location } = body;
+    const { title, content, publishAt } = body;
 
-    if (!content) {
-      return NextResponse.json({ error: "内容不能为空" }, { status: 400 });
+    if (!title || !content) {
+      return NextResponse.json({ error: "标题和内容不能为空" }, { status: 400 });
     }
 
-    const short = await prisma.short.create({
+    const article = await prisma.mrsZhaoArticle.create({
       data: {
+        title,
         content,
-        location: location || null,
-        createdAt: body.createdAt ? new Date(body.createdAt) : undefined,
+        publishAt: publishAt ? new Date(publishAt) : new Date(),
       },
     });
 
-    return NextResponse.json(short, { status: 201 });
+    return NextResponse.json(article, { status: 201 });
   } catch {
     return NextResponse.json({ error: "创建失败" }, { status: 500 });
   }

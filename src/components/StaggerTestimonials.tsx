@@ -35,7 +35,7 @@ export function StaggerTestimonials() {
   ];
 
   return (
-    <div className="flex flex-col gap-10 w-full max-w-[540px] ml-auto py-12 max-[767px]:mx-auto relative">
+    <div className="flex flex-col gap-10 w-full max-w-135 ml-auto py-12 max-[767px]:mx-auto relative">
       {/* Decorative background element */}
       <div className="absolute -right-20 top-0 w-64 h-64 bg-cement/20 rounded-full blur-3xl -z-10" />
 
@@ -74,7 +74,7 @@ export function StaggerTestimonials() {
             className={`
               relative p-8 bg-white border border-aluminum/30 
               shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] 
-              rounded-[32px] overflow-hidden group
+              rounded-4xl overflow-hidden group
               ${i % 2 === 0 ? "mr-12" : "ml-6"}
               max-[767px]:mr-0 max-[767px]:ml-0
             `}

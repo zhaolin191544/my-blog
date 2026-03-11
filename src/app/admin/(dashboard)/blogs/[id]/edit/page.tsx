@@ -1,6 +1,7 @@
 import { prisma } from "@/src/lib/prisma";
 import { notFound } from "next/navigation";
 import { BlogForm } from "@/src/components/admin/BlogForm";
+import { format } from "date-fns";
 
 export default async function EditBlogPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -22,6 +23,7 @@ export default async function EditBlogPage({ params }: { params: Promise<{ id: s
         content: post.content,
         contentType: post.contentType,
         published: post.published,
+        createdAt: format(post.createdAt, "yyyy-MM-dd'T'HH:mm"),
       }}
     />
   );

@@ -106,6 +106,17 @@ model Message {
   @@map("messages")
 }
 
+model MrsZhaoArticle {
+  id        String   @id @default(cuid())
+  title     String
+  content   String
+  publishAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("mrs_zhao_articles")
+}
+
 enum ContentType {
   MARKDOWN
   HTML

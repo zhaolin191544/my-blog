@@ -66,6 +66,7 @@ export async function POST(request: NextRequest) {
         content,
         contentType: contentType || "MARKDOWN",
         published: published || false,
+        createdAt: body.createdAt ? new Date(body.createdAt) : undefined,
       },
     });
 
