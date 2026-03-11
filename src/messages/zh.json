@@ -8,6 +8,10 @@
     "home": "首页",
     "about": "关于",
     "photo": "照片",
+    "shorts": "碎片",
+    "messages": "留言板",
+    "mrs_zhao": "Mrs. Zhao",
+    "blog": "博客",
     "contact": "联系方式"
   },
   "about": {
@@ -81,6 +85,42 @@
     "gallery_empty": "空空如也",
     "drag_hint": "拖拽以浏览",
     "places_count": "个地方"
+  },
+  "mrsZhao": {
+    "back": "⇦ 返回",
+    "title": "Mrs. Zhao",
+    "subtitle": "她的文字，她的故事",
+    "loading": "加载中...",
+    "empty": "暂无文章",
+    "min_read": "min",
+    "back_to_list": "⇦ 返回文章列表",
+    "not_found": "文章未找到"
+  },
+  "blog": {
+    "back": "\u21e6 返回",
+    "title": "Blog",
+    "subtitle": "记录生活，分享思考",
+    "loading": "加载中...",
+    "empty": "暂无文章",
+    "min_read": "min",
+    "back_to_list": "\u21e6 返回文章列表",
+    "not_found": "文章未找到",
+    "toc_title": "目录",
+    "comment_title": "评论",
+    "comment_name": "昵称",
+    "comment_name_placeholder": "你的昵称",
+    "comment_email": "邮箱",
+    "comment_email_placeholder": "your.email@example.com",
+    "comment_content": "评论内容",
+    "comment_placeholder": "写下你的想法...",
+    "comment_email_privacy": "你的邮箱不会被公开显示。",
+    "comment_submit": "发表评论",
+    "comment_submitting": "提交中...",
+    "comment_success": "评论已提交，等待审核。",
+    "comment_error": "发生错误，请重试。",
+    "comment_fill_fields": "请填写所有必填字段。",
+    "comment_empty": "暂无评论，来做第一个吧！",
+    "comment_admin_tag": "站长"
   },
   "messages": {
     "back": "⇦ 返回",

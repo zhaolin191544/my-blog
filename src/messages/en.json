@@ -8,6 +8,10 @@
     "home": "Home",
     "about": "About",
     "photo": "Photo",
+    "shorts": "Shorts",
+    "messages": "Guestbook",
+    "mrs_zhao": "Mrs. Zhao",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "about": {
@@ -81,6 +85,42 @@
     "gallery_empty": "empty",
     "drag_hint": "drag to browse",
     "places_count": "places"
+  },
+  "mrsZhao": {
+    "back": "⇦ back",
+    "title": "Mrs. Zhao",
+    "subtitle": "her words, her stories",
+    "loading": "loading...",
+    "empty": "No articles yet",
+    "min_read": "min",
+    "back_to_list": "⇦ back to articles",
+    "not_found": "Article not found"
+  },
+  "blog": {
+    "back": "\u21e6 back",
+    "title": "Blog",
+    "subtitle": "thoughts, stories, and everything in between",
+    "loading": "loading...",
+    "empty": "No posts yet",
+    "min_read": "min",
+    "back_to_list": "\u21e6 back to posts",
+    "not_found": "Post not found",
+    "toc_title": "Contents",
+    "comment_title": "Comments",
+    "comment_name": "Name",
+    "comment_name_placeholder": "Your name",
+    "comment_email": "Email",
+    "comment_email_placeholder": "your.email@example.com",
+    "comment_content": "Comment",
+    "comment_placeholder": "Share your thoughts...",
+    "comment_email_privacy": "Your email will be kept private and not displayed.",
+    "comment_submit": "Post Comment",
+    "comment_submitting": "Submitting...",
+    "comment_success": "Comment submitted, pending review.",
+    "comment_error": "An error occurred. Please try again.",
+    "comment_fill_fields": "Please fill in all fields.",
+    "comment_empty": "No comments yet. Be the first!",
+    "comment_admin_tag": "Admin"
   },
   "messages": {
     "back": "⇦ back",

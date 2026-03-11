@@ -51,7 +51,7 @@ export async function POST(request: NextRequest, { params }: { params: Promise<{
         author,
         email,
         content,
-        approved: !spamResult.isSpam,
+        approved: false,
       },
     });
 

@@ -27,6 +27,10 @@ export default function Home() {
           { label: t("home"), href: "/" },
           { label: t("about"), href: "/about" },
           { label: t("photo"), href: "/photos" },
+          { label: t("shorts"), href: "/shorts" },
+          { label: t("messages"), href: "/messages" },
+          { label: t("blog"), href: "/blog" },
+          { label: t("mrs_zhao"), href: "/mrs-zhao" },
           { label: t("contact"), href: "#contact" },
         ]}
         socialItems={[
