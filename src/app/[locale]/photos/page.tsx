@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
 import { Link } from "@/src/i18n/routing";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 
 const CircularGallery = dynamic(() => import("@/src/components/CircularGallery/CircularGallery"), {
   ssr: false,
@@ -21,6 +23,7 @@ interface PhotosByRegion {
 }
 
 export default function PhotosPage() {
+  const t = useTranslations("photos");
   const [photosByRegion, setPhotosByRegion] = useState<PhotosByRegion>({});
   const [regions, setRegions] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
@@ -58,7 +61,8 @@ export default function PhotosPage() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative z-10">
+      <LanguageSwitcher />
       {/* Main content — desktop: left padding so tree bg shows; mobile: full width */}
       <div className="mx-auto min-[900px]:max-w-[90vw] min-[1200px]:max-w-250">
         {/* Header */}
@@ -67,14 +71,14 @@ export default function PhotosPage() {
             href="/"
             className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8"
           >
-            &larr; back
+            {t("back")}
           </Link>
 
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
-            Photos
+            {t("title")}
           </h1>
           <p className="mt-2 text-ash text-sm font-serif italic font-serif">
-            places I&apos;ve been, things I&apos;ve seen
+            {t("subtitle")}
           </p>
         </header>
 
@@ -106,11 +110,11 @@ export default function PhotosPage() {
           {loading ? (
             <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
               <div className="w-5 h-5 border border-ash border-t-transparent rounded-full animate-spin" />
-              <p className="text-ash text-sm font-serif">loading...</p>
+              <p className="text-ash text-sm font-serif">{t("loading")}</p>
             </div>
           ) : regions.length === 0 ? (
             <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
-              <p className="text-cement text-lg font-serif">No photos yet</p>
+              <p className="text-cement text-lg font-serif">{t("empty")}</p>
             </div>
           ) : (
             <div className="flex flex-col gap-24">
@@ -128,7 +132,7 @@ export default function PhotosPage() {
                       <h2 className="font-serif text-2xl max-[767px]:text-xl text-carbon tracking-tight">
                         {region}
                       </h2>
-                      <span className="text-xs text-cement font-serif">{photos.length} photos</span>
+                      <span className="text-xs text-cement font-serif">{photos.length} {t("photos_count")}</span>
                       <div className="flex-1 h-px bg-enamel" />
                     </div>
 
@@ -146,14 +150,14 @@ export default function PhotosPage() {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <p className="text-cement text-sm font-serif italic">empty</p>
+                          <p className="text-cement text-sm font-serif italic">{t("gallery_empty")}</p>
                         </div>
                       )}
                     </div>
 
                     {/* Hint */}
                     <p className="text-[11px] text-cement mt-2 font-serif italic text-right">
-                      drag to browse
+                      {t("drag_hint")}
                     </p>
                   </section>
                 );
@@ -166,7 +170,7 @@ export default function PhotosPage() {
         <footer className="border-t border-enamel mt-16">
           <div className="px-8 max-[767px]:px-5 py-6">
             <p className="text-[11px] text-cement font-serif">
-              {Object.values(photosByRegion).flat().length} photos &middot; {regions.length} places
+              {Object.values(photosByRegion).flat().length} {t("photos_count")} &middot; {regions.length} {t("places_count")}
             </p>
           </div>
         </footer>

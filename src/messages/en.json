@@ -63,5 +63,44 @@
     "videos": "Videos",
     "rss": "RSS Feed",
     "spotify_note": "░  OUR DESIRES MAY BE DIFFERENT\n░  BUT OUR DISAPPOINTMENTS ARE SIMILAR"
+  },
+  "shorts": {
+    "back": "⇦ back",
+    "title": "Shorts",
+    "subtitle": "fragments of thoughts, bits of life",
+    "loading": "loading...",
+    "empty": "No shorts yet"
+  },
+  "photos": {
+    "back": "⇦ back",
+    "title": "Photos",
+    "subtitle": "places I've been, things I've seen",
+    "loading": "loading...",
+    "empty": "No photos yet",
+    "photos_count": "photos",
+    "gallery_empty": "empty",
+    "drag_hint": "drag to browse",
+    "places_count": "places"
+  },
+  "messages": {
+    "back": "⇦ back",
+    "title": "Guestbook",
+    "subtitle": "leave a trace, share a thought",
+    "leave_message": "Leave a message",
+    "email_privacy": "Your email will be kept private and will not be displayed.",
+    "name_label": "Name",
+    "name_placeholder": "Your name",
+    "email_label": "Email",
+    "email_placeholder": "your.email@example.com",
+    "message_label": "Message",
+    "message_placeholder": "What's on your mind?",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "loading": "loading...",
+    "empty": "No messages yet. Be the first!",
+    "admin": "Admin",
+    "toast_fill_fields": "Please fill in all fields.",
+    "toast_success": "Message left successfully!",
+    "toast_error": "An error occurred. Please try again."
   }
 }

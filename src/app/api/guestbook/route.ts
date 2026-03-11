@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/src/lib/prisma";
 import { checkSpam } from "@/src/lib/spam-detector";
 
+export const dynamic = "force-dynamic";
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
@@ -23,6 +25,8 @@ export async function GET(request: NextRequest) {
       id: msg.id,
       name: msg.name,
       content: msg.content,
+      reply: msg.reply,
+      repliedAt: msg.repliedAt,
       createdAt: msg.createdAt,
     }));
 

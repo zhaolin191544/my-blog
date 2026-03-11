@@ -101,6 +101,8 @@ model Message {
   content   String
   isSpam    Boolean  @default(false)
   read      Boolean  @default(false)
+  reply     String?
+  repliedAt DateTime?
   createdAt DateTime @default(now())
 
   @@map("messages")

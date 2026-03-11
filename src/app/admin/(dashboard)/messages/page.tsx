@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Mail, MailOpen, Trash2, ShieldAlert, ShieldCheck, Inbox } from "lucide-react";
+import { Mail, MailOpen, Trash2, ShieldAlert, ShieldCheck, Inbox, MessageSquareReply } from "lucide-react";
 import { format } from "date-fns";
 
 interface Message {
@@ -11,6 +11,8 @@ interface Message {
   content: string;
   isSpam: boolean;
   read: boolean;
+  reply?: string | null;
+  repliedAt?: string | null;
   createdAt: string;
 }
 
@@ -21,6 +23,7 @@ export default function MessagesPage() {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<TabType>("all");
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [replyContent, setReplyContent] = useState("");
 
   const fetchMessages = useCallback(async () => {
     setLoading(true);
@@ -65,6 +68,17 @@ export default function MessagesPage() {
   const handleDelete = async (id: string) => {
     if (!window.confirm("确定删除此留言？")) return;
     await fetch(`/api/messages/${id}`, { method: "DELETE" });
+    fetchMessages();
+  };
+
+  const handleReply = async (id: string) => {
+    if (!replyContent.trim()) return;
+    await fetch(`/api/messages/${id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ reply: replyContent, read: true }),
+    });
+    alert("回复已保存！");
     fetchMessages();
   };
 
@@ -125,8 +139,12 @@ export default function MessagesPage() {
               <div
                 className="flex cursor-pointer items-center gap-3 px-4 py-3"
                 onClick={() => {
-                  setExpandedId(expandedId === msg.id ? null : msg.id);
-                  if (!msg.read) handleMarkRead(msg.id, true);
+                  const isExpanding = expandedId !== msg.id;
+                  setExpandedId(isExpanding ? msg.id : null);
+                  if (isExpanding) {
+                    setReplyContent(msg.reply || "");
+                    if (!msg.read) handleMarkRead(msg.id, true);
+                  }
                 }}
               >
                 <div className="shrink-0">
@@ -145,6 +163,11 @@ export default function MessagesPage() {
                         垃圾
                       </span>
                     )}
+                    {msg.reply && (
+                      <span className="rounded-full bg-blue-50 px-2 py-0.5 text-xs text-blue-600">
+                        已回复
+                      </span>
+                    )}
                   </div>
                   <p className="mt-0.5 truncate text-sm text-neutral-500">{msg.content}</p>
                 </div>
@@ -156,7 +179,28 @@ export default function MessagesPage() {
               {expandedId === msg.id && (
                 <div className="border-t border-neutral-100 px-4 py-3">
                   <p className="whitespace-pre-wrap text-sm text-neutral-700">{msg.content}</p>
-                  <div className="mt-3 flex items-center gap-2">
+                  
+                  <div className="mt-4 pt-4 border-t border-neutral-100">
+                    <label className="block text-xs font-medium text-neutral-500 mb-2">站长回复</label>
+                    <textarea
+                      value={replyContent}
+                      onChange={(e) => setReplyContent(e.target.value)}
+                      placeholder="写下你的回复..."
+                      className="w-full min-h-[80px] rounded-lg border border-neutral-200 p-3 text-sm focus:border-amber-400 focus:outline-none focus:ring-1 focus:ring-amber-400/50 resize-y"
+                    />
+                    <div className="mt-2 flex justify-end">
+                      <button
+                        onClick={() => handleReply(msg.id)}
+                        disabled={!replyContent.trim()}
+                        className="flex items-center gap-1.5 rounded-lg bg-amber-500 px-4 py-2 text-sm text-white hover:bg-amber-600 disabled:opacity-50"
+                      >
+                        <MessageSquareReply className="h-4 w-4" />
+                        保存回复
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="mt-4 flex items-center gap-2 border-t border-neutral-100 pt-3">
                     {msg.read ? (
                       <button
                         onClick={() => handleMarkRead(msg.id, false)}

@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { Link } from "@/src/i18n/routing";
 import { format } from "date-fns";
 import { MagicCard } from "@/src/components/magicui/magic-card";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 
 interface Short {
   id: string;
@@ -13,6 +15,7 @@ interface Short {
 }
 
 export default function ShortsPage() {
+  const t = useTranslations("shorts");
   const [shorts, setShorts] = useState<Short[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -33,19 +36,20 @@ export default function ShortsPage() {
 
   return (
     <div className="min-h-screen relative z-10">
+      <LanguageSwitcher />
       <div className="mx-auto min-[900px]:max-w-[90vw] min-[1200px]:max-w-250">
         <header className="px-8 max-[767px]:px-5 pt-10 pb-6">
           <Link
             href="/"
             className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8"
           >
-            &larr; back
+            {t("back")}
           </Link>
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
-            Shorts
+            {t("title")}
           </h1>
           <p className="mt-2 text-ash text-sm font-serif italic">
-            fragments of thoughts, bits of life
+            {t("subtitle")}
           </p>
         </header>
 
@@ -53,11 +57,11 @@ export default function ShortsPage() {
           {loading ? (
             <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
               <div className="w-5 h-5 border border-ash border-t-transparent rounded-full animate-spin" />
-              <p className="text-ash text-sm font-serif">loading...</p>
+              <p className="text-ash text-sm font-serif">{t("loading")}</p>
             </div>
           ) : shorts.length === 0 ? (
             <div className="flex flex-col items-center justify-center min-h-[50vh] gap-3">
-              <p className="text-cement text-lg font-serif">No shorts yet</p>
+              <p className="text-cement text-lg font-serif">{t("empty")}</p>
             </div>
           ) : (
             <div className="columns-1 sm:columns-2 lg:columns-3 gap-6">

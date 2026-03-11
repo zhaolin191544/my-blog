@@ -63,5 +63,44 @@
     "videos": "视频",
     "rss": "RSS订阅",
     "spotify_note": "░  我们的欲望不一样\n░  但我们的失望很相似"
+  },
+  "shorts": {
+    "back": "⇦ 返回",
+    "title": "碎片",
+    "subtitle": "思想的碎片，生活的点滴",
+    "loading": "加载中...",
+    "empty": "暂无碎片"
+  },
+  "photos": {
+    "back": "⇦ 返回",
+    "title": "相册",
+    "subtitle": "我去过的地方，我看过的风景",
+    "loading": "加载中...",
+    "empty": "暂无照片",
+    "photos_count": "张照片",
+    "gallery_empty": "空空如也",
+    "drag_hint": "拖拽以浏览",
+    "places_count": "个地方"
+  },
+  "messages": {
+    "back": "⇦ 返回",
+    "title": "留言板",
+    "subtitle": "留下痕迹，分享想法",
+    "leave_message": "留言",
+    "email_privacy": "您的邮箱将会保密，不会被公开显示。",
+    "name_label": "昵称",
+    "name_placeholder": "您的昵称",
+    "email_label": "邮箱",
+    "email_placeholder": "your.email@example.com",
+    "message_label": "留言内容",
+    "message_placeholder": "在想些什么？",
+    "submit": "提交",
+    "submitting": "提交中...",
+    "loading": "加载中...",
+    "empty": "暂无留言，来做第一个吧！",
+    "admin": "站长",
+    "toast_fill_fields": "请填写所有必填字段。",
+    "toast_success": "留言成功！",
+    "toast_error": "发生错误，请重试。"
   }
 }
