@@ -77,7 +77,7 @@ export default function PhotosPage() {
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
             {t("title")}
           </h1>
-          <p className="mt-2 text-ash text-sm font-serif italic font-serif">
+          <p className="mt-2 text-ash text-sm font-serif italic">
             {t("subtitle")}
           </p>
         </header>
@@ -137,7 +137,7 @@ export default function PhotosPage() {
                     </div>
 
                     {/* Gallery */}
-                    <div className="w-full h-[350px] sm:h-[420px] md:h-[450px] lg:h-[480px] rounded-sm overflow-hidden bg-[#f7f7f5]">
+                    <div className="w-full h-87.5 sm:h-105 md:h-112.5 lg:h-120 rounded-sm overflow-hidden bg-[#f7f7f5]">
                       {galleryItems.length > 0 ? (
                         <CircularGallery
                           items={galleryItems}

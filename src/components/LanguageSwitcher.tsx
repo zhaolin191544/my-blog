@@ -28,7 +28,7 @@ export function LanguageSwitcher() {
 
   return (
     <>
-      <div className="absolute top-[47px] right-[170px] max-[767px]:right-[140px] z-50 flex items-center gap-5">
+      <div className="absolute top-11.75 right-42.5 max-[767px]:right-35 z-50 flex items-center gap-5">
         {/* Podcast (Mic) Button */}
         <button onClick={() => setPodcastOpen(true)} className={iconClass2} title={t_dialog("podcast_title")}>
           <Mic size={22} strokeWidth={2} />
@@ -62,7 +62,7 @@ export function LanguageSwitcher() {
 
       {/* Podcast Dialog */}
       <Dialog open={podcastOpen} onOpenChange={setPodcastOpen}>
-        <DialogContent className="font-serif border-enamel bg-[#fafafa] sm:max-w-[425px]">
+        <DialogContent className="font-serif border-enamel bg-[#fafafa] sm:max-w-106.25">
           <DialogHeader>
             <DialogTitle className="text-xl font-normal text-carbon flex items-center gap-3">
               {t_dialog("podcast_title")}
@@ -81,7 +81,7 @@ export function LanguageSwitcher() {
 
       {/* Video Dialog */}
       <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
-        <DialogContent className="font-serif border-enamel bg-[#fafafa] sm:max-w-[425px]">
+        <DialogContent className="font-serif border-enamel bg-[#fafafa] sm:max-w-106.25">
           <DialogHeader>
             <DialogTitle className="text-xl font-normal text-carbon flex items-center gap-3">
               {t_dialog("video_title")}

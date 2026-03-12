@@ -65,7 +65,7 @@ export function StaggeredMenu({
           zIndex: 52,
         }}
       >
-        <span className="flex flex-col gap-[6px]">
+        <span className="flex flex-col gap-1.5">
           <span className="sm-icon-line" style={{ backgroundColor: btnColor }} />
           <span className="sm-icon-line" style={{ backgroundColor: btnColor }} />
           <span className="sm-icon-line" style={{ backgroundColor: btnColor }} />

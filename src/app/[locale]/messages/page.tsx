@@ -103,12 +103,12 @@ export default function MessagesPage() {
 
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <DialogTrigger asChild>
-              <button className="flex items-center gap-2 px-4 py-2 mt-[68px] bg-carbon text-white rounded-full text-sm font-serif hover:bg-neutral-800 transition-colors shadow-sm">
+              <button className="flex items-center gap-2 px-4 py-2 mt-17 bg-carbon text-white rounded-full text-sm font-serif hover:bg-neutral-800 transition-colors shadow-sm">
                 <MessageSquarePlus className="w-4 h-4" />
                 <span>{t("leave_message")}</span>
               </button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-106.25">
               <form onSubmit={handleSubmit}>
                 <DialogHeader>
                   <DialogTitle className="font-serif italic text-xl">{t("leave_message")}</DialogTitle>
@@ -149,7 +149,7 @@ export default function MessagesPage() {
                     <Textarea
                       id="content"
                       placeholder={t("message_placeholder")}
-                      className="min-h-[100px] resize-y"
+                      className="min-h-25 resize-y"
                       value={formData.content}
                       onChange={(e) => setFormData({ ...formData, content: e.target.value })}
                       required

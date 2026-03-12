@@ -9,10 +9,10 @@ export function AnimatedLogo() {
   const isHome = pathname === "/" || pathname === "/en" || pathname === "/zh";
   return (
     <div
-      className={`absolute top-[30px] left-[34px] max-[767px]:left-[6px] z-50 pointer-events-none ${!isHome ? "max-[767px]:hidden" : ""}`}>                                                                                                                                                                                                                     
+      className={`absolute top-7.5 left-8.5 max-[767px]:left-1.5 z-50 pointer-events-none ${!isHome ? "max-[767px]:hidden" : ""}`}>                                                                                                                                                                                                                     
       <svg
         viewBox="0 0 160 100"
-        className="w-[100px] h-[60px] max-[767px]:w-[80px] max-[767px]:h-[48px] text-carbon/80 stroke-current drop-shadow-sm"
+        className="w-25 h-15 max-[767px]:w-20 max-[767px]:h-12 text-carbon/80 stroke-current drop-shadow-sm"
         fill="none"
         strokeWidth="3.5"
         strokeLinecap="round"

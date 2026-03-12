@@ -22,7 +22,7 @@ export default function Home() {
       <LanguageSwitcher />
 
       {/* ===== SECTION 1: Header ===== */}
-      <header className="relative max-w-360 mx-auto px-11 max-[767px]:px-4 pt-[100px] max-[767px]:pt-[70px]">
+      <header className="relative max-w-360 mx-auto px-11 max-[767px]:px-4 pt-25 max-[767px]:pt-17.5">
         <GlitchTitle />
       </header>
 
@@ -32,7 +32,7 @@ export default function Home() {
           <WelcomeContent />
           <div className="flex flex-col gap-8 w-full items-center justify-center">
             <TerminalDemo />
-            <div className="w-full max-w-lg h-[400px] max-[767px]:h-[300px] relative block overflow-visible">
+            <div className="w-full max-w-lg h-100 max-[767px]:h-75 relative block overflow-visible">
               <FallingText
                 text={`frontend football CS_pro poker Vuer DouDou Reacter MY JJY LMY 1223 Kr8s 0x103`}
                 highlightWords={["JJY", "DouDou", "LMY", "Kr8s", "0x103"]}
@@ -59,8 +59,8 @@ export default function Home() {
           </div>
         </section>*/}
         {/* ===== SECTION 3: Lanyard + Testimonials ===== */}
-        <section className="relative mt-[132px] max-[767px]:mt-[66px] min-h-[600px] max-[767px]:min-h-0">
-          <div className="absolute top-0 bottom-0 z-0 left-[calc(50%-50vw)] right-[50%] max-[1115px]:right-[45%] max-[767px]:relative max-[767px]:left-0 max-[767px]:right-0 max-[767px]:h-[400px] max-[767px]:w-[100vw] max-[767px]:-ml-[calc(50vw-50%)]">
+        <section className="relative mt-33 max-[767px]:mt-16.5 min-h-150 max-[767px]:min-h-0">
+          <div className="absolute top-0 bottom-0 z-0 left-[calc(50%-50vw)] right-[50%] max-[1115px]:right-[45%] max-[767px]:relative max-[767px]:left-0 max-[767px]:right-0 max-[767px]:h-100 max-[767px]:w-screen max-[767px]:-ml-[calc(50vw-50%)]">
             <LanyardWrapper position={[15, 0, 24]} fov={7} />
           </div>
 
@@ -70,7 +70,7 @@ export default function Home() {
               <img
                 src="/assets/highlighter-outline.svg"
                 alt=""
-                className="absolute hidden md:block w-90 h-130 -rotate-90 -left-[100px] top-[10%] pointer-events-none"
+                className="absolute hidden md:block w-90 h-130 -rotate-90 -left-25 top-[10%] pointer-events-none"
               />
               <StaggerTestimonials />
             </div>
@@ -78,14 +78,14 @@ export default function Home() {
         </section>
 
         {/* ===== SECTION 4: Flight Board ===== */}
-        <section className="mt-[132px] max-[767px]:mt-[66px] flex justify-center w-full">
+        <section className="mt-33 max-[767px]:mt-16.5 flex justify-center w-full">
           <FlightBoard />
         </section>
 
         {/* ===== SECTION 5: Location + Ticket ===== */}
-        <section className="relative mt-[132px] max-[767px]:mt-[66px] w-[100vw] left-[calc(50%-50vw)] px-11 max-[767px]:px-4">
-          <div className="max-w-[1440px] mx-auto w-full flex flex-col xl:flex-row gap-11 xl:gap-20 items-center justify-between">
-            <div className="w-full max-w-[280px] xl:w-[280px] flex-shrink-0 xl:-ml-[60px]">
+        <section className="relative mt-33 max-[767px]:mt-16.5 w-screen left-[calc(50%-50vw)] px-11 max-[767px]:px-4">
+          <div className="max-w-360 mx-auto w-full flex flex-col xl:flex-row gap-11 xl:gap-20 items-center justify-between">
+            <div className="w-full max-w-70 xl:w-70 shrink-0 xl:-ml-15">
               <LocationPlaceholder />
             </div>
             <div className="w-full flex-1 overflow-visible relative">
@@ -95,12 +95,12 @@ export default function Home() {
         </section>
 
         {/* ===== SECTION 6: Letter Printout & Spotify Player ===== */}
-        <section className="relative mt-[132px] max-[767px]:mt-[66px] w-[100vw] left-[calc(50%-50vw)] px-11 max-[767px]:px-4 flex justify-center overflow-visible">
-          <div className="w-full max-w-[1500px] flex flex-col xl:flex-row items-center justify-between gap-11 xl:gap-20">
-            <div className="w-full xl:flex-1 max-w-[1100px] xl:-ml-[40px]">
+        <section className="relative mt-33 max-[767px]:mt-16.5 w-screen left-[calc(50%-50vw)] px-11 max-[767px]:px-4 flex justify-center overflow-visible">
+          <div className="w-full max-w-375 flex flex-col xl:flex-row items-center justify-between gap-11 xl:gap-20">
+            <div className="w-full xl:flex-1 max-w-275 xl:-ml-10">
               <LetterPrintout />
             </div>
-            <div className="w-full max-w-[400px] flex-shrink-0">
+            <div className="w-full max-w-100 shrink-0">
               <SpotifyPlayer />
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function Home() {
       </div>
 
       {/* ===== SECTION 7: Code Section (light background) ===== */}
-      <section className="relative mt-[132px] max-[767px]:mt-[66px] text-carbon bg-white selection:bg-foam selection:text-carbon overflow-visible pb-[100px] w-full">
+      <section className="relative mt-33 max-[767px]:mt-16.5 text-carbon bg-white selection:bg-foam selection:text-carbon overflow-visible pb-25 w-full">
         <CodeSection />
       </section>
     </div>

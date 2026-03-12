@@ -2,7 +2,6 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useRouter } from "@/src/i18n/routing";
-import { LanguageSwitcher } from "../../../components/LanguageSwitcher";
 
 interface HistoryItem {
   id: string;
@@ -65,14 +64,14 @@ export default function TerminalPage() {
         id: "welcome1",
         type: "output",
         content: (
-          <div className="text-[#333333] font-bold mb-1">👋 Welcome to linlin's Terminal!</div>
+          <div className="text-soot font-bold mb-1">👋 Welcome to linlin's Terminal!</div>
         ),
       },
       {
         id: "welcome2",
         type: "output",
         content: (
-          <div className="mb-1 text-[#666666]">
+          <div className="mb-1 text-smoke">
             Type <span className="text-[#0066cc] font-bold">'help'</span> to see what you can do, or
             start exploring!
           </div>
@@ -82,7 +81,7 @@ export default function TerminalPage() {
         id: "welcome3",
         type: "output",
         content: (
-          <div className="mb-4 text-[#666666]">
+          <div className="mb-4 text-smoke">
             Type <span className="text-[#0066cc] font-bold">'clear'</span> to clear the terminal.
           </div>
         ),
@@ -124,58 +123,58 @@ export default function TerminalPage() {
         outputContent = (
           <div className="flex flex-col gap-6 mb-4 mt-2">
             <div>
-              <div className="font-bold mb-2 text-[#333333]">🚀 Core Commands:</div>
+              <div className="font-bold mb-2 text-soot">🚀 Core Commands:</div>
               <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[200px_1fr] gap-x-2 gap-y-1">
                 <div className="text-[#0066cc] font-medium">help</div>
-                <div className="text-[#666666]"># Discover everything you can do here.</div>
+                <div className="text-smoke"># Discover everything you can do here.</div>
                 <div className="text-[#0066cc] font-medium">clear</div>
-                <div className="text-[#666666]"># Clear the terminal.</div>
+                <div className="text-smoke"># Clear the terminal.</div>
                 <div className="text-[#0066cc] font-medium">version</div>
-                <div className="text-[#666666]"># See the latest updates on my site.</div>
+                <div className="text-smoke"># See the latest updates on my site.</div>
                 <div className="text-[#0066cc] font-medium">echo $MISSION</div>
-                <div className="text-[#666666]"># explore about my mission</div>
+                <div className="text-smoke"># explore about my mission</div>
                 <div className="text-[#0066cc] font-medium">ls</div>
-                <div className="text-[#666666]"># Explore this site.</div>
+                <div className="text-smoke"># Explore this site.</div>
                 <div className="text-[#0066cc] font-medium">ls projects</div>
-                <div className="text-[#666666]"># Explore ongoing projects.</div>
+                <div className="text-smoke"># Explore ongoing projects.</div>
               </div>
             </div>
             <div>
-              <div className="font-bold mb-2 text-[#333333]">📝 Blog Commands:</div>
+              <div className="font-bold mb-2 text-soot">📝 Blog Commands:</div>
               <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[200px_1fr] gap-x-2 gap-y-1">
                 <div className="text-[#0066cc] font-medium">blog status</div>
-                <div className="text-[#666666]"># check this site still alive</div>
+                <div className="text-smoke"># check this site still alive</div>
                 <div className="text-[#0066cc] font-medium">blog owner latest</div>
-                <div className="text-[#666666]"># get to know my recent situation</div>
+                <div className="text-smoke"># get to know my recent situation</div>
                 <div className="text-[#0066cc] font-medium">blog comments</div>
-                <div className="text-[#666666]"># Let's see who's talking bad about me</div>
+                <div className="text-smoke"># Let's see who's talking bad about me</div>
                 <div className="text-[#0066cc] font-medium">blog devlog</div>
-                <div className="text-[#666666]"># dev logs</div>
+                <div className="text-smoke"># dev logs</div>
               </div>
             </div>
             <div>
-              <div className="font-bold mb-2 text-[#333333]">🎁 Easter Egg Hunt:</div>
+              <div className="font-bold mb-2 text-soot">🎁 Easter Egg Hunt:</div>
               <div className="grid grid-cols-[150px_1fr] sm:grid-cols-[200px_1fr] gap-x-2 gap-y-1">
                 <div className="text-[#e3554e] font-medium">show_story</div>
-                <div className="text-[#666666]"># Laugh,my friend.</div>
+                <div className="text-smoke"># Laugh,my friend.</div>
                 <div className="text-[#e3554e] font-medium">whoami</div>
-                <div className="text-[#666666]"># Soul torture</div>
+                <div className="text-smoke"># Soul torture</div>
                 <div className="text-[#e3554e] font-medium">sudo useradd {"{name}"}</div>
-                <div className="text-[#666666]">
+                <div className="text-smoke">
                   # Want special privileges? Try announcing your name
                 </div>
                 <div className="text-[#e3554e] font-medium">rustup challenge</div>
-                <div className="text-[#666666]"># Test your rusty level</div>
+                <div className="text-smoke"># Test your rusty level</div>
                 <div className="text-[#e3554e] font-medium">ls -a</div>
-                <div className="text-[#666666]">
+                <div className="text-smoke">
                   # Shh, don't let anyone know you secretly read the hidden file.
                 </div>
                 <div className="text-[#e3554e] font-medium">pwd</div>
-                <div className="text-[#666666]"># find the backend admin username and password</div>
+                <div className="text-smoke"># find the backend admin username and password</div>
                 <div className="text-[#e3554e] font-medium">rm</div>
-                <div className="text-[#666666]"># HeiHei</div>
+                <div className="text-smoke"># HeiHei</div>
                 <div className="text-[#e3554e] font-medium">rm -rf</div>
-                <div className="text-[#666666]"># You dare?</div>
+                <div className="text-smoke"># You dare?</div>
               </div>
             </div>
           </div>
@@ -186,18 +185,18 @@ export default function TerminalPage() {
         return;
       case "version":
         outputContent = (
-          <div className="mb-4 text-[#333333]">v1.500 (最新的，也许比昨天少了一些bug吧...)</div>
+          <div className="mb-4 text-soot">v1.500 (最新的，也许比昨天少了一些bug吧...)</div>
         );
         break;
       case "whoami":
-        outputContent = <div className="mb-4 text-[#333333]">一个帅哥</div>;
+        outputContent = <div className="mb-4 text-soot">一个帅哥</div>;
         break;
       case "echo":
         if (parts[1] === "$MISSION") {
-          outputContent = <div className="mb-4 text-[#333333]">GET A JOB.RIGHT! N!O!W!.</div>;
+          outputContent = <div className="mb-4 text-soot">GET A JOB.RIGHT! N!O!W!.</div>;
         } else {
           outputContent = (
-            <div className="mb-4 text-[#333333]">
+            <div className="mb-4 text-soot">
               你让我说我就说? 好吧:“{parts.slice(1).join(" ")}” 🙄
             </div>
           );
@@ -243,21 +242,21 @@ export default function TerminalPage() {
       case "blog":
         if (parts[1] === "status") {
           outputContent = (
-            <div className="mb-4 text-[#333333]">博客状态：勉强活着，站长就不好说了</div>
+            <div className="mb-4 text-soot">博客状态：勉强活着，站长就不好说了</div>
           );
         } else if (parts[1] === "owner") {
           outputContent = (
-            <div className="mb-4 text-[#333333]">站长最近：忙着毕业就业 筹划旅行</div>
+            <div className="mb-4 text-soot">站长最近：忙着毕业就业 筹划旅行</div>
           );
         } else if (parts[1] === "comments") {
           outputContent = (
-            <div className="mb-4 text-[#333333]">"我和我朋友都觉得你挺招笑的。" --站长的来时路</div>
+            <div className="mb-4 text-soot">"我和我朋友都觉得你挺招笑的。" --站长的来时路</div>
           );
         } else if (parts[1] === "devlog") {
-          outputContent = <div className="mb-4 text-[#333333]">站长的秘密 不给你看</div>;
+          outputContent = <div className="mb-4 text-soot">站长的秘密 不给你看</div>;
         } else {
           outputContent = (
-            <div className="mb-4 text-[#333333]">
+            <div className="mb-4 text-soot">
               你想查啥？输入 <span className="text-[#0066cc]">blog status</span> 或{" "}
               <span className="text-[#0066cc]">blog owner latest</span> 试试？别乱敲啦！
             </div>
@@ -265,7 +264,7 @@ export default function TerminalPage() {
         }
         break;
       case "show_story":
-        outputContent = <div className="mb-4 text-[#333333]">想要唐氏留得住，那就重走来时路。</div>;
+        outputContent = <div className="mb-4 text-soot">想要唐氏留得住，那就重走来时路。</div>;
         break;
       case "rustup":
         if (parts[1] === "challenge") {
@@ -276,7 +275,7 @@ export default function TerminalPage() {
           );
         } else {
           outputContent = (
-            <div className="mb-4 text-[#333333]">
+            <div className="mb-4 text-soot">
               你要干嘛？输入 <span className="text-[#e3554e]">rustup challenge</span> 试试你的水平。
             </div>
           );
@@ -311,12 +310,12 @@ export default function TerminalPage() {
           outputContent = (
             <div className="text-red-500 mb-4 animate-bounce font-bold">
               💥 BOOM! 系统已销毁... <br />
-              <span className="text-[#333333] font-normal">删库跑路 已报警</span>
+              <span className="text-soot font-normal">删库跑路 已报警</span>
             </div>
           );
         } else {
           outputContent = (
-            <div className="mb-4 text-[#333333]">
+            <div className="mb-4 text-soot">
               想删东西？先带上 <span className="text-[#e3554e]">-rf</span> 试试
             </div>
           );
@@ -408,7 +407,7 @@ export default function TerminalPage() {
             </svg>
           </div>
           <div
-            className="cursor-pointer text-[#666666] hover:bg-[#d0d0d0] hover:text-[#333] transition-colors flex items-center justify-center w-8 h-8 rounded-sm"
+            className="cursor-pointer text-smoke hover:bg-[#d0d0d0] hover:text-[#333] transition-colors flex items-center justify-center w-8 h-8 rounded-sm"
             onClick={handleClose}
           >
             <svg
@@ -422,7 +421,7 @@ export default function TerminalPage() {
             </svg>
           </div>
           <div
-            className="cursor-pointer text-[#666666] hover:text-white hover:bg-[#e81123] transition-colors w-8 h-8 flex items-center justify-center rounded-sm"
+            className="cursor-pointer text-smoke hover:text-white hover:bg-[#e81123] transition-colors w-8 h-8 flex items-center justify-center rounded-sm"
             onClick={handleClose}
           >
             <svg
@@ -451,7 +450,7 @@ export default function TerminalPage() {
             {item.type === "input" && (
               <div className="flex gap-2 items-start sm:items-center mb-1 flex-col sm:flex-row">
                 <span className="text-[#0066cc] whitespace-nowrap font-bold">guest@linlin:~$</span>
-                <span className="break-all text-[#333333] font-medium">{item.content}</span>
+                <span className="break-all text-soot font-medium">{item.content}</span>
               </div>
             )}
             {item.type !== "input" && <div>{item.content}</div>}
@@ -474,7 +473,7 @@ export default function TerminalPage() {
               autoComplete="off"
             />
             {/* Custom Caret Rendering */}
-            <div className="pointer-events-none flex font-inherit whitespace-pre-wrap break-all items-center text-[#333333] font-medium">
+            <div className="pointer-events-none flex font-inherit whitespace-pre-wrap break-all items-center text-soot font-medium">
               <span>{input}</span>
               <span className="w-2 sm:w-2.5 bg-[#0066cc] animate-pulse h-4 sm:h-5 md:h-6 ml-0.5 inline-block" />
             </div>
