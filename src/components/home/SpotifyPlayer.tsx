@@ -5,21 +5,27 @@ import { Play, Pause, SkipBack, SkipForward, Volume2, VolumeX } from "lucide-rea
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-// Placeholder tracks
 const TRACKS = [
   {
     id: 1,
-    title: "Chill Vibes",
-    artist: "Lofi Beats",
-    cover: "/about/cover.jpg",
-    audioUrl: "https://actions.google.com/sounds/v1/water/rain_on_roof.ogg",
+    title: "Apocalypse",
+    artist: "Cigarettes After Sex",
+    cover: "/spotify/1.jpg",
+    audioUrl: "/spotify/cas.mp3",
   },
   {
     id: 2,
-    title: "Focus",
-    artist: "Deep Work",
-    cover: "/about/avatar.jpg",
-    audioUrl: "https://actions.google.com/sounds/v1/nature/river_stream.ogg",
+    title: "Mrs Magic",
+    artist: "Starwberry Guy",
+    cover: "/spotify/2.jpg",
+    audioUrl: "/spotify/mrs.mp3",
+  },
+  {
+    id: 3,
+    title: "Summertime Sadness",
+    artist: "Lana Del Rey",
+    cover: "/spotify/3.jpg",
+    audioUrl: "/spotify/lana.mp3",
   },
 ];
 
