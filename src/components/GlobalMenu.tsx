@@ -18,7 +18,7 @@ export function GlobalMenu() {
         { label: t("messages"), href: "/messages" },
         { label: t("photo"), href: "/photos" },
         { label: t("terminal"), href: "/terminal" },
-        { label: t("admin"), href: "/admin" }
+        { label: t("admin"), href: "/admin" },
       ]}
       socialItems={[
         { label: "Telegram", href: "https://t.me/szuLin" },

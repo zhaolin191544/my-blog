@@ -11,7 +11,7 @@ export function LanguageSwitcher() {
   const t_dialog = useTranslations("dialogs");
   const router = useRouter();
   const pathname = usePathname();
-  
+
   const [podcastOpen, setPodcastOpen] = useState(false);
   const [videoOpen, setVideoOpen] = useState(false);
 
@@ -30,21 +30,29 @@ export function LanguageSwitcher() {
     <>
       <div className="absolute top-11.75 right-42.5 max-[767px]:right-35 z-50 flex items-center gap-5">
         {/* Podcast (Mic) Button */}
-        <button onClick={() => setPodcastOpen(true)} className={iconClass2} title={t_dialog("podcast_title")}>
+        <button
+          onClick={() => setPodcastOpen(true)}
+          className={iconClass2}
+          title={t_dialog("podcast_title")}
+        >
           <Mic size={22} strokeWidth={2} />
         </button>
 
         {/* Video (TV) Button */}
-        <button onClick={() => setVideoOpen(true)} className={iconClass2} title={t_dialog("video_title")}>
+        <button
+          onClick={() => setVideoOpen(true)}
+          className={iconClass2}
+          title={t_dialog("video_title")}
+        >
           <Tv size={22} strokeWidth={2} />
         </button>
 
         {/* RSS Button (Now functional) */}
-        <a 
-          href="/api/rss" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className={iconClass2} 
+        <a
+          href="/api/rss"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={iconClass2}
           title="RSS Feed"
         >
           <Rss size={20} strokeWidth={2.5} />
@@ -72,9 +80,7 @@ export function LanguageSwitcher() {
             <p className="text-smoke leading-relaxed text-sm whitespace-pre-line">
               {t_dialog("podcast_description")}
             </p>
-            <p className="mt-4 text-xs text-aluminum italic">
-              {t_dialog("podcast_footer")}
-            </p>
+            <p className="mt-4 text-xs text-aluminum italic">{t_dialog("podcast_footer")}</p>
           </div>
         </DialogContent>
       </Dialog>
@@ -91,9 +97,7 @@ export function LanguageSwitcher() {
             <p className="text-smoke leading-relaxed text-sm whitespace-pre-line">
               {t_dialog("video_description")}
             </p>
-            <p className="mt-4 text-xs text-aluminum italic">
-              {t_dialog("video_footer")}
-            </p>
+            <p className="mt-4 text-xs text-aluminum italic">{t_dialog("video_footer")}</p>
           </div>
         </DialogContent>
       </Dialog>

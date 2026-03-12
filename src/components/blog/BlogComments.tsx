@@ -76,9 +76,7 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
       <form onSubmit={handleSubmit} className="mb-12 space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="block text-xs text-ash font-serif mb-1.5">
-              {t("comment_name")}
-            </label>
+            <label className="block text-xs text-ash font-serif mb-1.5">{t("comment_name")}</label>
             <input
               type="text"
               value={name}
@@ -88,9 +86,7 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
             />
           </div>
           <div>
-            <label className="block text-xs text-ash font-serif mb-1.5">
-              {t("comment_email")}
-            </label>
+            <label className="block text-xs text-ash font-serif mb-1.5">{t("comment_email")}</label>
             <input
               type="email"
               value={email}
@@ -101,9 +97,7 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
           </div>
         </div>
         <div>
-          <label className="block text-xs text-ash font-serif mb-1.5">
-            {t("comment_content")}
-          </label>
+          <label className="block text-xs text-ash font-serif mb-1.5">{t("comment_content")}</label>
           <textarea
             value={content}
             onChange={(e) => setContent(e.target.value)}
@@ -114,12 +108,8 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
         </div>
         <p className="text-xs text-cement font-serif">{t("comment_email_privacy")}</p>
 
-        {successMsg && (
-          <p className="text-sm text-green-600 font-serif">{successMsg}</p>
-        )}
-        {errorMsg && (
-          <p className="text-sm text-red-500 font-serif">{errorMsg}</p>
-        )}
+        {successMsg && <p className="text-sm text-green-600 font-serif">{successMsg}</p>}
+        {errorMsg && <p className="text-sm text-red-500 font-serif">{errorMsg}</p>}
 
         <button
           type="submit"
@@ -132,9 +122,7 @@ export function BlogComments({ postId, initialComments }: BlogCommentsProps) {
 
       {/* Comments List */}
       {comments.length === 0 ? (
-        <p className="text-cement text-sm font-serif italic">
-          {t("comment_empty")}
-        </p>
+        <p className="text-cement text-sm font-serif italic">{t("comment_empty")}</p>
       ) : (
         <div className="space-y-6">
           {comments.map((comment) => (

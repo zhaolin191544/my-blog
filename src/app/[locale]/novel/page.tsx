@@ -26,9 +26,7 @@ export default function NovelListPage() {
         const res = await fetch("/api/novels");
         const data = await res.json();
         // Filter published novels on client side
-        setNovels(
-          (data || []).filter((n: Novel) => n.published)
-        );
+        setNovels((data || []).filter((n: Novel) => n.published));
       } catch (err) {
         console.error("Failed to fetch novels:", err);
       } finally {
@@ -52,9 +50,7 @@ export default function NovelListPage() {
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
             {t("title")}
           </h1>
-          <p className="mt-2 text-ash text-sm font-serif italic">
-            {t("subtitle")}
-          </p>
+          <p className="mt-2 text-ash text-sm font-serif italic">{t("subtitle")}</p>
         </header>
 
         <main className="px-8 max-[767px]:px-5 py-6 pb-24">

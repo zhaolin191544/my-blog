@@ -50,7 +50,7 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
         });
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
-        // We don't want to fail the whole request if email fails, 
+        // We don't want to fail the whole request if email fails,
         // but we'll log it.
       }
     }

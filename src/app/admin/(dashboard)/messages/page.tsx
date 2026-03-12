@@ -1,7 +1,15 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { Mail, MailOpen, Trash2, ShieldAlert, ShieldCheck, Inbox, MessageSquareReply } from "lucide-react";
+import {
+  Mail,
+  MailOpen,
+  Trash2,
+  ShieldAlert,
+  ShieldCheck,
+  Inbox,
+  MessageSquareReply,
+} from "lucide-react";
 import { format } from "date-fns";
 
 interface Message {
@@ -179,9 +187,11 @@ export default function MessagesPage() {
               {expandedId === msg.id && (
                 <div className="border-t border-neutral-100 px-4 py-3">
                   <p className="whitespace-pre-wrap text-sm text-neutral-700">{msg.content}</p>
-                  
+
                   <div className="mt-4 pt-4 border-t border-neutral-100">
-                    <label className="block text-xs font-medium text-neutral-500 mb-2">站长回复</label>
+                    <label className="block text-xs font-medium text-neutral-500 mb-2">
+                      站长回复
+                    </label>
                     <textarea
                       value={replyContent}
                       onChange={(e) => setReplyContent(e.target.value)}

@@ -57,9 +57,7 @@ export default function NovelDetailPage() {
   // Filter published chapters
   const publishedChapters = useMemo(() => {
     if (!novel) return [];
-    return novel.chapters
-      .filter((ch) => ch.published)
-      .sort((a, b) => a.sortOrder - b.sortOrder);
+    return novel.chapters.filter((ch) => ch.published).sort((a, b) => a.sortOrder - b.sortOrder);
   }, [novel]);
 
   const isShortStory = publishedChapters.length === 1;

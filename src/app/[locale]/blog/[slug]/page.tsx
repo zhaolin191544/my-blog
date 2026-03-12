@@ -34,7 +34,10 @@ interface BlogPost {
 }
 
 function estimateReadTime(html: string): number {
-  const text = html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+  const text = html
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   return Math.max(1, Math.ceil(text.length / 400));
 }
 
@@ -108,11 +111,7 @@ export default function BlogArticlePage() {
                 {/* Cover Image */}
                 {post.cover && (
                   <div className="mb-8 rounded-lg overflow-hidden">
-                    <img
-                      src={post.cover}
-                      alt={post.title}
-                      className="w-full h-auto object-cover"
-                    />
+                    <img src={post.cover} alt={post.title} className="w-full h-auto object-cover" />
                   </div>
                 )}
 
@@ -123,9 +122,7 @@ export default function BlogArticlePage() {
 
                 {/* Meta */}
                 <div className="flex items-center gap-3 mt-4 mb-10 text-cement text-xs font-serif">
-                  <time>
-                    {format(new Date(post.createdAt), "MMMM d, yyyy")}
-                  </time>
+                  <time>{format(new Date(post.createdAt), "MMMM d, yyyy")}</time>
                   <span className="text-enamel">·</span>
                   <span>
                     {estimateReadTime(post.content)} {t("min_read")}
@@ -142,10 +139,7 @@ export default function BlogArticlePage() {
                 />
 
                 {/* Comments */}
-                <BlogComments
-                  postId={post.id}
-                  initialComments={post.comments}
-                />
+                <BlogComments postId={post.id} initialComments={post.comments} />
               </article>
 
               {/* TOC Sidebar - Desktop Only */}

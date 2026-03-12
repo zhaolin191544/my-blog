@@ -32,7 +32,10 @@ function groupByYear(articles: MrsZhaoArticle[]): YearGroup[] {
 }
 
 function estimateReadTime(html: string): number {
-  const text = html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+  const text = html
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   const chars = text.length;
   return Math.max(1, Math.ceil(chars / 400));
 }
@@ -73,9 +76,7 @@ export default function MrsZhaoPage() {
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
             {t("title")}
           </h1>
-          <p className="mt-2 text-ash text-sm font-serif italic">
-            {t("subtitle")}
-          </p>
+          <p className="mt-2 text-ash text-sm font-serif italic">{t("subtitle")}</p>
         </header>
 
         <main className="px-8 max-[767px]:px-5 py-6 pb-24">
@@ -111,7 +112,10 @@ export default function MrsZhaoPage() {
                         <div className="flex items-center gap-3 shrink-0 text-cement text-xs font-serif whitespace-nowrap">
                           <span>{format(new Date(article.publishAt), "MMM d")}</span>
                           <span className="text-enamel">·</span>
-                          <span>{estimateReadTime(article.content)}{t("min_read")}</span>
+                          <span>
+                            {estimateReadTime(article.content)}
+                            {t("min_read")}
+                          </span>
                         </div>
                       </Link>
                     ))}

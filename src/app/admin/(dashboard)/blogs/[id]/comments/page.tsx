@@ -146,7 +146,9 @@ export default function CommentsPage() {
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-neutral-600 whitespace-pre-wrap">{comment.reply}</p>
+                      <p className="text-sm text-neutral-600 whitespace-pre-wrap">
+                        {comment.reply}
+                      </p>
                     </div>
                   )}
 
@@ -170,7 +172,10 @@ export default function CommentsPage() {
                           {replying ? "发送中..." : "保存回复"}
                         </button>
                         <button
-                          onClick={() => { setReplyingTo(null); setReplyText(""); }}
+                          onClick={() => {
+                            setReplyingTo(null);
+                            setReplyText("");
+                          }}
                           className="rounded-lg px-3 py-1.5 text-xs text-neutral-500 transition-colors hover:bg-neutral-100"
                         >
                           取消

@@ -34,7 +34,10 @@ function groupByYear(articles: BlogPost[]): YearGroup[] {
 }
 
 function estimateReadTime(html: string): number {
-  const text = html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
+  const text = html
+    .replace(/<[^>]*>/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
   const chars = text.length;
   return Math.max(1, Math.ceil(chars / 400));
 }
@@ -75,9 +78,7 @@ export default function BlogPage() {
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
             {t("title")}
           </h1>
-          <p className="mt-2 text-ash text-sm font-serif italic">
-            {t("subtitle")}
-          </p>
+          <p className="mt-2 text-ash text-sm font-serif italic">{t("subtitle")}</p>
         </header>
 
         <main className="px-8 max-[767px]:px-5 py-6 pb-24">
@@ -109,9 +110,7 @@ export default function BlogPage() {
                           {post.title}
                         </h3>
                         <div className="flex items-center gap-3 shrink-0 text-cement text-xs font-serif whitespace-nowrap">
-                          <span>
-                            {format(new Date(post.createdAt), "MMM d")}
-                          </span>
+                          <span>{format(new Date(post.createdAt), "MMM d")}</span>
                           <span className="text-enamel">·</span>
                           <span>
                             {estimateReadTime(post.content)}

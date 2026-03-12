@@ -48,9 +48,7 @@ export default function ShortsPage() {
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
             {t("title")}
           </h1>
-          <p className="mt-2 text-ash text-sm font-serif italic">
-            {t("subtitle")}
-          </p>
+          <p className="mt-2 text-ash text-sm font-serif italic">{t("subtitle")}</p>
         </header>
 
         <main className="px-8 max-[767px]:px-5 py-12">

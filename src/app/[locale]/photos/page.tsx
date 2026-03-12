@@ -5,9 +5,12 @@ import { Link } from "@/src/i18n/routing";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 
-const CircularGallery = dynamic(() => import("@/src/components/photos/CircularGallery/CircularGallery"), {
-  ssr: false,
-});
+const CircularGallery = dynamic(
+  () => import("@/src/components/photos/CircularGallery/CircularGallery"),
+  {
+    ssr: false,
+  },
+);
 
 interface Photo {
   id: string;
@@ -77,9 +80,7 @@ export default function PhotosPage() {
           <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
             {t("title")}
           </h1>
-          <p className="mt-2 text-ash text-sm font-serif italic">
-            {t("subtitle")}
-          </p>
+          <p className="mt-2 text-ash text-sm font-serif italic">{t("subtitle")}</p>
         </header>
 
         {/* Region Tags */}
@@ -132,7 +133,9 @@ export default function PhotosPage() {
                       <h2 className="font-serif text-2xl max-[767px]:text-xl text-carbon tracking-tight">
                         {region}
                       </h2>
-                      <span className="text-xs text-cement font-serif">{photos.length} {t("photos_count")}</span>
+                      <span className="text-xs text-cement font-serif">
+                        {photos.length} {t("photos_count")}
+                      </span>
                       <div className="flex-1 h-px bg-enamel" />
                     </div>
 
@@ -150,7 +153,9 @@ export default function PhotosPage() {
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center">
-                          <p className="text-cement text-sm font-serif italic">{t("gallery_empty")}</p>
+                          <p className="text-cement text-sm font-serif italic">
+                            {t("gallery_empty")}
+                          </p>
                         </div>
                       )}
                     </div>
@@ -170,7 +175,8 @@ export default function PhotosPage() {
         <footer className="border-t border-enamel mt-16">
           <div className="px-8 max-[767px]:px-5 py-6">
             <p className="text-[11px] text-cement font-serif">
-              {Object.values(photosByRegion).flat().length} {t("photos_count")} &middot; {regions.length} {t("places_count")}
+              {Object.values(photosByRegion).flat().length} {t("photos_count")} &middot;{" "}
+              {regions.length} {t("places_count")}
             </p>
           </div>
         </footer>

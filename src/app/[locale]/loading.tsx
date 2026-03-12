@@ -20,7 +20,7 @@ export default function Loading() {
           <h2 className="animate-pulse font-serif text-2xl tracking-wide text-carbon">
             {t("title")}
           </h2>
-          
+
           <p className="border-t border-enamel pt-5 font-serif text-sm leading-relaxed text-smoke opacity-80">
             {t("disclaimer")}
           </p>

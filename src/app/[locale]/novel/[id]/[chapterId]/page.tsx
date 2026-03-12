@@ -54,15 +54,11 @@ export default function ChapterReaderPage() {
   // Published chapters sorted by sortOrder
   const publishedChapters = useMemo(() => {
     if (!novel) return [];
-    return novel.chapters
-      .filter((ch) => ch.published)
-      .sort((a, b) => a.sortOrder - b.sortOrder);
+    return novel.chapters.filter((ch) => ch.published).sort((a, b) => a.sortOrder - b.sortOrder);
   }, [novel]);
 
   // Find current chapter and prev/next
-  const currentIndex = publishedChapters.findIndex(
-    (ch) => ch.id === params.chapterId
-  );
+  const currentIndex = publishedChapters.findIndex((ch) => ch.id === params.chapterId);
   const currentChapter = currentIndex >= 0 ? publishedChapters[currentIndex] : null;
   const prevChapter = currentIndex > 0 ? publishedChapters[currentIndex - 1] : null;
   const nextChapter =
@@ -134,9 +130,7 @@ export default function ChapterReaderPage() {
                     href={`/novel/${novel.id}/${prevChapter.id}`}
                     className="group flex flex-col items-start gap-1 max-w-[45%]"
                   >
-                    <span className="text-xs text-cement font-serif">
-                      {t("prev_chapter")}
-                    </span>
+                    <span className="text-xs text-cement font-serif">{t("prev_chapter")}</span>
                     <span className="text-sm font-serif text-ash group-hover:text-amber transition-colors truncate max-w-full">
                       {prevChapter.title}
                     </span>
@@ -150,9 +144,7 @@ export default function ChapterReaderPage() {
                     href={`/novel/${novel.id}/${nextChapter.id}`}
                     className="group flex flex-col items-end gap-1 max-w-[45%]"
                   >
-                    <span className="text-xs text-cement font-serif">
-                      {t("next_chapter")}
-                    </span>
+                    <span className="text-xs text-cement font-serif">{t("next_chapter")}</span>
                     <span className="text-sm font-serif text-ash group-hover:text-amber transition-colors truncate max-w-full">
                       {nextChapter.title}
                     </span>

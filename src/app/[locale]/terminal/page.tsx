@@ -63,9 +63,7 @@ export default function TerminalPage() {
       {
         id: "welcome1",
         type: "output",
-        content: (
-          <div className="text-soot font-bold mb-1">👋 Welcome to linlin's Terminal!</div>
-        ),
+        content: <div className="text-soot font-bold mb-1">👋 Welcome to linlin's Terminal!</div>,
       },
       {
         id: "welcome2",
@@ -241,13 +239,9 @@ export default function TerminalPage() {
         break;
       case "blog":
         if (parts[1] === "status") {
-          outputContent = (
-            <div className="mb-4 text-soot">博客状态：勉强活着，站长就不好说了</div>
-          );
+          outputContent = <div className="mb-4 text-soot">博客状态：勉强活着，站长就不好说了</div>;
         } else if (parts[1] === "owner") {
-          outputContent = (
-            <div className="mb-4 text-soot">站长最近：忙着毕业就业 筹划旅行</div>
-          );
+          outputContent = <div className="mb-4 text-soot">站长最近：忙着毕业就业 筹划旅行</div>;
         } else if (parts[1] === "comments") {
           outputContent = (
             <div className="mb-4 text-soot">"我和我朋友都觉得你挺招笑的。" --站长的来时路</div>

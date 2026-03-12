@@ -4,7 +4,15 @@ import { useEffect, useState } from "react";
 import { Link } from "@/src/i18n/routing";
 import { format } from "date-fns";
 import { MagicCard } from "@/src/components/magicui/magic-card";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogDescription, DialogFooter } from "@/src/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+  DialogDescription,
+  DialogFooter,
+} from "@/src/components/ui/dialog";
 import { Input } from "@/src/components/ui/input";
 import { Textarea } from "@/src/components/ui/textarea";
 import { Button } from "@/src/components/ui/button";
@@ -96,9 +104,7 @@ export default function MessagesPage() {
             <h1 className="italic font-serif text-4xl max-[767px]:text-3xl font-normal tracking-tight text-carbon">
               {t("title")}
             </h1>
-            <p className="mt-2 text-ash text-sm font-serif italic">
-              {t("subtitle")}
-            </p>
+            <p className="mt-2 text-ash text-sm font-serif italic">{t("subtitle")}</p>
           </div>
 
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
@@ -111,7 +117,9 @@ export default function MessagesPage() {
             <DialogContent className="sm:max-w-106.25">
               <form onSubmit={handleSubmit}>
                 <DialogHeader>
-                  <DialogTitle className="font-serif italic text-xl">{t("leave_message")}</DialogTitle>
+                  <DialogTitle className="font-serif italic text-xl">
+                    {t("leave_message")}
+                  </DialogTitle>
                   <DialogDescription className="font-serif text-sm">
                     {t("email_privacy")}
                   </DialogDescription>
@@ -190,11 +198,13 @@ export default function MessagesPage() {
                         <p className="text-sm text-neutral-800 dark:text-neutral-200 leading-relaxed font-serif whitespace-pre-wrap">
                           {message.content}
                         </p>
-                        
+
                         {message.reply && (
                           <div className="mt-4 pt-3 border-t border-neutral-100 dark:border-neutral-800">
                             <div className="flex items-center gap-2 mb-1">
-                              <span className="text-xs font-semibold text-amber-600 dark:text-amber-500">{t("admin")}</span>
+                              <span className="text-xs font-semibold text-amber-600 dark:text-amber-500">
+                                {t("admin")}
+                              </span>
                               {message.repliedAt && (
                                 <span className="text-[10px] text-neutral-400">
                                   {format(new Date(message.repliedAt), "MMM d, yyyy")}
@@ -207,9 +217,11 @@ export default function MessagesPage() {
                           </div>
                         )}
                       </div>
-                      
+
                       <div className="flex items-center justify-between mt-auto pt-4 text-xs font-serif border-t border-neutral-100 dark:border-neutral-800">
-                        <span className="font-semibold text-neutral-700 dark:text-neutral-300">{message.name}</span>
+                        <span className="font-semibold text-neutral-700 dark:text-neutral-300">
+                          {message.name}
+                        </span>
                         <span className="text-neutral-400 dark:text-neutral-500">
                           {format(new Date(message.createdAt), "MMM d, yyyy")}
                         </span>

@@ -33,7 +33,7 @@ export function parseAndInjectHeadingIds(html: string): {
       // Rebuild the tag with the id injected
       const cleanAttrs = (attrs || "").replace(/\s*id\s*=\s*["'][^"']*["']/gi, "");
       return `<${tag}${cleanAttrs} id="${id}">${content}</${tag}>`;
-    }
+    },
   );
 
   return { html: processed, headings };
@@ -61,7 +61,7 @@ export function TableOfContents({ headings, title = "目录" }: TableOfContentsP
       {
         rootMargin: "-80px 0px -70% 0px",
         threshold: 0,
-      }
+      },
     );
 
     // Small delay to ensure DOM is ready after dangerouslySetInnerHTML
@@ -90,21 +90,14 @@ export function TableOfContents({ headings, title = "目录" }: TableOfContentsP
 
   return (
     <nav className="sticky top-24 max-h-[70vh] overflow-y-auto">
-      <p className="font-serif text-xs uppercase tracking-widest text-cement mb-4">
-        {title}
-      </p>
+      <p className="font-serif text-xs uppercase tracking-widest text-cement mb-4">{title}</p>
       <ul className="space-y-1.5">
         {headings.map((heading) => (
-          <li
-            key={heading.id}
-            style={{ paddingLeft: `${(heading.level - 1) * 12}px` }}
-          >
+          <li key={heading.id} style={{ paddingLeft: `${(heading.level - 1) * 12}px` }}>
             <button
               onClick={() => handleClick(heading.id)}
               className={`text-left text-sm font-serif leading-snug transition-colors duration-200 hover:text-carbon ${
-                activeId === heading.id
-                  ? "text-amber font-medium"
-                  : "text-ash"
+                activeId === heading.id ? "text-amber font-medium" : "text-ash"
               }`}
             >
               {heading.text}

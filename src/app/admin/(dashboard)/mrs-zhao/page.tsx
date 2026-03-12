@@ -5,10 +5,13 @@ import { Trash2, Pencil, Plus, X, Check, Calendar } from "lucide-react";
 import { format } from "date-fns";
 import dynamic from "next/dynamic";
 
-const RichTextEditor = dynamic(() => import("@/src/components/admin/RichTextEditor").then((mod) => mod.RichTextEditor), {
-  ssr: false,
-  loading: () => <div className="h-[300px] rounded-lg border border-neutral-200 bg-neutral-50" />,
-});
+const RichTextEditor = dynamic(
+  () => import("@/src/components/admin/RichTextEditor").then((mod) => mod.RichTextEditor),
+  {
+    ssr: false,
+    loading: () => <div className="h-[300px] rounded-lg border border-neutral-200 bg-neutral-50" />,
+  },
+);
 
 interface MrsZhaoArticle {
   id: string;
