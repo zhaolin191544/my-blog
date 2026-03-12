@@ -12,7 +12,9 @@
     "messages": "Guestbook",
     "mrs_zhao": "Mrs. Zhao",
     "blog": "Blog",
-    "contact": "Contact"
+    "terminal": "Terminal",
+    "novel": "novel",
+    "admin": "admin"
   },
   "about": {
     "home_link": "⇦ Home",
@@ -78,7 +80,7 @@
   "photos": {
     "back": "⇦ back",
     "title": "Photos",
-    "subtitle": "places I've been, things I've seen",
+    "subtitle": "Places I've been, Things I've seen. I have a camera, but it's just sitting there, too lazy to touch it. Many of the photos were taken with my phone, and they're pretty bad, but I still like them a lot because seeing them reminds me of happy times from the past.",
     "loading": "loading...",
     "empty": "No photos yet",
     "photos_count": "photos",
@@ -89,7 +91,7 @@
   "mrsZhao": {
     "back": "⇦ back",
     "title": "Mrs. Zhao",
-    "subtitle": "her words, her stories",
+    "subtitle": "When I was in fifth or sixth grade, Mrs. Zhao bragged to me about how wonderful her old diaries were. She told me her dream was to one day compile all her old diaries into a book. But who reads books these days? Now, Ms. Zhao is engrossed in tutoring her fifth-grade daughter in preparation for the 2032 college entrance exam. She's probably long forgotten what she said, but I still remember that memory. So I asked her if she wanted to continue preserving her writing here. To that end, considering that people her age don't know Markdown or HTML, I specially rewrote a simple rich text editor component for her in the backend. Let's hope Ms. Zhao returns to the “literary world” someday.",
     "loading": "loading...",
     "empty": "No articles yet",
     "min_read": "min",
@@ -99,7 +101,7 @@
   "blog": {
     "back": "\u21e6 back",
     "title": "Blog",
-    "subtitle": "thoughts, stories, and everything in between",
+    "subtitle": "Some carefully considered and organized content, to be kept for future reference in old age.",
     "loading": "loading...",
     "empty": "No posts yet",
     "min_read": "min",
@@ -113,7 +115,7 @@
     "comment_email_placeholder": "your.email@example.com",
     "comment_content": "Comment",
     "comment_placeholder": "Share your thoughts...",
-    "comment_email_privacy": "Your email will be kept private and not displayed.",
+    "comment_email_privacy": "Your email will be kept private and not displayed. Please trust my backend technology. It's only used for sending and receiving reply notifications, and the emails in your inbox will look great.",
     "comment_submit": "Post Comment",
     "comment_submitting": "Submitting...",
     "comment_success": "Comment submitted, pending review.",
@@ -122,15 +124,29 @@
     "comment_empty": "No comments yet. Be the first!",
     "comment_admin_tag": "Admin"
   },
+  "novel": {
+    "back": "⇦ back",
+    "title": "Novel",
+    "subtitle": "Attempting to write some stories, long and short. I wrote a few short stories on Zhihu (a Chinese Q&A website), one of which inexplicably went viral, garnering over 100,000 views. That year started off quite happily, with readers urging me to update. However, this was followed by all sorts of strange people online, hurling insults and mockery. At first, I couldn't handle it, but later I got used to these kinds of people. I'd at least exchange a few words with them if they dared to send me a private message or comment. Eventually, I couldn't stand the disturbance anymore and deleted my Zhihu account. After moving to 1223, I suddenly developed a liking for reading tragic ending (BE) novels. One night during the winter break of 2026, I was chatting with Mr Jiang about brainstorming a BE story, which seemed very interesting. But now I'm so busy, I don't know when I'll write it, or even if I'll write it at all. After all, I've been saying I'd rebuild my old blog since 2024, and then it's been dragged on until 2026.",
+    "loading": "loading...",
+    "empty": "No novels yet",
+    "chapters_count": "chapters",
+    "back_to_list": "⇦ back to novels",
+    "back_to_novel": "⇦ back to contents",
+    "prev_chapter": "Previous",
+    "next_chapter": "Next",
+    "not_found": "Not found",
+    "short_story_tag": "Short Story"
+  },
   "messages": {
     "back": "⇦ back",
     "title": "Guestbook",
-    "subtitle": "leave a trace, share a thought",
+    "subtitle": "Let's chat, be friendly. This is a really nice message board, and you'll even receive a surprise in your email.",
     "leave_message": "Leave a message",
     "email_privacy": "Your email will be kept private and will not be displayed.",
     "name_label": "Name",
     "name_placeholder": "Your name",
-    "email_label": "Email",
+    "email_label": "Email(used to receive reply notifications)",
     "email_placeholder": "your.email@example.com",
     "message_label": "Message",
     "message_placeholder": "What's on your mind?",
@@ -142,5 +158,17 @@
     "toast_fill_fields": "Please fill in all fields.",
     "toast_success": "Message left successfully!",
     "toast_error": "An error occurred. Please try again."
+  },
+  "dialogs": {
+    "podcast_title": "Podcast",
+    "podcast_description": "Podcast features are in preparation.\nFuture sounds of tech, life, and random thoughts will be here.",
+    "podcast_footer": "Coming soon...",
+    "video_title": "Videos",
+    "video_description": "Video content is still on the editing table.\nStay tuned for upcoming visual stories and dev vlogs.",
+    "video_footer": "Stay tuned..."
+  },
+  "loading_page": {
+    "title": "Loading...",
+    "disclaimer": "This website is best viewed on a desktop screen. Although I have tried my best to adapt it for mobile, there are still some performance issues and imperfections."
   }
 }

@@ -58,7 +58,7 @@ export default function About() {
       >
         <header className="relative">
           <span className="absolute left-[1em] top-[1em] z-10">
-            <Link href="/" className="text-[aliceblue]!">
+            <Link href="/" className="text-[aliceblue]! max-[767px]:hidden">
               {t("home_link")}
             </Link>
           </span>

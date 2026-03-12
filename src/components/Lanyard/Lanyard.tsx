@@ -148,7 +148,7 @@ function Band({
   };
 
   const { nodes, materials } = useGLTF("/assets/card.glb") as any;
-  const texture = useTexture("/assets/lanyard.png");
+  const texture = useTexture("/assets/texture.jpg");
   const { width, height } = useThree((state) => state.size);
 
   const [curve] = useState(

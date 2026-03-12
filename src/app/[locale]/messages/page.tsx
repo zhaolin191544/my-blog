@@ -89,7 +89,7 @@ export default function MessagesPage() {
           <div>
             <Link
               href="/"
-              className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8"
+              className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8  max-[767px]:hidden"
             >
               {t("back")}
             </Link>

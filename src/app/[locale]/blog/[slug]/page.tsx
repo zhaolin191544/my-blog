@@ -1,18 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { Link } from "@/src/i18n/routing";
 import { format } from "date-fns";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
-import { TableOfContents } from "@/src/components/TableOfContents";
+import { TableOfContents, parseAndInjectHeadingIds } from "@/src/components/TableOfContents";
+import type { TocItem } from "@/src/components/TableOfContents";
 import { BlogComments } from "@/src/components/BlogComments";
 import { useParams } from "next/navigation";
 
 interface BlogComment {
   id: string;
   author: string;
-  email: string;
   content: string;
   approved: boolean;
   reply: string | null;
@@ -46,6 +46,13 @@ export default function BlogArticlePage() {
   const [loading, setLoading] = useState(true);
   const [notFound, setNotFound] = useState(false);
 
+  // Pre-process HTML: inject heading IDs and extract TOC items
+  const { processedHtml, tocHeadings } = useMemo(() => {
+    if (!post) return { processedHtml: "", tocHeadings: [] as TocItem[] };
+    const result = parseAndInjectHeadingIds(post.content);
+    return { processedHtml: result.html, tocHeadings: result.headings };
+  }, [post]);
+
   useEffect(() => {
     async function fetchPost() {
       try {
@@ -72,7 +79,7 @@ export default function BlogArticlePage() {
         <header className="px-8 max-[767px]:px-5 pt-10 pb-6">
           <Link
             href="/blog"
-            className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8"
+            className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8 max-[767px]:hidden"
           >
             {t("back_to_list")}
           </Link>
@@ -131,7 +138,7 @@ export default function BlogArticlePage() {
                 {/* Content */}
                 <div
                   className="prose-zhao font-serif text-base leading-[1.85] text-dark max-w-none"
-                  dangerouslySetInnerHTML={{ __html: post.content }}
+                  dangerouslySetInnerHTML={{ __html: processedHtml }}
                 />
 
                 {/* Comments */}
@@ -143,7 +150,7 @@ export default function BlogArticlePage() {
 
               {/* TOC Sidebar - Desktop Only */}
               <aside className="hidden min-[1024px]:block w-56 shrink-0">
-                <TableOfContents html={post.content} title={tocTitle} />
+                <TableOfContents headings={tocHeadings} title={tocTitle} />
               </aside>
             </div>
           )}

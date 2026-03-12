@@ -68,7 +68,7 @@ export default function BlogPage() {
         <header className="px-8 max-[767px]:px-5 pt-10 pb-6">
           <Link
             href="/"
-            className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8"
+            className="inline-block text-sm text-ash hover:text-carbon transition-colors mb-8  max-[767px]:hidden"
           >
             {t("back")}
           </Link>

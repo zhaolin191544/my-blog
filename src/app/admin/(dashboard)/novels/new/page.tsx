@@ -57,14 +57,25 @@ export default function NewNovelPage() {
           </Link>
           <h1 className="text-2xl font-bold text-neutral-900">新建小说</h1>
         </div>
-        <button
-          onClick={() => handleSave()}
-          disabled={saving}
-          className="flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2 text-sm font-medium text-white hover:bg-amber-600 disabled:opacity-50"
-        >
-          <Save className="h-4 w-4" />
-          {saving ? "保存中..." : "创建"}
-        </button>
+        <div className="flex items-center gap-4">
+          <label className="flex items-center gap-2 text-sm text-neutral-600 cursor-pointer">
+            <input
+              type="checkbox"
+              checked={form.published}
+              onChange={(e) => setForm((f) => ({ ...f, published: e.target.checked }))}
+              className="rounded border-neutral-300 text-amber-500 focus:ring-amber-400"
+            />
+            直接发布
+          </label>
+          <button
+            onClick={() => handleSave()}
+            disabled={saving}
+            className="flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2 text-sm font-medium text-white hover:bg-amber-600 disabled:opacity-50"
+          >
+            <Save className="h-4 w-4" />
+            {saving ? "保存中..." : "创建"}
+          </button>
+        </div>
       </div>
 
       <div className="space-y-6">

@@ -6,7 +6,6 @@ import { Editor } from "@/src/components/departure/Editor";
 import { CodeSection } from "@/src/components/departure/CodeSection";
 import { TerminalDemo } from "@/src/components/TerminalDemo";
 import FallingText from "@/src/components/FallingText";
-import { StaggeredMenu } from "@/src/components/StaggeredMenu/StaggeredMenu";
 import { WelcomeContent } from "@/src/components/WelcomeContent";
 import { StaggerTestimonials } from "@/src/components/StaggerTestimonials";
 import { LocationPlaceholder } from "@/src/components/LocationPlaceholder";
@@ -21,26 +20,6 @@ export default function Home() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <LanguageSwitcher />
-      {/* Navigation */}
-      <StaggeredMenu
-        items={[
-          { label: t("home"), href: "/" },
-          { label: t("about"), href: "/about" },
-          { label: t("photo"), href: "/photos" },
-          { label: t("shorts"), href: "/shorts" },
-          { label: t("messages"), href: "/messages" },
-          { label: t("blog"), href: "/blog" },
-          { label: t("mrs_zhao"), href: "/mrs-zhao" },
-          { label: t("contact"), href: "#contact" },
-        ]}
-        socialItems={[
-          { label: "GitHub", href: "https://github.com" },
-          { label: "Twitter", href: "https://twitter.com" },
-        ]}
-        position="right"
-        accentColor="#ffa133"
-        colors={["#bccabb", "#ffa133"]}
-      />
 
       {/* ===== SECTION 1: Header ===== */}
       <header className="relative max-w-360 mx-auto px-11 max-[767px]:px-4 pt-[100px] max-[767px]:pt-[70px]">

@@ -7,7 +7,6 @@ import { useTranslations } from "next-intl";
 interface BlogComment {
   id: string;
   author: string;
-  email: string;
   content: string;
   approved: boolean;
   reply: string | null;

@@ -1,47 +1,51 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 
-interface TocItem {
+export interface TocItem {
   id: string;
   text: string;
   level: number;
 }
 
-interface TableOfContentsProps {
+/**
+ * Parse headings from an HTML string and inject id attributes.
+ * Returns { html: processedHtml, headings: TocItem[] }
+ */
+export function parseAndInjectHeadingIds(html: string): {
   html: string;
+  headings: TocItem[];
+} {
+  const headings: TocItem[] = [];
+  let index = 0;
+
+  // Match <h1>, <h2>, <h3> tags — with or without existing attributes
+  const processed = html.replace(
+    /<(h[123])(\s[^>]*)?>([^]*?)<\/\1>/gi,
+    (match, tag: string, attrs: string | undefined, content: string) => {
+      const id = `heading-${index++}`;
+      const level = parseInt(tag[1]);
+      // Strip inner HTML tags to get plain text
+      const text = content.replace(/<[^>]*>/g, "").trim();
+      if (text) {
+        headings.push({ id, text, level });
+      }
+      // Rebuild the tag with the id injected
+      const cleanAttrs = (attrs || "").replace(/\s*id\s*=\s*["'][^"']*["']/gi, "");
+      return `<${tag}${cleanAttrs} id="${id}">${content}</${tag}>`;
+    }
+  );
+
+  return { html: processed, headings };
+}
+
+interface TableOfContentsProps {
+  headings: TocItem[];
   title?: string;
 }
 
-export function TableOfContents({ html, title = "目录" }: TableOfContentsProps) {
-  const [headings, setHeadings] = useState<TocItem[]>([]);
+export function TableOfContents({ headings, title = "目录" }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
-
-  // Parse headings from HTML and inject IDs into article DOM
-  useEffect(() => {
-    // Wait for article content to be rendered
-    const timer = setTimeout(() => {
-      const articleEl = document.querySelector(".prose-zhao");
-      if (!articleEl) return;
-
-      const headingEls = articleEl.querySelectorAll("h1, h2, h3");
-      const items: TocItem[] = [];
-
-      headingEls.forEach((el, index) => {
-        const id = `heading-${index}`;
-        el.id = id;
-        items.push({
-          id,
-          text: el.textContent || "",
-          level: parseInt(el.tagName[1]),
-        });
-      });
-
-      setHeadings(items);
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [html]);
 
   // IntersectionObserver for active heading highlighting
   useEffect(() => {
@@ -49,7 +53,6 @@ export function TableOfContents({ html, title = "目录" }: TableOfContentsProps
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Find the first intersecting heading
         const intersecting = entries.filter((e) => e.isIntersecting);
         if (intersecting.length > 0) {
           setActiveId(intersecting[0].target.id);
@@ -61,18 +64,25 @@ export function TableOfContents({ html, title = "目录" }: TableOfContentsProps
       }
     );
 
-    headings.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    // Small delay to ensure DOM is ready after dangerouslySetInnerHTML
+    const timer = setTimeout(() => {
+      headings.forEach(({ id }) => {
+        const el = document.getElementById(id);
+        if (el) observer.observe(el);
+      });
+    }, 50);
 
-    return () => observer.disconnect();
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
   }, [headings]);
 
   const handleClick = useCallback((id: string) => {
     const el = document.getElementById(id);
     if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top, behavior: "smooth" });
     }
   }, []);
 

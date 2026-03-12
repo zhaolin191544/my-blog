@@ -8,11 +8,13 @@
     "home": "首页",
     "about": "关于",
     "photo": "照片",
-    "shorts": "碎片",
+    "shorts": "碎碎念",
     "messages": "留言板",
-    "mrs_zhao": "Mrs. Zhao",
+    "mrs_zhao": "赵女士",
     "blog": "博客",
-    "contact": "联系方式"
+    "terminal": "终端",
+    "novel": "小说",
+    "admin": "后台(你看到也进不来)"
   },
   "about": {
     "home_link": "⇦ Home",
@@ -71,14 +73,14 @@
   "shorts": {
     "back": "⇦ 返回",
     "title": "碎片",
-    "subtitle": "思想的碎片，生活的点滴",
+    "subtitle": "碎碎念，记录一些日常的想法、情绪",
     "loading": "加载中...",
     "empty": "暂无碎片"
   },
   "photos": {
     "back": "⇦ 返回",
     "title": "相册",
-    "subtitle": "我去过的地方，我看过的风景",
+    "subtitle": "去过一些地方，看过的一些风景。我有一台相机，但是一直放在那边懒得碰。很多照片都是用手机拍的，拍的很烂，但是我还是很喜欢，因为看见这些照片就能让我想起从前的快乐。",
     "loading": "加载中...",
     "empty": "暂无照片",
     "photos_count": "张照片",
@@ -89,7 +91,7 @@
   "mrsZhao": {
     "back": "⇦ 返回",
     "title": "Mrs. Zhao",
-    "subtitle": "她的文字，她的故事",
+    "subtitle": "大概在我读小学五六年级时，赵女士和我炫耀她以前写的日记多好多好，她和我说她的愿望是有一天她以前的日记能够全部被整理下来，做成一本书。可是现在这个年代谁还看书啊。如今，赵女士终日沉迷于辅导她五年级的小女儿冲刺2032年高考，估计她早已经忘记自己以前说过的话了，但我还记得那段回忆。于是我便问了她是否想在我这里继续保留自己的文字，为此，我甚至还考虑到这个年龄段的人既不会写markdown也不会写html，我在后台特地给她重新写了个操作简单的富文本编辑器组件。那就期待赵女士有朝一日重回“文坛”吧。",
     "loading": "加载中...",
     "empty": "暂无文章",
     "min_read": "min",
@@ -99,7 +101,7 @@
   "blog": {
     "back": "\u21e6 返回",
     "title": "Blog",
-    "subtitle": "记录生活，分享思考",
+    "subtitle": "一些经过深思熟虑整理下来的内容，留着老了看",
     "loading": "加载中...",
     "empty": "暂无文章",
     "min_read": "min",
@@ -113,24 +115,38 @@
     "comment_email_placeholder": "your.email@example.com",
     "comment_content": "评论内容",
     "comment_placeholder": "写下你的想法...",
-    "comment_email_privacy": "你的邮箱不会被公开显示。",
+    "comment_email_privacy": "你的邮箱不会被公开显示，请相信我的后端技术。仅用来发送接收回复通知，邮箱里的邮件也会很好看。",
     "comment_submit": "发表评论",
     "comment_submitting": "提交中...",
     "comment_success": "评论已提交，等待审核。",
     "comment_error": "发生错误，请重试。",
     "comment_fill_fields": "请填写所有必填字段。",
     "comment_empty": "暂无评论，来做第一个吧！",
-    "comment_admin_tag": "站长"
+    "comment_admin_tag": "主人"
+  },
+  "novel": {
+    "back": "⇦ 返回",
+    "title": "小说",
+    "subtitle": "尝试写一些故事，长的短的都有。曾经在某乎写过几个短篇，当时有一篇莫名其妙的火了，一下子有了10w+的阅读量，那一年一开始挺开心的，有催更的读者，不过接踵而来的是网络上各种各样奇形怪状的人物，谩骂讥讽。一开始我心态不好承受不了，再后来我习惯了这样的人，他敢私信或者评论多少和对方过几招。再后来我不堪这种事情的打扰，便注销了某乎。搬到1223之后，我突然喜欢上了看be小说，26年寒假的时候一天晚上和小蒋聊天构思一个be故事，感觉会很有意思。但是现在好忙，我也不知道我什么时候会去写，我也不知道我会不会写，毕竟我是在24年就喊着要重构老博客的，然后一直拖到了26年。",
+    "loading": "加载中...",
+    "empty": "暂无小说",
+    "chapters_count": "章",
+    "back_to_list": "⇦ 返回小说列表",
+    "back_to_novel": "⇦ 返回目录",
+    "prev_chapter": "上一章",
+    "next_chapter": "下一章",
+    "not_found": "未找到",
+    "short_story_tag": "短篇"
   },
   "messages": {
     "back": "⇦ 返回",
     "title": "留言板",
-    "subtitle": "留下痕迹，分享想法",
+    "subtitle": "和我聊聊天吧，友善的。这可是一个非常好看的留言板，你还会在邮箱收到一份惊喜。",
     "leave_message": "留言",
     "email_privacy": "您的邮箱将会保密，不会被公开显示。",
     "name_label": "昵称",
     "name_placeholder": "您的昵称",
-    "email_label": "邮箱",
+    "email_label": "邮箱(用于接收回复通知)",
     "email_placeholder": "your.email@example.com",
     "message_label": "留言内容",
     "message_placeholder": "在想些什么？",
@@ -138,9 +154,21 @@
     "submitting": "提交中...",
     "loading": "加载中...",
     "empty": "暂无留言，来做第一个吧！",
-    "admin": "站长",
+    "admin": "主人回复",
     "toast_fill_fields": "请填写所有必填字段。",
     "toast_success": "留言成功！",
     "toast_error": "发生错误，请重试。"
+  },
+  "dialogs": {
+    "podcast_title": "播客",
+    "podcast_description": "这是我的一个梦想\n希望未来有一些关于技术、生活和胡思乱想的声音。\n也许未来会有吧。",
+    "podcast_footer": "敬请期待...",
+    "video_title": "视频",
+    "video_description": "这是我的另一个梦想 \n 也许未来也会有吧",
+    "video_footer": "敬请期待..."
+  },
+  "loading_page": {
+    "title": "请稍候...",
+    "disclaimer": "此网站更适合pc桌面端大屏幕浏览，即便我已经尽最大努力去适配了移动端，但仍然有一些性能问题和瑕疵。"
   }
 }

@@ -369,7 +369,7 @@ export default function TerminalPage() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-[#fafafa] text-[#333333] font-mono text-xs sm:text-sm md:text-base flex flex-col selection:bg-[#0066cc] selection:text-white">
+    <div className="fixed inset-0 z-50 bg-[#fafafa] text-soot font-mono text-xs sm:text-sm md:text-base flex flex-col selection:bg-[#0066cc] selection:text-white">
       {/* Top Bar */}
       <div className="h-10 sm:h-12 bg-[#e8e8e8] flex flex-none items-center justify-between px-3 sm:px-4 border-b border-[#d0d0d0] shadow-sm">
         <div className="flex items-center gap-2 w-1/3">
@@ -389,12 +389,12 @@ export default function TerminalPage() {
           </svg>
         </div>
         <div className="flex items-center justify-center w-1/3">
-          <span className="text-[#333333] font-bold text-center truncate">guest@linlin</span>
+          <span className="text-soot font-bold text-center truncate">guest@linlin</span>
         </div>
         <div className="flex items-center justify-end gap-2 sm:gap-3 w-1/3">
           {/* Windows-style window controls */}
           <div
-            className="cursor-pointer text-[#666666] hover:bg-[#d0d0d0] hover:text-[#333] transition-colors flex items-center justify-center w-8 h-8 rounded-sm"
+            className="cursor-pointer text-smoke hover:bg-[#d0d0d0] hover:text-[#333] transition-colors flex items-center justify-center w-8 h-8 rounded-sm"
             onClick={handleClose}
           >
             <svg
