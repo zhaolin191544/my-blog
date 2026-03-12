@@ -1,6 +1,6 @@
 "use client";
 
-import { Terminal, TypingAnimation, AnimatedSpan } from "@/src/components/Terminal";
+import { Terminal, TypingAnimation, AnimatedSpan } from "@/src/components/home/Terminal";
 import { Link } from "@/src/i18n/routing";
 
 export function TerminalDemo() {

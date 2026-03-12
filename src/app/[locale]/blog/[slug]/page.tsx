@@ -5,9 +5,9 @@ import { Link } from "@/src/i18n/routing";
 import { format } from "date-fns";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
-import { TableOfContents, parseAndInjectHeadingIds } from "@/src/components/TableOfContents";
-import type { TocItem } from "@/src/components/TableOfContents";
-import { BlogComments } from "@/src/components/BlogComments";
+import { TableOfContents, parseAndInjectHeadingIds } from "@/src/components/blog/TableOfContents";
+import type { TocItem } from "@/src/components/blog/TableOfContents";
+import { BlogComments } from "@/src/components/blog/BlogComments";
 import { useParams } from "next/navigation";
 
 interface BlogComment {

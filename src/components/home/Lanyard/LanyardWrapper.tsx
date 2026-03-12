@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const Lanyard = dynamic(() => import("@/src/components/Lanyard/Lanyard"), {
+const Lanyard = dynamic(() => import("@/src/components/home/Lanyard/Lanyard"), {
   ssr: false,
   loading: () => <div className="w-full h-full bg-enamel/30 animate-pulse rounded-lg" />,
 });

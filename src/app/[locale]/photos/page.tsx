@@ -5,7 +5,7 @@ import { Link } from "@/src/i18n/routing";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 
-const CircularGallery = dynamic(() => import("@/src/components/CircularGallery/CircularGallery"), {
+const CircularGallery = dynamic(() => import("@/src/components/photos/CircularGallery/CircularGallery"), {
   ssr: false,
 });
 
