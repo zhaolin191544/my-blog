@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
+import Image from "next/image";
 import { Printout } from "./Printout";
 
 const reportZh = `\
@@ -183,7 +184,7 @@ export function CodeSection() {
         {/* Left side: bounded to match the max-w-360 layout */}
         <div className="w-full lg:w-[50%] flex justify-end pl-11 pr-11 lg:pr-0 max-[767px]:px-4">
           <div className="w-full max-w-170 lg:pr-10">
-            <img src="/assets/lily.png" alt="Decoration" className="w-full h-auto object-cover" />
+            <Image src="/assets/lily.png" alt="Decoration" width={680} height={680} className="w-full h-auto object-cover" />
           </div>
         </div>
 
@@ -206,10 +207,12 @@ export function CodeSection() {
           </div>
 
           <div className="w-full max-w-170 pl-11 pr-11 lg:pl-10 lg:pr-11 max-[767px]:px-4 mb-12 lg:mb-16 flex justify-start">
-            <img
+            <Image
               className="w-75 xl:w-100 pointer-events-none opacity-100 hover:scale-105 transition-transform"
               src="/assets/sql.jpg"
               alt="SQL"
+              width={400}
+              height={300}
             />
           </div>
 

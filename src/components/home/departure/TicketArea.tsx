@@ -11,16 +11,19 @@ export function TicketArea() {
           className="absolute left-[100px] top-[40px] max-[1115px]:left-[40px] max-[1115px]:top-[20px] max-[767px]:left-0 max-[767px]:top-[20px] transition-transform duration-1000 ease-[cubic-bezier(1,0.05,0.48,0.99)] group-hover:translate-x-[20px] group-hover:translate-y-[-24px] group-hover:rotate-[2deg]"
           src="/assets/1.jpg"
           alt=""
+          loading="lazy"
         />
         <img
           className="absolute w-100 top-[130px] left-[-20px] max-[1115px]:top-[110px] max-[1115px]:left-[-80px] max-[767px]:top-[100px] max-[767px]:left-[-60px] transition-transform duration-1000 ease-[cubic-bezier(1,0.05,0.48,0.99)] group-hover:rotate-[-3deg] group-hover:translate-x-[-96px] group-hover:translate-y-[12px]"
           src="/assets/3.jpg"
           alt=""
+          loading="lazy"
         />
         <img
           className="absolute w-80 top-[250px] left-[500px] rotate-[270deg] max-[1115px]:top-[280px] max-[1115px]:left-[350px] max-[767px]:top-[300px] max-[767px]:left-[150px] transition-transform duration-1000 ease-[cubic-bezier(1,0.05,0.48,0.99)] group-hover:translate-x-[60px] group-hover:translate-y-[20px] group-hover:rotate-[275deg]"
           src="/assets/2.jpg"
           alt=""
+          loading="lazy"
         />
       </div>
     </div>

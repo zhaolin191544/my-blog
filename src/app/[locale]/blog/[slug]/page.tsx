@@ -8,6 +8,7 @@ import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 import { TableOfContents, parseAndInjectHeadingIds } from "@/src/components/blog/TableOfContents";
 import type { TocItem } from "@/src/components/blog/TableOfContents";
 import { BlogComments } from "@/src/components/blog/BlogComments";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 
 interface BlogComment {
@@ -110,8 +111,8 @@ export default function BlogArticlePage() {
               <article className="flex-1 min-w-0 max-w-200">
                 {/* Cover Image */}
                 {post.cover && (
-                  <div className="mb-8 rounded-lg overflow-hidden">
-                    <img src={post.cover} alt={post.title} className="w-full h-auto object-cover" />
+                  <div className="mb-8 rounded-lg overflow-hidden relative aspect-video">
+                    <Image src={post.cover} alt={post.title} fill className="object-cover" unoptimized />
                   </div>
                 )}
 

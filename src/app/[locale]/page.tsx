@@ -1,18 +1,37 @@
+import dynamic from "next/dynamic";
 import { GlitchTitle } from "@/src/components/home/departure/GlitchTitle";
-import { FlightBoard } from "@/src/components/home/departure/FlightBoard";
-import { TicketArea } from "@/src/components/home/departure/TicketArea";
-import { LetterPrintout } from "@/src/components/home/departure/LetterPrintout";
-import { Editor } from "@/src/components/home/departure/Editor";
-import { CodeSection } from "@/src/components/home/departure/CodeSection";
-import { TerminalDemo } from "@/src/components/home/TerminalDemo";
-import FallingText from "@/src/components/home/FallingText";
 import { WelcomeContent } from "@/src/components/home/WelcomeContent";
-import { StaggerTestimonials } from "@/src/components/home/StaggerTestimonials";
-import { LocationPlaceholder } from "@/src/components/home/LocationPlaceholder";
-import { LanyardWrapper } from "@/src/components/home/Lanyard/LanyardWrapper";
-import { SpotifyPlayer } from "@/src/components/home/SpotifyPlayer";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 import { useTranslations } from "next-intl";
+
+const FlightBoard = dynamic(
+  () => import("@/src/components/home/departure/FlightBoard").then((m) => m.FlightBoard),
+);
+const TicketArea = dynamic(
+  () => import("@/src/components/home/departure/TicketArea").then((m) => m.TicketArea),
+);
+const LetterPrintout = dynamic(
+  () => import("@/src/components/home/departure/LetterPrintout").then((m) => m.LetterPrintout),
+);
+const CodeSection = dynamic(
+  () => import("@/src/components/home/departure/CodeSection").then((m) => m.CodeSection),
+);
+const TerminalDemo = dynamic(
+  () => import("@/src/components/home/TerminalDemo").then((m) => m.TerminalDemo),
+);
+const FallingText = dynamic(() => import("@/src/components/home/FallingText"));
+const StaggerTestimonials = dynamic(
+  () => import("@/src/components/home/StaggerTestimonials").then((m) => m.StaggerTestimonials),
+);
+const LocationPlaceholder = dynamic(
+  () => import("@/src/components/home/LocationPlaceholder").then((m) => m.LocationPlaceholder),
+);
+const LanyardWrapper = dynamic(
+  () => import("@/src/components/home/Lanyard/LanyardWrapper").then((m) => m.LanyardWrapper),
+);
+const SpotifyPlayer = dynamic(
+  () => import("@/src/components/home/SpotifyPlayer").then((m) => m.SpotifyPlayer),
+);
 
 export default function Home() {
   const t = useTranslations("navigation");

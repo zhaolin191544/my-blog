@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@/src/i18n/routing";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { LanguageSwitcher } from "@/src/components/LanguageSwitcher";
 
 interface Novel {
@@ -73,11 +74,13 @@ export default function NovelListPage() {
                 >
                   {/* Cover */}
                   {novel.cover && (
-                    <div className="w-20 h-28 max-[767px]:w-16 max-[767px]:h-22 rounded-md overflow-hidden shrink-0 bg-enamel">
-                      <img
+                    <div className="w-20 h-28 max-[767px]:w-16 max-[767px]:h-22 rounded-md overflow-hidden shrink-0 bg-enamel relative">
+                      <Image
                         src={novel.cover}
                         alt={novel.title}
-                        className="w-full h-full object-cover"
+                        fill
+                        className="object-cover"
+                        unoptimized
                       />
                     </div>
                   )}

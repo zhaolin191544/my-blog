@@ -33,11 +33,13 @@ ${t("body_p2")}`}
         className="absolute w-85 z-1 top-0 right-17.5 max-[1115px]:-right-12.5  max-[1023px]:hidden"
         src="/assets/evidence.jpg"
         alt=""
+        loading="lazy"
       />
       <img
         className="absolute z-1 -top-3.5 right-25 max-[1115px]:-right-30 max-[1023px]:hidden"
         src="/assets/paperclip.svg"
         alt=""
+        loading="lazy"
       />
     </div>
   );
