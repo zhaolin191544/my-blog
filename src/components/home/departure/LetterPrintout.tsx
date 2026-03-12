@@ -6,8 +6,8 @@ export function LetterPrintout() {
 
   return (
     <div className="relative">
-      <Printout className="text-[16.5px] z-[1] w-full h-auto" color="white" viewBox="0 55 1010 594">
-        <pre className="relative top-[-92px] pt-[88px] px-[66px] leading-[24.75px] max-[767px]:px-[30px] max-[767px]:text-[13px]">
+      <Printout className="text-[16.5px] z-1 w-full h-auto" color="white" viewBox="0 55 1010 594">
+        <pre className="relative -top-23 pt-22 px-16.5 leading-[24.75px] max-[767px]:px-7.5 max-[767px]:text-[13px]">
           {`\
 ${t("to_label")}                                ${t("from_label")}
 ${t("to_name")}                         ${t("from_name")}
@@ -32,12 +32,12 @@ ${t("body_p2")}`}
         </pre>
       </Printout>
       <img
-        className="absolute w-85 z-[1] top-0 right-[70px] max-[1115px]:right-[-50px]  max-[1023px]:hidden"
+        className="absolute w-85 z-1 top-0 right-17.5 max-[1115px]:-right-12.5  max-[1023px]:hidden"
         src="/assets/evidence.jpg"
         alt=""
       />
       <img
-        className="absolute z-[1] top-[-14px] right-[100px] max-[1115px]:right-[-120px] max-[1023px]:hidden"
+        className="absolute z-1 -top-3.5 right-25 max-[1115px]:-right-30 max-[1023px]:hidden"
         src="/assets/paperclip.svg"
         alt=""
       />

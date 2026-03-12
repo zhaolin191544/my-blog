@@ -39,7 +39,7 @@ const FallingText: React.FC<FallingTextProps> = ({
       .map((word) => {
         const isHighlighted = highlightWords.some((hw) => word.startsWith(hw));
         return `<span
-          class="inline-block mx-[2px] select-none ${isHighlighted ? highlightClass : ""}"
+          class="inline-block mx-0.5 select-none ${isHighlighted ? highlightClass : ""}"
         >
           ${word}
         </span>`;
@@ -190,7 +190,7 @@ const FallingText: React.FC<FallingTextProps> = ({
   return (
     <div
       ref={containerRef}
-      className="relative z-[1] w-full h-full cursor-pointer text-center pt-8 overflow-visible"
+      className="relative z-1 w-full h-full cursor-pointer text-center pt-8 overflow-visible"
       onClick={trigger === "click" ? handleTrigger : undefined}
       onMouseEnter={trigger === "hover" ? handleTrigger : undefined}
     >
