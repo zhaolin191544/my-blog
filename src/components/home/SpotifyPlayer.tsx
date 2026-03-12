@@ -83,10 +83,10 @@ export function SpotifyPlayer() {
 
   return (
     <div className="relative">
-      <p className="text-[11px] whitespace-pre text-clay mb-4 absolute -top-28 left-[7]">
+      <p className="text-[11px] whitespace-pre text-clay mb-4 absolute -top-12 left-[7]">
         {t_spotify("spotify_note")}
       </p>
-      <div className="w-full aspect-square bg-white/80 backdrop-blur-md border border-aluminum/30 rounded-[32px] p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] text-carbon flex flex-col justify-between selection:bg-ash/20">
+      <div className="w-full aspect-square bg-white/80 backdrop-blur-md border border-aluminum/30 rounded-4xl p-6 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.05)] text-carbon flex flex-col justify-between selection:bg-ash/20">
         <audio
           ref={audioRef}
           src={currentTrack.audioUrl}
@@ -96,7 +96,7 @@ export function SpotifyPlayer() {
 
         <div className="flex flex-col gap-4">
           {/* Album Cover */}
-          <div className="relative w-full aspect-square max-h-[180px] rounded-2xl overflow-hidden shadow-lg group mx-auto">
+          <div className="relative w-full aspect-square max-h-45 rounded-2xl overflow-hidden shadow-lg group mx-auto">
             <Image
               src={currentTrack.cover}
               alt={currentTrack.title}

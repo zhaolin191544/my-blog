@@ -94,7 +94,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ===== SECTION 6: Letter Printout & Spotify Player ===== */}
         <section className="relative mt-33 max-[767px]:mt-16.5 w-screen left-[calc(50%-50vw)] px-11 max-[767px]:px-4 flex justify-center overflow-visible">
           <div className="w-full max-w-375 flex flex-col xl:flex-row items-center justify-between gap-11 xl:gap-20">
             <div className="w-full xl:flex-1 max-w-275 xl:-ml-10">
@@ -107,8 +106,7 @@ export default function Home() {
         </section>
       </div>
 
-      {/* ===== SECTION 7: Code Section (light background) ===== */}
-      <section className="relative mt-33 max-[767px]:mt-16.5 text-carbon bg-white selection:bg-foam selection:text-carbon overflow-visible pb-25 w-full">
+      <section className="relative mt-33 max-[767px]:mt-16.5 text-carbon bg-white selection:bg-foam selection:text-carbon overflow-visible w-full">
         <CodeSection />
       </section>
     </div>

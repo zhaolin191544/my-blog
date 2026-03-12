@@ -84,55 +84,68 @@ can be conducted.
 
 export function CodeSection() {
   return (
-    <div className="relative w-full flex flex-col pt-12 overflow-visible">
-      {/* Decorative background image */}
-      <img
-        className="absolute top-0 left-[-20%] xl:left-[-10%] max-[767px]:hidden w-[1000px] xl:w-[1200px] opacity-20 pointer-events-none z-0"
-        src="/assets/mercury-diagram.svg"
-        alt=""
-      />
+    <div className="relative w-full pt-12 overflow-visible">
 
-      {/* Text block */}
-      <div className="relative z-30 mb-20 px-11 max-[767px]:px-4 max-w-[1440px] mx-auto w-full">
-        <p className="text-mud text-[16px] xl:text-[20px] whitespace-pre font-bold tracking-widest leading-loose">
-          {"\u2591"}
-          {"  "}ADD A RETRO FLAVOR
-          <br />
-          {"\u2591"}
-          {"  "}TO YOUR CODE AND
-          <br />
-          {"\u2591"}
-          {"  "}TECHNICAL DOCUMENTATION
-        </p>
-      </div>
+      <div className="w-full flex flex-col lg:flex-row items-stretch relative z-30">
+        
+        {/* Left side: bounded to match the max-w-360 layout */}
+        <div className="w-full lg:w-[50%] flex justify-end pl-11 pr-11 lg:pr-0 max-[767px]:px-4">
+          <div className="w-full max-w-[680px] lg:pr-10">
+             <img src="/assets/lily.png" alt="Decoration" className="w-full h-auto object-cover" />
+          </div>
+        </div>
 
-      {/* Code images row (side by side) */}
-      <div className="relative z-10 w-full max-w-[1440px] mx-auto px-11 max-[767px]:px-4 flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32 mb-24">
-        <img
-          className="w-[350px] xl:w-[450px] pointer-events-none opacity-100 hover:scale-105 transition-transform"
-          src="/assets/sql.svg"
-          alt="SQL"
-        />
-      </div>
+        {/* Right side: takes the rest of the screen */}
+        <div className="w-full lg:w-[50%] flex flex-col pt-12 lg:pt-0">
+          
+          <div className="w-full max-w-[680px] pl-11 pr-11 lg:pl-10 lg:pr-11 max-[767px]:px-4 mb-12 lg:mb-16">
+            <p className="text-mud text-[16px] xl:text-[20px] whitespace-pre font-bold tracking-widest leading-loose">
+              {"\u2591"}
+              {"  "}ADD A RETRO FLAVOR
+              <br />
+              {"\u2591"}
+              {"  "}TO YOUR CODE AND
+              <br />
+              {"\u2591"}
+              {"  "}TECHNICAL DOCUMENTATION
+            </p>
+          </div>
 
-      {/* Printout taking full width */}
-      <div className="relative z-30 w-[100vw] left-[calc(50%-50vw)] flex justify-center bg-white shadow-2xl">
-        <Printout className="w-full h-auto text-carbon max-w-[1920px]" color="white">
-          <pre
-            className="relative pt-[70px] pb-[50px] px-[5%] max-[767px]:px-[4%] max-[767px]:pt-[60px] max-[767px]:select-none max-[767px]:pointer-events-none font-mono"
-            contentEditable
-            suppressContentEditableWarning
-            spellCheck={false}
-            style={{
-              fontSize: "clamp(12px, 1.2vw, 18px)",
-              lineHeight: "1.7",
-              maxHeight: "800px",
-              overflowY: "auto",
-            }}
-          >
-            {missionReport}
-          </pre>
-        </Printout>
+          <div className="w-full max-w-[680px] pl-11 pr-11 lg:pl-10 lg:pr-11 max-[767px]:px-4 mb-12 lg:mb-16 flex justify-start">
+            <img
+              className="w-75 xl:w-100 pointer-events-none opacity-100 hover:scale-105 transition-transform"
+              src="/assets/sql.svg"
+              alt="SQL"
+            />
+          </div>
+
+          {/* 3. Printout: extends to the right edge and bottom! */}
+          <div className="w-full flex-grow flex items-end justify-end bg-transparent relative pl-11 max-[767px]:pl-4 lg:pl-10">
+            <div className="w-full flex bg-white shadow-[-10px_-10px_30px_rgba(0,0,0,0.05)]">
+              <Printout 
+                className="w-full h-auto text-carbon block" 
+                color="white"
+                foreignObjectProps={{ width: 942, height: 648 }}
+              >
+                <pre
+                  className="relative pt-17.5 px-[5%] max-[767px]:px-[4%] max-[767px]:pt-15 max-[767px]:select-none max-[767px]:pointer-events-none font-mono"
+                  contentEditable
+                  suppressContentEditableWarning
+                  spellCheck={false}
+                  style={{
+                    fontSize: "clamp(12px, 1.2vw, 18px)",
+                    lineHeight: "1.7",
+                    height: "100%",
+                    overflow: "auto",
+                    margin: 0
+                  }}
+                >
+                  {missionReport}
+                </pre>
+              </Printout>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
