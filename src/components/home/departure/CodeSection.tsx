@@ -179,29 +179,29 @@ export function CodeSection() {
 
   return (
     <div className="relative w-full pt-12 overflow-visible">
-
       <div className="w-full flex flex-col lg:flex-row items-stretch relative z-30">
-
         {/* Left side: bounded to match the max-w-360 layout */}
         <div className="w-full lg:w-[50%] flex justify-end pl-11 pr-11 lg:pr-0 max-[767px]:px-4">
           <div className="w-full max-w-170 lg:pr-10">
-             <img src="/assets/lily.png" alt="Decoration" className="w-full h-auto object-cover" />
+            <img src="/assets/lily.png" alt="Decoration" className="w-full h-auto object-cover" />
           </div>
         </div>
 
         {/* Right side: takes the rest of the screen */}
         <div className="w-full lg:w-[50%] flex flex-col pt-12 lg:pt-0">
-
           <div className="w-full max-w-170 pl-11 pr-11 lg:pl-10 lg:pr-11 max-[767px]:px-4 mb-12 lg:mb-16">
             <p className="text-mud text-[16px] xl:text-[20px] whitespace-pre font-bold tracking-widest leading-loose">
               {"\u2591"}
-              {"  "}{t("tagline1")}
+              {"  "}
+              {t("tagline1")}
               <br />
               {"\u2591"}
-              {"  "}{t("tagline2")}
+              {"  "}
+              {t("tagline2")}
               <br />
               {"\u2591"}
-              {"  "}{t("tagline3")}
+              {"  "}
+              {t("tagline3")}
             </p>
           </div>
 
@@ -231,7 +231,7 @@ export function CodeSection() {
                     lineHeight: "1.7",
                     height: "100%",
                     overflow: "auto",
-                    margin: 0
+                    margin: 0,
                   }}
                 >
                   {report}

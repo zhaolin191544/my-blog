@@ -15,7 +15,13 @@ type PrintoutProps = SVGProps<SVGSVGElement> & {
   foreignObjectProps?: React.SVGProps<SVGForeignObjectElement>;
 };
 
-export function Printout({ color = "white", children, className, foreignObjectProps, ...rest }: PrintoutProps) {
+export function Printout({
+  color = "white",
+  children,
+  className,
+  foreignObjectProps,
+  ...rest
+}: PrintoutProps) {
   return (
     <svg
       className={`printout text-carbon ${className ?? ""}`}
@@ -33,7 +39,14 @@ export function Printout({ color = "white", children, className, foreignObjectPr
       />
       <path d="M66 0H67V648H66V0Z" fill={Colors[color][1]} />
       <path d="M943 0H944V648H943V0Z" fill={Colors[color][1]} />
-      <foreignObject x="68" y="0" width="875" height="648" style={{ overflowY: "clip" }} {...foreignObjectProps}>
+      <foreignObject
+        x="68"
+        y="0"
+        width="875"
+        height="648"
+        style={{ overflowY: "clip" }}
+        {...foreignObjectProps}
+      >
         {children}
       </foreignObject>
     </svg>

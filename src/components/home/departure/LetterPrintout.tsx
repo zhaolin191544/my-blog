@@ -24,9 +24,7 @@ ${t("body_p1")}
           <span className="bg-foam">{t("highlight1")}</span>
           {`
 ${t("body_p2")}`}
-          <span className="bg-foam">
-            {t("highlight2")}
-          </span>
+          <span className="bg-foam">{t("highlight2")}</span>
           <br />
           {t("body_p3")}
         </pre>
