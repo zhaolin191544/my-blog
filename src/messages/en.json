@@ -167,6 +167,29 @@
     "video_description": "This is my dream too \n Also maybe later",
     "video_footer": "Stay tuned..."
   },
+  "letter": {
+    "to_label": "To:",
+    "from_label": "From:",
+    "to_name": "DR. Z. Lin",
+    "to_org": "Digital Underworld, South China Cluster",
+    "to_addr1": "1223 FeetUnder #507",
+    "to_addr2": "Shen Zhen, SZ 43589",
+    "from_name": "PROFESSOR S. W. XIAOXIANGZI",
+    "from_org": "HM Digital Soul Research Institute",
+    "from_addr1": "88 JISUW SB",
+    "from_addr2": "NEW Mexico, NM 15507",
+    "greeting": "Dear Lin,",
+    "body_p1": "Great news! I've found a way to rescue you from the agony of unemployment, even though I know\nyou're still staring at localhost:3000 wondering why no one else can access it.\nStop messing around with component libraries made for the living —\nI've found you a gig that lasts for eternity.\n",
+    "highlight1": "The Nanshan district of the \"Digital Underworld\" is experiencing a massive, unexplained logic collapse.",
+    "body_p2": "\nWe suspect the consciousness of the new generation is too complex — both\nour v18 rendering engine and Guoping's engine are suffering massive memory leaks.",
+    "highlight2": "Your primary objectives are as follows:",
+    "body_p3": "\nThe Qing Dynasty ancestors in the virtual community are complaining that the UI is too\n\"modern\", causing severe cognitive imbalance (a form of soul crash caused by the inability\nto comprehend Flexbox layouts). We need you to rewrite a \"retro mode\" rendering layer\nusing Next.js 72.0 to ensure their virtual lives run smoothly. Some radical developers in the\nunderworld broke the system's Theme-Provider, so now millions of souls are living under a\nblinding \"highlight mode\". You must fix this damn brightness issue by the 15th of next month,\nor we'll face a real \"code riot\".\nGood news: this job only requires your consciousness. Your body can lounge comfortably in a\nrocking chair back in Nantong, sipping Suntory oolong tea.\n\nEnclosed are the \"Consciousness Maintenance Agreement\" and the latest Git commit guidelines.\nRemember, inline styles are strictly forbidden in underworld code — even the dead have\naesthetic standards. The date is set for the 15th of next month. I'll prepare the purest server\nbandwidth for you. Bring your mechanical keyboard — they only have touch virtual keys here,\nand the feel is terrible.\n            Best regards, may your soul never 404."
+  },
+  "codeSection": {
+    "tagline1": "Development Manual and Postscript",
+    "tagline2": "Not Layout Issue, On purpose",
+    "tagline3": "Except For Mobie Users"
+  },
   "loading_page": {
     "title": "Loading...",
     "disclaimer": "This website is best viewed on a desktop screen. Although I have tried my best to adapt it for mobile, there are still some performance issues and imperfections."

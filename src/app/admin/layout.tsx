@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Admin - My Blog",
+  title: "Admin - Lin's Blog",
   description: "Blog administration panel",
 };
 
