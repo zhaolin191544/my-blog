@@ -219,9 +219,9 @@ export function Editor() {
 
   return (
     <div className="w-full">
-      <div className="relative w-full max-w-[824px]">
+      <div className="relative w-full max-w-206">
         <select
-          className="absolute top-4 right-4 z-[1] bg-enamel text-dark border border-aluminum py-1 px-2 font-inherit text-[11px] cursor-pointer"
+          className="absolute top-4 right-4 z-1 bg-enamel text-dark border border-aluminum py-1 px-2 font-inherit text-[11px] cursor-pointer"
           value={lang}
           onChange={(e) => setLang(e.target.value as Language)}
         >
@@ -232,7 +232,7 @@ export function Editor() {
           ))}
         </select>
         <pre
-          className="bg-enamel text-soot p-4 min-h-[400px] whitespace-pre overflow-auto text-[13px] leading-[1.5] caret-soot border border-aluminum focus:outline-none selection:bg-foam selection:text-carbon"
+          className="bg-enamel text-soot p-4 min-h-100 whitespace-pre overflow-auto text-[13px] leading-normal caret-soot border border-aluminum focus:outline-none selection:bg-foam selection:text-carbon"
           contentEditable
           suppressContentEditableWarning
           spellCheck={false}
